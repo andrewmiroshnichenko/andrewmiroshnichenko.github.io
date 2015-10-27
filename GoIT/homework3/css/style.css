@@ -23,20 +23,26 @@
 	background: linear-gradient(to bottom, #5e5e5e, #444343);
 }
 
-.header_list {
+.header ul {
+	font-size: 0;
+}
+
+.header .header_list {
 	display: inline-block;
 	color: white;
 	font-size: 15px;
 	margin-left: 1px;
 	margin-right: 1px;
+
 }
 
-.header_list:hover {
+.header .header_list:hover {
 	background: linear-gradient(to bottom, #4a4a4a, #2e2e2e);
 	margin-left: 0px;
 	margin-right: 0px;
 	border-left: 1px solid #838383;
 	border-right: 1px solid #838383;
+
 }
 
 .header_list:nth-child(1) {
