@@ -110,17 +110,40 @@
 
 /*FOOTER*/
 
-/*.footer {
+ .footer {
 	background: #e1e1e1;
+	margin-top: 500px;
 }
-
 .footer_list {
 	display: inline-block;
-	color: white;
+	color: #838383;
 	font-size: 15px;
-	margin-left: 1px;
-	margin-right: 1px;
-	float: bottom;
 }
-*/
-	
+
+.footer_list:hover {
+  text-decoration: underline;
+}
+
+.footer_list:nth-child(1) {
+	padding: 15px 50px 15px 20px;
+}
+
+.footer_list:nth-child(2) {
+	padding: 15px 20px 15px 20px;
+}
+
+.footer_list:nth-child(3) {
+	padding: 15px 50px 15px 50px;
+}
+
+.footer_list:nth-child(4) {
+	padding: 15px 20px 15px 20px;
+}
+
+.copyright {
+	padding: 15px 20px 15px 20px;
+	float: right;
+	display: inline-block;
+	color: #838383;
+	font-size: 15px;
+}
