@@ -26,7 +26,6 @@
 .header_list {
 	display: inline-block;
 	color: white;
-	font-family: Open Sans;
 	font-size: 15px;
 	margin-left: 1px;
 	margin-right: 1px;
@@ -58,9 +57,13 @@
 
 /*BODY*/
 
+.main_field {
+	`	`
+	margin-bottom: 100px;
+}
+
 .sidebar {
-	margin-top: 40px;
-	display: inline-block;
+	/*display: inline-block;*/
 }
 
 .sidebar ul {
@@ -102,5 +105,22 @@
 }
 
 .description {
-	margin: 40px 25px 0 25px;
+	margin: 40px 20px 0 20px;
 }
+
+/*FOOTER*/
+
+.footer {
+	/*margin-top: 35px;*/
+	background: #e1e1e1;
+}
+
+.footer_list {
+	display: inline-block;
+	color: white;
+	font-size: 15px;
+	margin-left: 1px;
+	margin-right: 1px;
+	float: bottom;
+}
+	
