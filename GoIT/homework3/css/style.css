@@ -58,12 +58,12 @@
 /*BODY*/
 
 .main_field {
-	`	`
 	margin-bottom: 100px;
 }
 
 .sidebar {
 	display: inline-block;
+	margin-top: 40px;
 }
 
 .sidebar ul {
