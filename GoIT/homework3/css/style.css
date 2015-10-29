@@ -5,7 +5,7 @@
 
 .background {
 	width: 1366px;
-	height: 950px;
+	height: 100%;
 	background-color: #f9f9f9;
 }
 .container {
@@ -17,7 +17,9 @@
 	border-left: 1px solid gray;
 	border-right: 1px solid gray;
 }
+
 /*HEADER*/
+
 .header {
 	margin-top: 35px;
 	background: linear-gradient(to bottom, #5e5e5e, #444343);
@@ -33,7 +35,6 @@
 	font-size: 15px;
 	margin-left: 1px;
 	margin-right: 1px;
-
 }
 
 .header .header_list:hover {
@@ -42,7 +43,6 @@
 	margin-right: 0px;
 	border-left: 1px solid #838383;
 	border-right: 1px solid #838383;
-
 }
 
 .header_list:nth-child(1) {
@@ -97,7 +97,7 @@
 }
 
 .product {
-	margin-top: 40px;
+	margin: 40px 0 60px 0;
 	display: inline-block;
 	float: right;
 	width: 760px;
@@ -119,7 +119,7 @@
 
  .footer {
 	background: #e1e1e1;
-	margin-top: 500px;
+	clear: both;
 }
 .footer_list {
 	display: inline-block;
