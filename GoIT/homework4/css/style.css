@@ -7,12 +7,6 @@ html, body {
 	height: 100%;
 }
 
-.clearfix:after {
-	content: ".";
-	display: block;
-	clear: both;
-}
-
 .background1 {
 	background-color: #128aa7;
 	height: 2.35%;
@@ -62,15 +56,47 @@ header {
 .contacts {
 	float: right;
 	color: #128aa7;
+	margin-bottom: 30px;
 }
 
 .flags {
-	border: 1px solid #000;
+	/*border: 1px solid #000;*/
 	float: right;
+	clear: right;
 }
+
 .flag_list {
 	float: right;
 	list-style: none;
 	font-size: 10px;
 	margin-left: 15px;
+}
+
+.flag_list p {
+	text-align: center;
+	color: #128aa7;
+}
+
+.wrapper .bigpicture {
+	width: 100%;
+	height: auto;
+	border-top: 1px solid #128aa7;
+	border-bottom: 1px solid #128aa7;
+}
+
+.menu {
+	background: #333333;
+	border-top: 3px solid red;
+	list-style: none;
+}
+
+.hor_menu_item {
+	list-style: none;
+	display: inline-block;
+	color: #fff;
+	margin-right: 100px;
+}
+
+.hor_menu_item:first-child {
+	margin-left: 80px;
 }
