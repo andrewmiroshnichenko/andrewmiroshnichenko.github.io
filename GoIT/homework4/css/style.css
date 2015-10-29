@@ -7,6 +7,11 @@ html, body {
 	height: 100%;
 }
 
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+}
 
 .background1 {
 	background-color: #128aa7;
@@ -32,9 +37,40 @@ html, body {
 
 .wrapper {
 	width: 82%;
+	margin: 0 auto;
 	background-color: #fff;
 	position: absolute;
 	top: 0;
 	left: 10%;
 	height: 100%
+}
+
+header {
+	float: left;
+	width: calc(100% - 50px);
+	height: 175px;
+	padding: 5px 25px 0 25px;
+}
+
+.logo {
+	background: url(../img/LogoText.png) center no-repeat;
+	float: left;
+	height: 100%;
+	width: 283px;
+}
+
+.contacts {
+	float: right;
+	color: #128aa7;
+}
+
+.flags {
+	border: 1px solid #000;
+	float: right;
+}
+.flag_list {
+	float: right;
+	list-style: none;
+	font-size: 10px;
+	margin-left: 15px;
 }
