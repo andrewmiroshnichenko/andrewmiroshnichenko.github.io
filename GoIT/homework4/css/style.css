@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    list-style: none;
 }
 
 html, body {
@@ -60,14 +61,12 @@ header {
 }
 
 .flags {
-	/*border: 1px solid #000;*/
 	float: right;
 	clear: right;
 }
 
 .flag_list {
 	float: right;
-	list-style: none;
 	font-size: 10px;
 	margin-left: 15px;
 }
@@ -85,18 +84,38 @@ header {
 }
 
 .menu {
-	background: #333333;
-	border-top: 3px solid red;
-	list-style: none;
+	background: linear-gradient(to top, #303030, #373737);
+	border-top: 1px solid #cacbcb;
+	border-bottom: 1px solid #000;
 }
 
 .hor_menu_item {
-	list-style: none;
 	display: inline-block;
 	color: #fff;
-	margin-right: 100px;
+	width: 13%;
+	text-align: center;
+	position: relative;
+	height: 15px;
+	z-index: 1;
 }
 
-.hor_menu_item:first-child {
-	margin-left: 80px;
+.hor_menu_item img {
+	margin-left: 5px;
+}
+
+.drop_down_menu {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 15px;
+	width: 100%;
+}
+
+.drop_down_menu span {
+	display: block;
+	background-color: #303030;
+}
+
+.hor_menu_item:hover .drop_down_menu {
+	display: block;
 }
