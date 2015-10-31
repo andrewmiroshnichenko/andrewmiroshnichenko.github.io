@@ -18,8 +18,9 @@ body {
 	width: 82%;
 	margin: 0 auto;
 	background-color: #fff;
-/*	box-shadow: 1px 0 10px 0 #a9a9a9, -1px 0 10px 0 #a9a9a9;
-*/	position: relative;
+	box-shadow: 1px 0 10px 0 #a9a9a9, -1px 0 10px 0 #a9a9a9;
+	position: relative;
+	overflow: hidden;
 }
 
 header {
@@ -63,7 +64,6 @@ header {
 	width: 100%;
 	border-top: 1px solid #128aa7;
 	border-bottom: 1px solid #128aa7;
-	display: block;
 	float: left;
 }
 
@@ -72,6 +72,8 @@ header {
 	border-top: 1px solid #cacbcb;
 	border-bottom: 1px solid #000;
 	clear: both;
+/*	box-shadow: 0 0 5px 5px #555555;
+	margin-bottom: 10px;*/
 }
 
 .hor_menu_item {
@@ -81,8 +83,7 @@ header {
 	text-align: center;
 	position: relative;
 	font-size: 15px;
-	padding: 2px 0 2px 0;
-	z-index: 1;
+	padding: 4px 0 4px 0;
 }
 
 .hor_menu_item img {
@@ -93,15 +94,17 @@ header {
 	display: none;
 	position: absolute;
 	left: 0;
-	top: 22px;
+	top: 26px;
 	width: 100%;
 	cursor: pointer;
 	border-top: 1px solid #000;
+	z-index: 100;
 }
 
 .drop_down_menu span {
 	display: block;
 	background-color: #303030;
+	padding-bottom: 7px;
 }
 
 .hor_menu_item:hover .drop_down_menu,
@@ -115,58 +118,25 @@ header {
 	width: 100%;
 	float: left;
 	position: relative;
-
+	box-shadow: 20px 10px 5px -5px #555555 inset;
 }
+
 .left_column_wrapper {
 	background: #edeef0;
 	right: 58%;
 	border-right: 1px solid #c7cacf;
 }
 
-/*.left_column_wrapper:after {
-  box-shadow: 15px 0 15px 0 red inset;
-  content: " ";
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: -15px;
-  width: 15px;
-}*/
-
 .central_column_wrapper {
 	background: #fff;
 	right: 21%;
 	border-right: 1px solid #c7cacf;
-	/*z-index: 1;*/
 }
 
 .right_column_wrapper {
 	background: #edeef0;
 	overflow: hidden;
 }
-
-/*.right_column_wrapper:before {
-  box-shadow: 60px 60px 60px 0 red inset;
-  content: " ";
-  height: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 5px;
-  width: 1500px;
-  z-index: 1;
- }
-
-.wrapper:before {
-  box-shadow: 0 1px 1px 10px red inset;
-  content: " ";
-  height: inherit;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 1300px;
-  width: 10px;
- }*/
 
 .left_column,
 .central_column,
@@ -180,7 +150,6 @@ header {
 
 .left_column {
 	width: 21%;
-	text-decoration: none;
 }
 
 .central_column {
@@ -200,7 +169,7 @@ header {
 .copyright {
 	display: inline-block;
 	width: 100%;
-	margin: 5px 0 0 0;
+	margin-top: 5px;
 	color: #fff;
 	text-align: center;
 }
