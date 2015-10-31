@@ -20,7 +20,6 @@ body {
 	background-color: #fff;
 	box-shadow: 1px 0 10px 0 #a9a9a9, -1px 0 10px 0 #a9a9a9;
 	position: relative;
-
 	overflow: hidden;
 }
 
@@ -65,7 +64,6 @@ header {
 	width: 100%;
 	border-top: 1px solid #128aa7;
 	border-bottom: 1px solid #128aa7;
-	display: block;
 	float: left;
 }
 
@@ -74,6 +72,8 @@ header {
 	border-top: 1px solid #cacbcb;
 	border-bottom: 1px solid #000;
 	clear: both;
+	box-shadow: 0 0 5px 5px #555555;
+	margin-bottom: 10px;
 }
 
 .hor_menu_item {
@@ -84,7 +84,6 @@ header {
 	position: relative;
 	font-size: 15px;
 	padding: 2px 0 2px 0;
-	z-index: 1;
 }
 
 .hor_menu_item img {
@@ -99,6 +98,7 @@ header {
 	width: 100%;
 	cursor: pointer;
 	border-top: 1px solid #000;
+	z-index: 100;
 }
 
 .drop_down_menu span {
@@ -117,7 +117,6 @@ header {
 	width: 100%;
 	float: left;
 	position: relative;
-	z-index: 2;
 
 }
 .left_column_wrapper {
@@ -126,21 +125,10 @@ header {
 	border-right: 1px solid #c7cacf;
 }
 
-/*.left_column_wrapper:after {
-  box-shadow: 15px 0 15px 0 red inset;
-  content: " ";
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: -15px;
-  width: 15px;
-}*/
-
 .central_column_wrapper {
 	background: #fff;
 	right: 21%;
 	border-right: 1px solid #c7cacf;
-	/*z-index: 1;*/
 }
 
 .right_column_wrapper {
@@ -148,28 +136,6 @@ header {
 	overflow: hidden;
 	clear: both;
 }
-
-/*.right_column_wrapper:after {
-  box-shadow: 60px 60px 60px 0 red inset;
-  background-color: yellow;
-  content: " ";
-  height: 1000%;
-  position: absolute;
-  left: 5px;
-  width: 1000%;
-}*/
-
-.wrapper:after {
-  box-shadow: 50px 50px 50px 10px red inset;
-  content: " ";
-  height: inherit;
-  position: absolute;
-  top: 0;
-  /*bottom: 0;*/
-  height: 100%;
-  right: -100px;
-  width: 10px;
- }
 
 .left_column,
 .central_column,
@@ -183,7 +149,6 @@ header {
 
 .left_column {
 	width: 21%;
-	text-decoration: none;
 }
 
 .central_column {
@@ -200,18 +165,10 @@ header {
 	color: #424c43;
 }
 
-/*.test {
-	height: 1000%;
-	width: 1000%;
-	position: absolute;
-	right: -50px;
-	background-color: green;
-}*/
-
 .copyright {
 	display: inline-block;
 	width: 100%;
-	margin: 5px 0 0 0;
+	margin-top: 5px;
 	color: #fff;
 	text-align: center;
 }
