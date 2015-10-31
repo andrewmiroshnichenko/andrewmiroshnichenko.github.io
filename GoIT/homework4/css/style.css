@@ -72,8 +72,8 @@ header {
 	border-top: 1px solid #cacbcb;
 	border-bottom: 1px solid #000;
 	clear: both;
-	box-shadow: 0 0 5px 5px #555555;
-	margin-bottom: 10px;
+/*	box-shadow: 0 0 5px 5px #555555;
+	margin-bottom: 10px;*/
 }
 
 .hor_menu_item {
@@ -83,7 +83,7 @@ header {
 	text-align: center;
 	position: relative;
 	font-size: 15px;
-	padding: 2px 0 2px 0;
+	padding: 4px 0 4px 0;
 }
 
 .hor_menu_item img {
@@ -94,7 +94,7 @@ header {
 	display: none;
 	position: absolute;
 	left: 0;
-	top: 22px;
+	top: 26px;
 	width: 100%;
 	cursor: pointer;
 	border-top: 1px solid #000;
@@ -104,6 +104,7 @@ header {
 .drop_down_menu span {
 	display: block;
 	background-color: #303030;
+	padding-bottom: 7px;
 }
 
 .hor_menu_item:hover .drop_down_menu,
@@ -117,8 +118,9 @@ header {
 	width: 100%;
 	float: left;
 	position: relative;
-
+	box-shadow: 20px 10px 5px -5px #555555 inset;
 }
+
 .left_column_wrapper {
 	background: #edeef0;
 	right: 58%;
@@ -134,7 +136,6 @@ header {
 .right_column_wrapper {
 	background: #edeef0;
 	overflow: hidden;
-	clear: both;
 }
 
 .left_column,
