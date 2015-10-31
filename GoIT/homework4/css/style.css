@@ -160,6 +160,13 @@ header {
 	width: 20%;
 }
 
+.left_links:first-child,
+.central_column span,
+.right_link_item:first-child {
+	display: block;
+	padding-top: 8px;
+}
+
 .left_link_item a,
 .right_link_item a {
 	text-decoration: none;
