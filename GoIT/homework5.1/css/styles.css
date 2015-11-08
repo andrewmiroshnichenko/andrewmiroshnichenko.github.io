@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Helvetica Neue Regular';
+    src: url('../fonts/helveticaneue-thin-webfont.eot');
+    src: url('../fonts/helveticaneue-thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/helveticaneue-thin-webfont.woff2') format('woff2'),
+         url('../fonts/helveticaneue-thin-webfont.woff') format('woff'),
+         url('../fonts/helveticaneue-thin-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
 	height: 100%;
 	width: 100%;
@@ -11,6 +23,7 @@ header ul {
 
 header ul li {
 	float: right;
+	font-family: 'Helvetica Neue Regular';
 }
 
 header ul li a,
@@ -58,11 +71,12 @@ header ul li:first-child:hover {
 	height: 3%;
 	width: 35%;
 	background-color: rgba(0, 0, 0, .63);
-	margin: 100px auto 1;
+	margin: 100px auto 1px;
 	padding: 20px 0 20px 0;
 	font-size: 24px;
 	color: #fff;
 	text-align: center;
+	font-family: 'Helvetica Neue Regular';
 }
 
 .register_container {
@@ -85,6 +99,7 @@ header ul li:first-child:hover {
 	border-top: 1px solid #000;
 	width: 275px;
 	margin: 0 auto;
+
 }
 
 input[type="text"],
@@ -98,6 +113,7 @@ input[type="image"] {
 	width: 255px;
 	color: #ccc;
 	font-size: 14px;
+	font-family: 'Helvetica Neue Regular';
 }
 
 input[type="text"],
@@ -125,4 +141,5 @@ input[type="text"]:hover {
 	margin: 0 auto;
 	font-size: 11px;
 	text-align: center;
+	font-family: 'Helvetica Neue Regular';
 }
