@@ -1,0 +1,53 @@
+body {
+	height: 100%;
+	width: 100%;
+}
+
+header {
+	background-color: #074c89;
+	overflow: hidden;
+}
+
+header ul li {
+	float: right;
+}
+
+
+header ul li a {
+	color: #60b5ed;
+	text-decoration: none;
+	font-size: 14px;
+	display: block;
+	padding: 10px 10px;
+}
+
+header ul li:nth-child(2) a {
+	color: #ffffff;
+	font-size: 14px;
+	border-left: 1px solid #4eabda;
+}
+
+header ul li img {
+	height: 23px;
+	float: left;
+	margin-right: 10px;
+}
+
+header ul li a:hover {
+	color: #ffffff;
+	background-color: #4eabda;
+}
+
+.background {
+	background: url(../img/background.jpg) no-repeat center center;
+	background-size: cover;
+	height: 1028px;
+
+}
+
+.form_container {
+	height: 50%;
+	width: 30%;
+	background-color: black;
+	padding: 100px auto;
+}
