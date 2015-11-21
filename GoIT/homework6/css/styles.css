@@ -43,6 +43,17 @@
 
 }
 
+@font-face {
+    font-family: 'Arial Bold Italic';
+    src: url('../fonts/Arial Italic/arialitalic-webfont.eot');
+    src: url('../fonts/Arial Italic/arialitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Arial Italic/arialitalic-webfont.woff2') format('woff2'),
+         url('../fonts/Arial Italic/arialitalic-webfont.woff') format('woff'),
+         url('../fonts/Arial Italic/arialitalic-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
 .wrapper {	
 	width: 909px;
 	margin: 17px auto;
@@ -444,7 +455,7 @@
 	margin-left: 10px;
 }
 
-.rim_filter>header {
+.rim_filter header {
 	font-family: "Arial Black";
 	font-size: 12px;
 	color: #114165;
@@ -463,16 +474,16 @@
 	float: left;
 }
 
-.rim_filter_names>p {
+.rim_filter_names p {
 	font-size: 10px;
 	line-height: 9px;
 }
 
-.rim_filter_names>p:nth-child(2) {
+.rim_filter_names p:nth-child(2) {
 	margin: 7px 0 3px 0;
 }
 
-.rim_filter_names>p>span {
+.rim_filter_names p span {
 	font-size: 9px;
 	color: #77858b;
 }
@@ -509,28 +520,155 @@
 	float: left;
 	font-family: "Lucida Sans Unicode Regular";
 	font-size: 9px;
-	margin-top: 3px;
+	margin-top: 11px;
 	padding: 4px 0 0 9px;
 	border-left: 1px solid #bdc6ca;
 	letter-spacing: 0.05em;
 	line-height: 8px;
 }
 
-.rim_filter_additional_options>span {
+.rim_filter_additional_options span {
 	font-size: 8px;
 	color: #77858b;
 }
 
-.rim_filter_additional_options>select {
+.rim_filter_additional_options select {
 	margin: 4px 0 8px 0;
 	height: 17px;
 	width: 58px;
 }
 
-.rim_filter a {
+.rim_filter input[type='submit'] {
 	float: right;
 	color: #154467;
 	font-family: "Arial Italic";
 	font-size: 14px;
-	margin-right: 29px;
+	margin-right: 17px;
+	border: none;
+	background-color: #fff;
+	text-decoration: underline;
+	padding: 0;
+	cursor: pointer;
+	line-height: 10px;
+}
+
+.catalog_column>ul>li:first-child {
+	width: 180px;
+	height: 25px;
+	border: 1px solid #8b979c;
+	float: left;
+	margin: 19px 0 13px 0;
+	border-radius: 10px;
+	box-shadow: 1px 2px 4px -1px #bfbfbf;
+}
+
+.catalog_column>ul>li:first-child>img {
+	margin: 1px 2px 0 3px;
+}
+
+.catalog_column span {
+	color: #114165;
+	font-family: 'Lucida Sans Unicode Regular';
+	font-size: 13px;
+	letter-spacing: -.01em;
+	vertical-align: 30%;
+}
+
+.catalog_column_chapter {
+	width: 148px;
+	height: 26px;
+	border: 1px solid #8b979c;
+	float: left;
+	margin: 0 0 6px 2px;
+	border-radius: 10px;
+	clear: left;
+}
+
+.catalog_column_chapter>img {
+	margin: 1px 2px 0 5px;
+}
+
+.catalog_column_chapter>span {
+	color: #114165;
+	font-family: 'Lucida Sans Unicode Regular';
+	font-size: 13px;
+	letter-spacing: .07em;
+	vertical-align: 35%;
+}
+
+.catalog_column_item {
+	float: left;
+	margin: 0 0 15px 38px;
+	clear: left;
+	line-height: 10px;
+}
+
+.catalog_column_item:nth-child(6),
+.catalog_column_item:nth-child(11),
+.catalog_column_item:nth-child(16) {
+	margin-bottom: 5px;
+}
+
+.catalog_column_item>.marker_small {
+	border: 1px solid #79878d;
+	box-shadow: 0 0 1px 1px #79878d inset;
+	border-radius: 3px;
+	height: 6px;
+	width: 6px;
+	margin-right: 2px;
+	display: inline-block;
+}
+
+.catalog_column_item>a {
+	color: #465961;
+	text-decoration: none;
+	letter-spacing: -.01em;
+	font-family: 'Lucida Sans Unicode Regular';
+	font-size: 13px;
+}
+
+/*hover example, comparable with .psd*/
+
+/*.catalog_column_item:nth-child(4) {
+	margin-bottom: 10px;
+}
+
+.catalog_column_item:nth-child(4)>.marker_small {
+	border: 1px solid #313a55;
+	box-shadow: 0 0 2px 0 #313a55 inset;
+}
+
+.catalog_column_item:nth-child(4)>a {
+	color: #0c3256;
+	letter-spacing: .04em;
+	font-family: 'Arial Bold Italic';
+	font-size: 14px;
+	display: inline-block;
+	padding-bottom: 2px;
+	border-bottom: 2px solid #58697f;
+}*/
+
+.catalog_column_item:hover {
+	margin-bottom: 11px;
+}
+
+.catalog_column_item:nth-child(6):hover,
+.catalog_column_item:nth-child(11):hover,
+.catalog_column_item:nth-child(16):hover {
+	margin-bottom: 1px;
+}
+
+.catalog_column_item:hover>.marker_small {
+	border: 1px solid #313a55;
+	box-shadow: 0 0 2px 0 #313a55 inset;
+}
+
+.catalog_column_item:hover>a {
+	color: #0c3256;
+	letter-spacing: .04em;
+	font-family: 'Arial Bold Italic';
+	font-size: 14px;
+	display: inline-block;
+	padding-bottom: 2px;
+	border-bottom: 2px solid #58697f;
 }

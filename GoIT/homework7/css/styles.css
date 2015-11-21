@@ -1,0 +1,472 @@
+@font-face {
+    font-family: 'League Gothic Regular';
+    src: url('../fonts/League Gothic Regular/leaguegothic-regular-webfont.eot');
+    src: url('../fonts/League Gothic Regular/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/League Gothic Regular/leaguegothic-regular-webfont.woff2') format('woff2'),
+         url('../fonts/League Gothic Regular/leaguegothic-regular-webfont.woff') format('woff'),
+         url('../fonts/League Gothic Regular/leaguegothic-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans Light';
+    src: url('../fonts/Open Sans Light/opensans-light-webfont.eot');
+    src: url('../fonts/Open Sans Light/opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Open Sans Light/opensans-light-webfont.woff2') format('woff2'),
+         url('../fonts/Open Sans Light/opensans-light-webfont.woff') format('woff'),
+         url('../fonts/Open Sans Light/opensans-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+	width: 100%;
+	height: 100%;
+}
+
+header {
+	background: url(../img/background_up_black.png), url(../img/background_up.jpg);
+	background-position: center 278px, center center;
+	background-repeat: no-repeat, no-repeat;
+	background-size: 100% 400px, cover;
+    width: 100%;
+	height: 844px;
+	overflow: hidden;
+}
+
+.wrapper {
+	width: 960px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+header .logo {
+	margin-top: 51px;
+	float: left;
+}
+
+header .top_nav {
+	float: right;
+	margin-top: 74px;
+}
+
+.top_nav li {
+	font-family: 'League Gothic Regular';
+	font-size: 24px;
+	color: #fff;
+	display: inline-block;
+	text-transform: uppercase;
+	margin-left: 48px;
+	text-shadow: 1px 1px 2px #988d91;
+}
+
+.top_nav li:hover {
+	border-bottom: 2px solid #edbfff;
+	cursor: pointer;
+}
+
+header article {
+	margin-top: 245px;
+	height: 100%;
+	width: 100%;
+	color: #fff;
+	float: left;
+	position: relative;
+}
+
+header article h1 {
+	font-family: 'League Gothic Regular';
+	font-size: 61px;
+	letter-spacing: -.7px;
+	width: 53%;
+
+}
+
+header article h3 {
+	font-family: 'League Gothic Regular';
+	font-size: 32px;
+	letter-spacing: -.03px;
+	color: #edbfff;
+	text-transform: uppercase;
+	width: 53%;
+}
+
+header article p {
+	font-family: 'Open Sans Light';
+	font-size: 18px;
+	margin-top: 6px;
+	letter-spacing: -.06px;
+	line-height: 24px;
+	width: 53%;
+}
+
+header article p span {
+	letter-spacing: -.4px;
+}
+
+header article img {
+	float: right;
+	position: absolute;
+	right: 7.2%;
+	top: -11%;
+}
+
+header article .radio_block {
+	float: right;
+	margin: 175px 166px 0 0;
+}
+
+header article .radio_passive {
+	height: 15px;
+	width: 16px;
+	background: rgba(0, 0, 0, .3);
+	display: inline-block;
+	border-radius: 15px;
+	margin-left: 2px;
+}
+
+header article .radio_passive:nth-child(2) {
+	box-shadow: 0 0 0 3px rgba(0, 0, 0, .7) inset;
+	background-color: #fff;
+}
+
+header article .radio_passive:hover {
+	box-shadow: 0 0 0 3px rgba(0, 0, 0, .7) inset;
+	background-color: #fff;
+}
+
+header .arrows {
+	position: absolute;
+	background-repeat: no-repeat;
+	background-position: 10% 0;
+	height: 40px;
+	width: calc((100% - 960px)/2);
+	top: 478px;
+}
+
+header .arrow_left {
+	background-image: url(../img/arrow_left.png);
+}
+
+header .arrow_right {
+	background-image: url(../img/arrow_right.png);
+	right: -1px;
+	background-position: 90% 0;
+}
+
+.about {
+	height: 339px;
+	width: 100%;
+	background: linear-gradient(to top, #322539, #745083);
+	border-top: 1px solid #33253a;
+	border-bottom: 1px solid #1d2f37;
+	overflow: hidden;
+}
+
+.wrapper_ext {
+	width: 970px;
+}
+
+.about .about_us {
+	width: 23.4%;
+	display: inline-block;
+	margin-top: 77px;
+	position: relative;
+	color: #fff;
+}
+
+.about .about_us:nth-child(1) {
+	background-image: url(../img/sprite.png);
+	background-repeat: no-repeat;
+	background-position: 15px 7px;
+	padding-left: 68px;
+}
+
+.about .about_us:nth-child(2) {
+	background-image: url(../img/sprite.png);
+	background-repeat: no-repeat;
+	background-position: -283px 7px;
+	padding-left: 108px;
+}
+
+.about .about_us:nth-child(3) {
+	background-image: url(../img/sprite.png);
+	background-repeat: no-repeat;
+	background-position: -622px 7px;
+	padding-left: 105px;
+}
+
+.about h3 {
+	font-family: 'League Gothic Regular';
+	font-size: 32px;
+	letter-spacing: -.7px;
+	line-height: 32px;
+	text-transform: uppercase;
+	padding-left: 1px;
+	padding-bottom: 1px;
+}
+
+.about p {
+	font-family: 'Open Sans Light';
+	font-size: 16px;
+	margin-top: 6px;
+	letter-spacing: -.06px;
+	line-height: 24px;
+
+}
+
+.about a {
+	font-family: 'League Gothic Regular';
+	float: right;
+	font-size: 19px;
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+	margin: 19px 11px 0 0;
+	letter-spacing: -.3px;
+}
+
+.testemonial {
+	background-color: #f9f9f9;
+	width: 100%;
+	height: 489px;
+}
+
+.testemonial article {
+	width: 44%;
+	float: left;
+	background-color: #fff;
+	margin-top: 103px;
+	margin-left: 24px;
+	position: relative;
+}
+
+.testemonial article img {
+	position: absolute;
+	top: 18px;
+	left: -24px;
+}
+
+.testemonial article h3 {
+	font-family: 'League Gothic Regular';
+	font-size: 30px;
+	color: #454545;
+	padding-left: 39px;
+	text-transform: uppercase;
+	padding-top: 29px;
+	letter-spacing: 0.01px;
+}
+
+.testemonial article h3 span {
+	color: #edbfff;
+}
+	
+.testemonial article p {
+	font-size: 16px;
+	padding: 9px 29px 15px 39px;
+	font-family: 'Open Sans Light';
+	letter-spacing: -0.06px;
+	line-height: 24px;
+}
+
+.testemonial>.wrapper>article>ul {
+	position: relative;
+	top: 43px;
+	left: 168px;
+}
+
+.testemonial .testemonial_radio {
+	background-image: url(../img/button_sprite.png);
+	width: 14px;
+	height: 20px;
+	float: left;
+	padding-left: 4px;
+	margin-left: 4px;
+}
+
+.testemonial .testemonial_radio:hover {
+	background-position: 0 -20px;
+	cursor: pointer;
+}
+
+.updates {
+	float: right;
+	width: 46.7%;
+	margin-top: 132px;
+}
+
+.updates h3 {
+	font-family: 'League Gothic Regular';
+	font-size: 30px;
+	color: #454545;
+	text-transform: uppercase;
+	letter-spacing: 0.01px;
+	margin-left: -2px;
+}
+
+.updates li {
+	padding-left: 50px;
+	background-repeat: no-repeat;
+	height: 50px;
+	margin-top: 16px;
+}
+
+.updates li:nth-child(1) {
+	background-image: url(../img/update-1.png);
+}
+
+.updates li:nth-child(2) {
+	background-image: url(../img/update-2.png);
+}
+
+.updates li:nth-child(3) {
+	background-image: url(../img/update-3.png);
+}
+
+
+.updates p {
+	font-family: 'Open Sans Light';
+	font-size: 16px;
+	margin-top:8px;
+	padding-left: 15px;
+	letter-spacing: -0.1px;
+}
+
+.updates .extrabold {
+	font-weight: 800;
+	padding-top: 4px;
+	letter-spacing: 0.9px;
+}
+
+.updates span {
+	float: right;
+	font-family: 'League Gothic Regular';
+	letter-spacing: -.3px;
+	font-size: 19px;
+	margin: 20px 21px 0 0;
+}
+
+.projects {
+	background-color: #f9f9f9;
+	width: 100%;
+	height: 120px;
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #d8d8d8;
+}
+
+.projects ul {
+	width: 960px;
+	height: 120px;
+	margin: 0 auto;
+	display: block;
+}
+
+.projects li {
+	display: inline-block;
+	margin: 24px 20px 0 41px;
+}
+
+.projects li:nth-child(4) {
+	margin: 0 20px 0 49px;
+}
+
+.projects li:nth-child(5) {
+	margin: 0 20px 0 45px;
+	vertical-align: 140%;
+}
+
+.projects li:nth-child(6) {
+	margin: 0 20px 0 43px;
+}
+
+.recent {
+	height: 396px;
+	width: 100%;
+	background-color: #ececec;
+}
+
+.recent .wrapper {
+	padding-top: 96px;
+}
+
+.recent article {
+	float: left;
+	width: 29.1%;
+}
+
+.recent article:nth-child(2) {
+	margin: 0 59px;
+}
+
+.recent h2 {
+	font-size: 48px;
+	color: #454545;
+	font-family: 'League Gothic Regular';
+	line-height: 45px;
+	letter-spacing: -.4px;
+}
+
+.recent h2 span {
+	color: #b9b9b9;
+}
+
+.recent h3 {
+	color: #454545;
+	font-size: 30px;
+	font-family: 'League Gothic Regular';
+	margin-bottom: 8px;
+}
+
+.recent .copyright {
+	font-size: 16px;
+	color: #c5c5c5;
+	font-family: 'Georgia Italic';
+	font-style: italic;
+	margin: 10px 0 7px 0;
+	letter-spacing: .5px;
+}
+
+.recent p {
+	color: #787878;
+	font-size: 16px;
+	font-family: 'Open Sans Light';
+	letter-spacing: -.08px;
+	line-height: 24px;
+}
+
+footer {
+	width: 100%;
+	height: 114px;
+	background: url(../img/footer.png) center center no-repeat;
+}
+
+footer ul {
+	float: left;
+	margin-top: 46px;
+}
+
+footer li {
+	text-transform: uppercase;
+	font-family: 'League Gothic Regular';
+	font-size: 20px;
+	color: #fff;
+	display: inline-block;
+	margin-right: 39px;
+	text-shadow: 1px 2px 2px #333;
+}
+
+footer p {
+	float: right;
+	font-family: 'Open Sans Light';
+	font-size: 12px;
+	color: #fff;
+	margin-right: 53px;
+}
+
+footer p span {
+	font-weight: 900;
+	letter-spacing: 0.6px;
+}

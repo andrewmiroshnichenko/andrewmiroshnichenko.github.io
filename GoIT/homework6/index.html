@@ -133,33 +133,73 @@
 					<a href="#">поиск...</a>			
 			</div>
 			<div class="rim_filter">
-				<header>поиск дисков</header>
-				<div class="rim_filter_names">
-					<p>Диаметр <span>диска:</span></p>
-					<p>Количество <span>крепёжных отверстий:</span></p>
-					<p>Диаметр <span>расположения крепёжных отверстий:</span></p>
-				</div>
-				<div class="rim_filter_dropdowns">
-					<select name="" id="">
-						<option value=""></option>
-						<option value=""></option>
-					</select>
-					<select name="" id="">
-						<option value=""></option>
-						<option value=""></option>
-					</select>
-					<select name="" id="">
-						<option value=""></option>
-						<option value=""></option>
-					</select>
-				</div>
-				<div class="rim_filter_additional_options">
-					<p>ДЦО</p><span>(диаметр центрального отверстия):</span>
-					<select name="" id=""></select>
-					<p>ЕТ</p><span>(вылет диска):</span>
-					<select name="" id=""></select>
-				</div>
-				<a href="#">поиск...</a>
+				<form action="">
+					<header>поиск дисков</header>
+					<div class="rim_filter_names">
+						<p>Диаметр <span>диска:</span></p>
+						<p>Количество <span>крепёжных отверстий:</span></p>
+						<p>Диаметр <span>расположения крепёжных отверстий:</span></p>
+					</div>
+					<div class="rim_filter_dropdowns">
+						<select name="" id="">
+							<option value=""></option>
+							<option value=""></option>
+						</select>
+						<select name="" id="">
+							<option value=""></option>
+							<option value=""></option>
+						</select>
+						<select name="" id="">
+							<option value=""></option>
+							<option value=""></option>
+						</select>
+					</div>
+					<div class="rim_filter_additional_options">
+						<p>ДЦО</p><span>(диаметр центрального отверстия):</span>
+						<select name="" id=""></select>
+						<p>ЕТ</p><span>(вылет диска):</span>
+						<select name="" id=""></select>
+					</div>
+					<input type="submit" value="поиск...">
+				</form>
+			</div>
+			<div class="catalog_column">
+<!-- 				<ul>
+					<li><img src="img/catalog_sheet.png" alt=""><span>КАТАЛОГ ПРОДУКЦИИ:</span></li>
+					<li class="catalog_column_chapter"><img src="img/catalog_marker_big.png" alt=""><span>ШИНЫ</span></li>
+					<li class="catalog_column_item"><img src="img/catalog_marker_small.png" alt=""><a href="">Наименование 1</a></li>
+					<li class="catalog_column_item"><img src="img/catalog_marker_small.png" alt=""><a href="">Наименование 2</a></li>
+					<li class="catalog_column_item"><img src="img/catalog_marker_small.png" alt=""><a href="">Наименование 3</a></li>
+					<li class="catalog_column_item"><img src="img/catalog_marker_small.png" alt=""><a href="">Наименование 4</a></li>
+					<li class="catalog_column_chapter"><img src="img/catalog_marker_big.png" alt=""><span>ДИСКИ</span></li>
+					<li class="catalog_column_item"><img src="img/catalog_marker_small.png" alt=""><a href="">Наименование 1</a></li>
+					<li class="catalog_column_item"><img src="img/catalog_marker_small.png" alt=""><a href="">Наименование 2</a></li>
+					<li class="catalog_column_item"><img src="img/catalog_marker_small.png" alt=""><a href="">Наименование 3</a></li>
+					<li class="catalog_column_item"><img src="img/catalog_marker_small.png" alt=""><a href="">Наименование 4</a></li>
+					<li class="catalog_column_chapter"><img src="img/catalog_marker_big.png" alt=""><span>БОЛТЫ</span></li>
+					<li class="catalog_column_item"><img src="img/catalog_marker_small.png" alt=""><a href="">Наименование 1</a></li>
+					<li class="catalog_column_item"><img src="img/catalog_marker_small.png" alt=""><a href="">Наименование 2</a></li>
+					<li class="catalog_column_item"><img src="img/catalog_marker_small.png" alt=""><a href="">Наименование 3</a></li>
+					<li class="catalog_column_item"><img src="img/catalog_marker_small.png" alt=""><a href="">Наименование 4</a></li>
+				</ul> -->
+				<ul>
+					<li><img src="img/catalog_sheet.png" alt=""><span>КАТАЛОГ ПРОДУКЦИИ:</span></li>
+					<li class="catalog_column_chapter"><img src="img/catalog_marker_big.png" alt=""><span>ШИНЫ</span></li>
+					<li class="catalog_column_item"><div class="marker_small"></div><a href="">Наименование 1</a></li>
+					<li class="catalog_column_item"><div class="marker_small"></div><a href="">Наименование 2</a></li>
+					<li class="catalog_column_item"><div class="marker_small"></div><a href="">Наименование 3</a></li>
+					<li class="catalog_column_item"><div class="marker_small"></div><a href="">Наименование 4</a></li>
+					<li class="catalog_column_chapter"><img src="img/catalog_marker_big.png" alt=""><span>ДИСКИ</span></li>
+					<li class="catalog_column_item"><div class="marker_small"></div><a href="">Наименование 1</a></li>
+					<li class="catalog_column_item"><div class="marker_small"></div><a href="">Наименование 2</a></li>
+					<li class="catalog_column_item"><div class="marker_small"></div><a href="">Наименование 3</a></li>
+					<li class="catalog_column_item"><div class="marker_small"></div><a href="">Наименование 4</a></li>
+					<li class="catalog_column_chapter"><img src="img/catalog_marker_big.png" alt=""><span>БОЛТЫ</span></li>
+					<li class="catalog_column_item"><div class="marker_small"></div><a href="">Наименование 1</a></li>
+					<li class="catalog_column_item"><div class="marker_small"></div><a href="">Наименование 2</a></li>
+					<li class="catalog_column_item"><div class="marker_small"></div><a href="">Наименование 3</a></li>
+					<li class="catalog_column_item"><div class="marker_small"></div><a href="">Наименование 4</a></li>
+				</ul>
 			</div>
 		</main>
 		<nav class="bottom_nav"></nav>
