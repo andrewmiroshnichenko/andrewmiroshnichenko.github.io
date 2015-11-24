@@ -43,6 +43,10 @@ header {
 	position: relative;
 }
 
+.wrapper_ext {
+	width: 970px;
+}
+
 header .logo {
 	margin-top: 51px;
 	float: left;
@@ -51,6 +55,7 @@ header .logo {
 header .top_nav {
 	float: right;
 	margin-top: 74px;
+	overflow: hidden;
 }
 
 .top_nav li {
@@ -67,21 +72,26 @@ header .top_nav {
 	border-bottom: 2px solid #edbfff;
 	cursor: pointer;
 }
+1
+header .slider {
+	position: relative;
+	height: 100%;
+}
 
 header article {
 	margin-top: 245px;
 	height: 100%;
-	width: 100%;
+	width: 54%;
 	color: #fff;
 	float: left;
-	position: relative;
+	clear: both;
 }
 
 header article h1 {
 	font-family: 'League Gothic Regular';
 	font-size: 61px;
 	letter-spacing: -.7px;
-	width: 53%;
+	width: 100%;
 
 }
 
@@ -91,7 +101,7 @@ header article h3 {
 	letter-spacing: -.03px;
 	color: #edbfff;
 	text-transform: uppercase;
-	width: 53%;
+	width: 100%;
 }
 
 header article p {
@@ -100,26 +110,24 @@ header article p {
 	margin-top: 6px;
 	letter-spacing: -.06px;
 	line-height: 24px;
-	width: 53%;
+	width: 100%;
 }
 
 header article p span {
 	letter-spacing: -.4px;
 }
 
-header article img {
+header .slider img {
+	margin:  16% 7% 0 0;
 	float: right;
-	position: absolute;
-	right: 7.2%;
-	top: -11%;
 }
 
-header article .radio_block {
+header .radio_block {
 	float: right;
-	margin: 175px 166px 0 0;
+	margin: 8% 17% 0 0;
 }
 
-header article .radio_passive {
+header .radio_passive {
 	height: 15px;
 	width: 16px;
 	background: rgba(0, 0, 0, .3);
@@ -128,12 +136,12 @@ header article .radio_passive {
 	margin-left: 2px;
 }
 
-header article .radio_passive:nth-child(2) {
+header .radio_passive:nth-child(2) {
 	box-shadow: 0 0 0 3px rgba(0, 0, 0, .7) inset;
 	background-color: #fff;
 }
 
-header article .radio_passive:hover {
+header .radio_passive:hover {
 	box-shadow: 0 0 0 3px rgba(0, 0, 0, .7) inset;
 	background-color: #fff;
 }
@@ -164,10 +172,6 @@ header .arrow_right {
 	border-top: 1px solid #33253a;
 	border-bottom: 1px solid #1d2f37;
 	overflow: hidden;
-}
-
-.wrapper_ext {
-	width: 970px;
 }
 
 .about .about_us {
@@ -239,15 +243,15 @@ header .arrow_right {
 	width: 44%;
 	float: left;
 	background-color: #fff;
-	margin-top: 103px;
-	margin-left: 24px;
+	margin: 103px 0 0 24px;
 	position: relative;
 }
 
-.testemonial article img {
+.testemonial img {
 	position: absolute;
 	top: 18px;
 	left: -24px;
+	z-index: 1;
 }
 
 .testemonial article h3 {
@@ -397,6 +401,10 @@ header .arrow_right {
 	width: 29.1%;
 }
 
+.recent article:nth-child(1) h3 {
+	display: none;
+}
+
 .recent article:nth-child(2) {
 	margin: 0 59px;
 }
@@ -469,4 +477,565 @@ footer p {
 footer p span {
 	font-weight: 900;
 	letter-spacing: 0.6px;
+}
+
+@media only screen and (max-width: 960px) {
+	header {
+		background-position: center 243px, center center;
+		background-size: 100% 400px, auto;
+		height: 797px;
+	}
+
+	.wrapper {
+		width: 768px;
+		margin-left: 8%;
+	}
+	header .logo {
+		display: block;
+	}
+
+	header .top_nav {
+		width: 100%;
+		margin-top: 33px;
+	}
+
+	.top_nav li {
+		margin: 0 48px 0 0;
+	}
+
+	header .slider {
+		clear: both;
+		overflow: hidden;
+	}
+
+	header article {
+		margin-top: 22%;
+		width: 40%;
+	}
+
+	header article h1 {
+		font-size: 51px;
+		letter-spacing: -1.1px;
+		margin-left: 21px;
+	}
+
+	header article h3 {
+		font-size: 25px;
+		margin: 7px 0 0 21px;
+		letter-spacing: -.3px;
+	}
+
+	header article p {
+		font-size: 16px;
+		margin: 6px 0 0 20px;
+		letter-spacing: -.06px;
+		line-height: 24px;
+	}
+
+	header article p span {
+		letter-spacing: -.4px;
+	}
+	
+	header .slider img {
+		margin: 7% 9% 0 0;
+	}
+
+	header .radio_block {
+		margin: -1% 21% 0 0;		
+		clear: both;
+	}
+	
+	.about .about_us {
+		width: 20.4%;
+		margin-top: 9%;
+	}
+
+	.about .about_us:nth-child(1) {
+		background-position: 10px 7px;
+		padding-left: 8%;
+	}
+
+	.about .about_us:nth-child(2) {
+		background-position: -297px 7px;
+		padding-left: 12%;
+	}
+
+	.about .about_us:nth-child(3) {
+		background-position: -628px 7px;
+		padding-left: 13%;
+	}
+
+	.about h3 {
+		font-size: 24px;
+		letter-spacing: -.1px;
+	}
+
+	.about p {
+		font-size: 16px;
+		margin-top: 0;
+	}
+
+	.testemonial img {
+		left: -1%;
+		top: 24%;
+	}
+	.testemonial article {
+		margin: 13% 0 0 2%;
+		width: 41%;
+		height: 48%;
+		border-bottom: 40px solid #fff;
+		overflow: hidden;
+	}
+
+	.testemonial article h3 {
+		font-size: 24px;
+	}
+
+	.testemonial article span {
+		display: block;
+	}	
+	.testemonial>.wrapper>article>ul {
+		left: 35%;
+		top: -30%;
+	}
+		
+	.updates {
+		width: 50%;
+		margin-top: 130px;
+	}
+
+	.updates .update_item span {
+		display: none;
+	}
+
+	.updates span {
+		margin-right: 13%;
+	}
+
+	.projects li {
+		margin: 2% -2% 0 7%;
+	}
+
+	.projects li:nth-child(4) {
+		margin: 2% 0 0 9%;
+	}
+
+	.projects li:nth-child(5) {
+		margin: 4% 0 0 6%;
+		vertical-align: 115%;
+	}
+
+	.projects li:nth-child(6) {
+		margin-right: 5%;
+	}
+		
+	.recent article {
+		width: 28%;
+		height: 51%;
+		overflow: hidden;
+	}
+
+	.recent article:nth-child(1) {
+		margin-left: -1%;
+	}
+
+	.recent article:nth-child(2) {
+		margin: 0 6%;
+	}
+	
+	.recent article:nth-child(1) h2,
+	.recent article:nth-child(1) .copyright {
+		display: none;
+	}
+
+	.recent article:nth-child(1) h3 {
+		display: block;
+	}
+
+	.recent h3 {
+		font-size: 26px;
+	}
+
+	footer {
+		height: 201px;
+		background: url(../img/footer-768.png) center center no-repeat;
+	}
+
+	footer ul {
+		margin: 6% 0 0 -1%;
+	}
+
+	footer p {
+		margin: 13% 6% 0 0;
+	}
+
+	footer p span {
+		font-weight: 900;
+		letter-spacing: 0.6px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	header {
+		background-position: center 152px, -757px -50px;
+		background-size: 100% 246px, auto;
+		height: 496px;
+	}
+
+	.wrapper {
+		width: 480px;
+		margin: 0 auto;
+	}
+	header .logo {
+		float: none;
+		margin: 0 auto;
+	}
+
+	header .top_nav {
+		position: absolute;
+		left: 24%;
+		top: 8%;
+		width: 248px;
+		letter-spacing: -1px;
+	}
+
+
+	.top_nav .visible {
+		display: block;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.top_nav li span {
+		padding: 4% 0;	
+		display: inline-block;	
+	}
+
+	.top_nav .visible span {
+		border-bottom: 2px solid #edbfff;
+	}
+
+	.top_nav li:nth-child(n+2) {
+		display: none;
+	}
+
+	.top_nav:hover {
+		background-color: rgba(54, 41, 62, .9);
+		border: 1px solid #111b22;
+		border-radius: 8px;
+	}
+
+	.top_nav:hover .visible {
+		border-top: 1px solid #5f486a;
+		border-bottom: 1px solid #3e3146;
+	}
+
+	.top_nav:hover .visible span {
+		padding: calc(4% - 2px)  0;
+	}
+
+	.top_nav:hover li:nth-child(n+2) {
+		display: block;
+		margin: 0 auto;
+		width: auto;
+		text-align: center;
+		border-top: 1px solid #5f486a;
+		border-bottom: 1px solid #3e3146;
+	}
+
+	.top_nav:hover li:nth-child(n+2):hover {
+		border-bottom: 2px solid #edbfff;
+		background: rgba(0, 0, 0, .3);
+	}
+	header article {
+		margin: 38% 0 0 4%;
+	}
+		
+	header article h1 {
+		font-size: 36px;
+	}
+
+	header article h3 {
+		font-size: 18px;
+	}
+
+	header article p {
+		display: none;
+	}
+
+	header .slider img {
+		width: 192px;
+		height: auto;
+		margin:  18% 7% 0 0;
+	}
+
+	header .radio_block {
+		margin: -6% 40% 0 0;
+	}
+
+	.about {
+		height: 595px;
+	}
+
+	.about .about_us {
+		width: 80%;
+		margin-left: 7%;
+	}
+
+	.about .about_us:nth-child(1) {
+		padding-left: 13%;
+		margin-top: 15%;
+	}
+
+	.about .about_us:nth-child(2) {
+		background-position: -326px 7px;
+		padding-left: 12%;
+		margin-top: 3%;
+	}
+
+	.about .about_us:nth-child(3) {
+		background-position: -666px 7px;
+		padding-left: 13%;
+		margin-top: 4%;
+	}
+
+	.about p {
+		margin-top: 0;
+	}
+
+	.testemonial {
+		height: 785px;
+	}
+
+	.testemonial img {
+		position: absolute;
+		top: 9%;
+		left: 7%;
+	}
+
+	.testemonial article {
+		width: 89%;
+		margin: 15% 0 0 11%;
+		height: 23%;
+	}
+
+	.testemonial article h3 span {
+		display: inline;
+	}
+		
+	.testemonial>.wrapper>article>ul {
+		position: relative;
+		top: 43px;
+		left: 168px;
+	}
+
+	.updates {
+		width: 80%;
+		margin-top: 29%;
+	}
+
+	.projects {
+		height: 232px;
+	}
+
+	.projects ul {
+		width: 480px;
+		height: 232px;
+	}
+
+	.projects li {
+		margin: 8% -10% 0 20%;
+	}
+
+	.projects li:nth-child(4) {
+		margin: 5% 0 0 17%;
+	}
+
+	.projects li:nth-child(5) {
+		margin: 0 0 0 11%;
+		vertical-align: 140%;
+	}
+
+	.projects li:nth-child(6) {
+		margin: 0 0 0 11%;
+	}
+	
+	.recent {
+		height: 668px;
+	}
+
+	.recent .wrapper {
+		padding-top: 12%;
+	}
+
+	.recent article {
+		width: 94%;
+		height: 30%;
+	}
+
+	.recent article:nth-child(1) h3 {
+		display: block;
+	}
+
+	.recent article:nth-child(1) {
+		margin-left: 6%;
+		height: 30%;
+	}
+
+	.recent article:nth-child(2) {
+		margin-top: -4%;
+	}
+
+	.recent article:nth-child(3) {
+		margin: -2% 0 0 6%;
+	}
+
+	footer {
+		height: 202px;
+		background: url(../img/footer-480.png) center center no-repeat;
+	}
+
+	footer ul {
+		float: left;
+		margin: 10% 0 0 7%;
+		width: 100%;
+	}
+
+	footer li {
+		font-size: 20px;
+		display: inline-block;
+		margin-right: 4.3%;
+	}
+	
+	footer p {
+		float: right;
+		font-family: 'Open Sans Light';
+		font-size: 12px;
+		color: #fff;
+		margin: 8% 33% 0 0;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	header {
+		background: url(../img/background_up.jpg);
+		background-position: center center;
+		background-repeat: no-repeat;
+		height: 466px;
+	}
+
+	.wrapper {
+		width: 280px;
+	}
+
+	header .top_nav {
+		left: 5%;
+		top: 10%;
+	}
+
+	header article {
+		margin: 66% 0 0 8%;
+		width: 77%;
+	}
+
+	header .slider img {
+		display: none;
+	}
+	
+	header .radio_block {
+		margin: 21% 34% 0 0;
+	}
+
+	.about .about_us {
+		width: 71%;
+		margin-left: 7%;
+		height: 18%;
+		overflow: hidden;
+	}
+
+	.about .about_us:nth-child(1) {
+		background-position: -3px 7px;
+		padding-left: 15%;
+		margin-top: 24%;
+	}
+
+	.about .about_us:nth-child(2) {
+		background-position: -340px 7px;
+		padding-left: 15%;
+		margin-top: 16%;
+	}
+
+	.about .about_us:nth-child(3) {
+		background-position: -678px 7px;
+		padding-left: 15%;
+		margin-top: 23%;
+	}
+	
+	.testemonial img {
+		left: 0;
+		top: 11%;
+	}
+
+	.testemonial article {
+		margin: 24% 0 0 8%;
+		height: 33%;
+	}
+
+	.testemonial article h3 span {
+		display: block;
+	}
+
+	.testemonial>.wrapper>article>ul {
+		left: 37%;
+		top: -72%;
+	}
+
+	.updates {
+		width: 100%;
+		margin-top: 24%;
+	}
+
+	.updates .extrabold span {
+		display: none;
+	}
+
+	.updates p .update_year {
+		display: none;
+	}
+
+	.updates>span {
+		margin-right: 2%;
+	}
+
+	.projects {
+		height: 422px;
+	}
+
+	.projects ul {
+		width: 280px;
+	}
+
+	.projects li {
+		margin: 19% 5% 0 14%;
+	}
+
+	.projects li:nth-child(4) {
+		margin: 22% 0 0 20%;
+	}
+
+	.projects li:nth-child(5) {
+		margin: 22% 0 0 8%;
+	}
+
+	.projects li:nth-child(6) {
+		margin: 0 0 0 19%;
+	}
+
+	.recent {
+		display: none;
+	}
+
+	footer ul {
+		display: none;
+	}
 }
