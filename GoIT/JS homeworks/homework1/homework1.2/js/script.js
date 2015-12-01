@@ -6,20 +6,30 @@ while (i < 5) {
 }
 var yourName;
 yourName = prompt('Enter your name, sir or madam');
+var flag = false;
 
-// console.log (typeof(yourName));
-// if (typeof(yourName) != 'string') {
-// 	alert('valid name, please');
+// Было до вебинара
+// for (i = 0; i < namesList.length; i++) {
+// 	if (yourName === namesList[i]) {
+// 		alert(yourName + ', вы успешно вошли');
+// 		break;
+// 	} 
 // }
 
-for (i = 0; i < 5; i++) {
-	if (yourName == namesList[i]) {
-		alert(yourName + ', вы успешно вошли');
+// console.log('i = ', i);
+// if (i >= 5) {
+// 	alert('Ошибочка вышла');
+// }
+
+for (var i = 0; i < namesList.length; i++) {
+	if (yourName === namesList[i]) {
+		flag = true;
 		break;
 	} 
 }
 
-console.log('i = ', i);
-if (i >= 5) {
-	alert('Ошибочка вышла');
+if (flag) {
+	alert(namesList[i] + ', вы успешно вошли')
+} else {
+	alert('Пользователя ' + yourName + ' не существует')
 }
