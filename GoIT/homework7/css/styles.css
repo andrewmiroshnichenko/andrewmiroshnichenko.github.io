@@ -125,6 +125,7 @@ header .slider img {
 header .radio_block {
 	float: right;
 	margin: 8% 17% 0 0;
+	clear: both;
 }
 
 header .radio_passive {
@@ -153,6 +154,7 @@ header .arrows {
 	height: 40px;
 	width: calc((100% - 960px)/2);
 	top: 478px;
+	z-index: 1;
 }
 
 header .arrow_left {
@@ -249,8 +251,8 @@ header .arrow_right {
 
 .testemonial img {
 	position: absolute;
-	top: 18px;
-	left: -24px;
+	left: 0;
+	top: 25%;
 	z-index: 1;
 }
 
@@ -345,7 +347,7 @@ header .arrow_right {
 	letter-spacing: 0.9px;
 }
 
-.updates span {
+.updates>span {
 	float: right;
 	font-family: 'League Gothic Regular';
 	letter-spacing: -.3px;
@@ -364,7 +366,7 @@ header .arrow_right {
 .projects ul {
 	width: 960px;
 	height: 120px;
-	margin: 0 auto;
+	margin: 0 20%;
 	display: block;
 }
 
@@ -471,7 +473,7 @@ footer p {
 	font-family: 'Open Sans Light';
 	font-size: 12px;
 	color: #fff;
-	margin-right: 53px;
+	margin-top: 5%;
 }
 
 footer p span {
@@ -479,16 +481,17 @@ footer p span {
 	letter-spacing: 0.6px;
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (min-width: 768px) and (max-width: 960px) {
 	header {
 		background-position: center 243px, center center;
 		background-size: 100% 400px, auto;
 		height: 797px;
+		width: 100%;
 	}
 
 	.wrapper {
 		width: 768px;
-		margin-left: 8%;
+		margin-left: 0 auto;
 	}
 	header .logo {
 		display: block;
@@ -511,6 +514,7 @@ footer p span {
 	header article {
 		margin-top: 22%;
 		width: 40%;
+		overflow: hidden;
 	}
 
 	header article h1 {
@@ -530,10 +534,11 @@ footer p span {
 		margin: 6px 0 0 20px;
 		letter-spacing: -.06px;
 		line-height: 24px;
+		height: 125px;
 	}
 
-	header article p span {
-		letter-spacing: -.4px;
+	header article h3 span {
+		display: none;
 	}
 	
 	header .slider img {
@@ -541,13 +546,26 @@ footer p span {
 	}
 
 	header .radio_block {
-		margin: -1% 21% 0 0;		
+		margin: 3% 21% 0 0;		
 		clear: both;
+	}
+
+	header .arrows {
+		background-position: 10% 0;
+		width: calc((100% - 768px)/2);
+		top: 420px;
+	}
+
+	header .arrow_right {
+		right: 1%;
+		background-position: 43% 0;
 	}
 	
 	.about .about_us {
 		width: 20.4%;
 		margin-top: 9%;
+/*		overflow: hidden;
+		height: 53%;*/
 	}
 
 	.about .about_us:nth-child(1) {
@@ -611,9 +629,13 @@ footer p span {
 	.updates span {
 		margin-right: 13%;
 	}
+	
+	.projects ul {
+		margin-left: -1%;
+	}
 
 	.projects li {
-		margin: 2% -2% 0 7%;
+		margin: 2% -2% 0 8%;
 	}
 
 	.projects li:nth-child(4) {
@@ -675,7 +697,7 @@ footer p span {
 	}
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 480px)and (max-width: 768px) {
 	header {
 		background-position: center 152px, -757px -50px;
 		background-size: 100% 246px, auto;

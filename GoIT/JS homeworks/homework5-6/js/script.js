@@ -1,18 +1,24 @@
-var p = document.createElement('p');
-document.body.appendChild(p);
-p.classList.add('redbox');
-p.innerHTML = 'Start';
-p.addEventListener("click", startTimer);
+// function createNewField(newFieldName, newTagName, HTML, class) {
+// 	var this.newFieldName = document.createElement('p');
+// 	document.body.appendChild(newTagName);
+// }
+
+
+var startButton = document.createElement('p');
+document.body.appendChild(startButton);
+startButton.classList.add('redbox');
+startButton.innerHTML = 'Start';
+startButton.addEventListener("click", startTimer);
 
 var timeTable = document.createElement('p');
 document.body.appendChild(timeTable);
 timeTable.innerHTML = '00:00:00:000';
 
-var reset = document.createElement('p');
-document.body.appendChild(reset);
-reset.classList.add('redbox');
-reset.innerHTML = 'Reset';
-reset.addEventListener("click", resetTimer);
+var resetButton = document.createElement('p');
+document.body.appendChild(resetButton);
+resetButton.classList.add('redbox');
+resetButton.innerHTML = 'Reset';
+resetButton.addEventListener("click", resetTimer);
 
 var zero = new Date(0, 0),
 seconds = 0,
@@ -25,6 +31,15 @@ time;
 function DisplayTime() {
 	zero.setMilliseconds( zero.getMilliseconds() + 4);
 	var milliseconds = zero.getMilliseconds();
+
+	// function checkOvercount(a, b){
+	// 	if (a >= 60) {
+	// 		a = 0;
+	// 		b = ++b;
+	// 	}
+	// }
+	// checkOvercount(seconds, minutes);
+	// checkOvercount(minutes, hours);
 
 	
 		if ( milliseconds === 996) {
@@ -56,34 +71,33 @@ function DisplayTime() {
 
 	time = hoursNum + ':' + minutesNum + ':' + secondsNum + ':' + milliseconds;
 	timeTable.innerHTML = time;
-	return time;
 }
 
 function startTimer(){
-	p.classList.add('bluebox');
-	p.classList.remove('greenbox');
-	p.innerHTML = 'Pause';
+	startButton.classList.add('bluebox');
+	startButton.classList.remove('greenbox');
+	startButton.innerHTML = 'Pause';
 	timer = setInterval(DisplayTime, 4);
-	p.removeEventListener("click", startTimer);
-	p.addEventListener("click", pauseTimer);
+	startButton.removeEventListener("click", startTimer);
+	startButton.addEventListener("click", pauseTimer);
 }
 
 function pauseTimer(){
-	p.classList.add('greenbox');
-	p.innerHTML = 'Continue';
+	startButton.classList.add('greenbox');
+	startButton.innerHTML = 'Continue';
 	clearInterval(timer);
 	timeTable.innerHTML = time;
-	p.removeEventListener("click", pauseTimer);
-	p.addEventListener("click", startTimer);
+	startButton.removeEventListener("click", pauseTimer);
+	startButton.addEventListener("click", startTimer);
 }
 
 function resetTimer(){
-	p.classList.remove('greenbox', 'bluebox');
-	p.innerHTML = 'Start';
+	startButton.classList.remove('greenbox', 'bluebox');
+	startButton.innerHTML = 'Start';
 	timeTable.innerHTML = '00:00:00:000';
 	clearInterval(timer);
-	p.removeEventListener("click", pauseTimer);
-	p.addEventListener("click", startTimer);
+	startButton.removeEventListener("click", pauseTimer);
+	startButton.addEventListener("click", startTimer);
 	zero = new Date(0, 0);
 	seconds = 0;
 	minutes = 0;
