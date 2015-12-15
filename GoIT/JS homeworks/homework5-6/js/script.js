@@ -1,22 +1,20 @@
-// function createNewField(newFieldName, newTagName, HTML, class) {
-// 	var this.newFieldName = document.createElement('p');
-// 	document.body.appendChild(newTagName);
-// }
-
-
-var startButton = document.createElement('p');
+var startButton = document.createElement('button');
 document.body.appendChild(startButton);
-startButton.classList.add('redbox');
+startButton.classList.add('btn', 'btn-danger', 'col-md-3', 'col-md-offset-3');
+startButton.setAttribute('type', 'button');
 startButton.innerHTML = 'Start';
 startButton.addEventListener("click", startTimer);
 
-var timeTable = document.createElement('p');
+var timeTable = document.createElement('div');
 document.body.appendChild(timeTable);
 timeTable.innerHTML = '00:00:00:000';
+timeTable.classList.add('col-md-4', 'col-md-offset-4');
+timeTable.setAttribute('type', 'button');
 
-var resetButton = document.createElement('p');
+var resetButton = document.createElement('button');
 document.body.appendChild(resetButton);
-resetButton.classList.add('redbox');
+resetButton.classList.add('btn', 'btn-danger', 'col-md-3', 'col-md-offset-3');
+resetButton.setAttribute('type', 'button');
 resetButton.innerHTML = 'Reset';
 resetButton.addEventListener("click", resetTimer);
 
@@ -31,16 +29,6 @@ time;
 function DisplayTime() {
 	zero.setMilliseconds( zero.getMilliseconds() + 4);
 	var milliseconds = zero.getMilliseconds();
-
-	// function checkOvercount(a, b){
-	// 	if (a >= 60) {
-	// 		a = 0;
-	// 		b = ++b;
-	// 	}
-	// }
-	// checkOvercount(seconds, minutes);
-	// checkOvercount(minutes, hours);
-
 	
 		if ( milliseconds === 996) {
 			seconds = ++seconds;
@@ -74,8 +62,8 @@ function DisplayTime() {
 }
 
 function startTimer(){
-	startButton.classList.add('bluebox');
-	startButton.classList.remove('greenbox');
+	startButton.classList.add('btn', 'btn-primary');
+	startButton.classList.remove('btn-danger', 'btn-success');
 	startButton.innerHTML = 'Pause';
 	timer = setInterval(DisplayTime, 4);
 	startButton.removeEventListener("click", startTimer);
@@ -83,7 +71,8 @@ function startTimer(){
 }
 
 function pauseTimer(){
-	startButton.classList.add('greenbox');
+	startButton.classList.add('btn-success');
+	startButton.classList.remove('btn-primary');
 	startButton.innerHTML = 'Continue';
 	clearInterval(timer);
 	timeTable.innerHTML = time;
@@ -92,7 +81,8 @@ function pauseTimer(){
 }
 
 function resetTimer(){
-	startButton.classList.remove('greenbox', 'bluebox');
+	startButton.classList.remove('btn-primary', 'btn-success');
+	startButton.classList.add('btn-danger');
 	startButton.innerHTML = 'Start';
 	timeTable.innerHTML = '00:00:00:000';
 	clearInterval(timer);
