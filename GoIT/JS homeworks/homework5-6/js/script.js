@@ -1,22 +1,61 @@
+function createRow (rowName) {
+	var rowName = document.createElement('div');
+	document.body.appendChild(rowName);
+	rowName.classList.add('row');
+	return rowName;
+}
+
+var rowForTimeTable = createRow(rowForTimeTable);
+var rowForStartReset = createRow(rowForStartReset);
+var rowForSplit = createRow(rowForSplit);
+
+
+// function createField () {
+// 	var fieldName = document.createElement(this.tagName);
+// 	this.parentNodeName.appendChild(fieldName);
+// 	for (var i = 0; i < this.classSet.length; ++i){
+// 		fieldName.classList.add(this.classSet[i]);
+// 	}
+// 	// fieldName.setAttribute(this.attributeSet);
+// 	fieldName.innerHTML = this.innerHTML;
+// 	// fieldName.addEventListener = ('click', this.listener);
+// }
+
+// var	timeTable = {
+// 	tagName: 'div',
+// 	parentNodeName: rowForTimeTable,
+// 	classSet: ['col-md-2', 'col-md-offset-5', 'text-center'],
+// 	innerHTML: '00:00:00:000'
+// };
+
+
+// createField.call(timeTable);
+
+var timeTable = document.createElement('div');
+rowForTimeTable.appendChild(timeTable);
+timeTable.innerHTML = '00:00:00:000';
+timeTable.classList.add('col-md-2', 'col-md-offset-5', 'text-center');
+
 var startButton = document.createElement('button');
-document.body.appendChild(startButton);
-startButton.classList.add('btn', 'btn-danger', 'col-md-3', 'col-md-offset-3');
+rowForStartReset.appendChild(startButton);
+startButton.classList.add('btn', 'btn-danger', 'col-md-1', 'col-md-offset-5');
 startButton.setAttribute('type', 'button');
 startButton.innerHTML = 'Start';
 startButton.addEventListener("click", startTimer);
 
-var timeTable = document.createElement('div');
-document.body.appendChild(timeTable);
-timeTable.innerHTML = '00:00:00:000';
-timeTable.classList.add('col-md-4', 'col-md-offset-4');
-timeTable.setAttribute('type', 'button');
-
 var resetButton = document.createElement('button');
-document.body.appendChild(resetButton);
-resetButton.classList.add('btn', 'btn-danger', 'col-md-3', 'col-md-offset-3');
+rowForStartReset.appendChild(resetButton);
+resetButton.classList.add('btn', 'btn-danger', 'col-md-1');
 resetButton.setAttribute('type', 'button');
 resetButton.innerHTML = 'Reset';
 resetButton.addEventListener("click", resetTimer);
+
+var splitButton = document.createElement('button');
+rowForSplit.appendChild(splitButton);
+splitButton.classList.add('btn', 'btn-warning', 'col-md-2', 'col-md-offset-5', 'row');
+splitButton.setAttribute('type', 'button');
+splitButton.innerHTML = 'Split';
+splitButton.addEventListener("click", splitTime);
 
 var zero = new Date(0, 0),
 seconds = 0,
@@ -25,32 +64,36 @@ hours = 0,
 timer,
 time;
 
-
-function DisplayTime() {
+function countTime() {
 	zero.setMilliseconds( zero.getMilliseconds() + 4);
 	var milliseconds = zero.getMilliseconds();
 	
 		if ( milliseconds === 996) {
-			seconds = ++seconds;
+			++seconds;
 		} 
+
 		if (seconds >= 60) {
 			seconds = 0;
-			minutes = ++minutes;
+			++minutes;
 		} 
+
 		if (minutes >= 60) {
 			minutes = 0;
-			hours = ++hours;
+			++hours;
 		} 
+
 		if (seconds < 10) {
 			secondsNum = '0' + seconds;
 		} else {
 			secondsNum = seconds;
 		}
+
 		if (minutes < 10) {
 			minutesNum = '0' + minutes;
 		} else {
 			minutesNum = minutes;
 		}
+
 		if (hours < 10) {
 			hoursNum = '0' + hours;
 		} else {
@@ -65,7 +108,7 @@ function startTimer(){
 	startButton.classList.add('btn', 'btn-primary');
 	startButton.classList.remove('btn-danger', 'btn-success');
 	startButton.innerHTML = 'Pause';
-	timer = setInterval(DisplayTime, 4);
+	timer = setInterval(countTime, 4);
 	startButton.removeEventListener("click", startTimer);
 	startButton.addEventListener("click", pauseTimer);
 }
@@ -88,8 +131,19 @@ function resetTimer(){
 	clearInterval(timer);
 	startButton.removeEventListener("click", pauseTimer);
 	startButton.addEventListener("click", startTimer);
+	var timestamp = document.querySelectorAll('.test');
+	[].forEach.call(timestamp, function(el) {
+	el.parentNode.removeChild(el);
+	});
 	zero = new Date(0, 0);
 	seconds = 0;
 	minutes = 0;
 	hours = 0;
+}
+
+function splitTime() {
+	var timestamp = document.createElement('p');
+	document.body.appendChild(timestamp);
+	timestamp.classList.add('test', 'col-md-2', 'col-md-offset-5', 'text-center', 'row');
+	timestamp.innerHTML = timeTable.innerHTML;
 }
