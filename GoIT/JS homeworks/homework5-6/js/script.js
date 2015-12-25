@@ -21,7 +21,7 @@ var rowForSplit = createRow(rowForSplit);
 // 	// fieldName.addEventListener = ('click', this.listener);
 // }
 
-// var	timeTable = {
+// var	timeTableData = {
 // 	tagName: 'div',
 // 	parentNodeName: rowForTimeTable,
 // 	classSet: ['col-md-2', 'col-md-offset-5', 'text-center'],
@@ -29,7 +29,8 @@ var rowForSplit = createRow(rowForSplit);
 // };
 
 
-// createField.call(timeTable);
+
+// var timeTable = createField.call(timeTableData);
 
 var timeTable = document.createElement('div');
 rowForTimeTable.appendChild(timeTable);
@@ -145,5 +146,6 @@ function splitTime() {
 	var timestamp = document.createElement('p');
 	document.body.appendChild(timestamp);
 	timestamp.classList.add('test', 'col-md-2', 'col-md-offset-5', 'text-center', 'row');
+	var i = 0;
 	timestamp.innerHTML = timeTable.innerHTML;
 }
