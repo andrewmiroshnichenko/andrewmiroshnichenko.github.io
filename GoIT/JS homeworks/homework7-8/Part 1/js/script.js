@@ -5,7 +5,8 @@ $( document ).ready(function() {
 	var elementNameHTML = '<' + elementName + '>' + '</' + elementName + '>';
 	$( searchName ).append( elementNameHTML );
 		for (var i = 0; i < classList.length; i++) {
-			$( elementName ).addClass( classList[i] );
+		var addClassVar = searchName + ' > ' +  elementName;
+		$( addClassVar ).addClass( classList[i] );
 		};
 	$ ( elementName ).text( elementText );
 	}
@@ -40,5 +41,13 @@ $( document ).ready(function() {
 		$( 'article' ).eq( liElementNumber ).clone().appendTo( $( '.container' ) ).show();
 		$( this ).parent().addClass( 'active' );
 	});
+
+// Button to Part 2
+	createNewElement( 'body', [], 'p');
+	createNewElement( 'p', ['btn', 'btn-default', 'col-sm-offset-5'], 'a');
+	$( 'p > a' )
+	.attr( 'href', 'http://andrewmiroshnichenko.github.io/GoIT/JS homeworks/homework7-8/Part 2/index.html' )
+	.attr( 'role', 'button' )
+	.text('Part 2');
 
 });
