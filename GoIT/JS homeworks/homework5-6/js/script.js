@@ -68,6 +68,7 @@ time;
 function countTime() {
 	zero.setMilliseconds( zero.getMilliseconds() + 4);
 	var milliseconds = zero.getMilliseconds();
+	var millisecondsNum, secondsNum, minutesNum, hoursNum;
 	
 		if ( milliseconds === 996) {
 			++seconds;
@@ -82,6 +83,14 @@ function countTime() {
 			minutes = 0;
 			++hours;
 		} 
+		
+		if (milliseconds < 10) {
+			millisecondsNum = '00' + milliseconds;
+		} else if (milliseconds < 100) {
+			millisecondsNum = '0' + milliseconds;
+		} else {
+			millisecondsNum = milliseconds;
+		}
 
 		if (seconds < 10) {
 			secondsNum = '0' + seconds;
@@ -101,7 +110,7 @@ function countTime() {
 			hoursNum = hours;
 		}
 
-	time = hoursNum + ':' + minutesNum + ':' + secondsNum + ':' + milliseconds;
+	time = hoursNum + ':' + minutesNum + ':' + secondsNum + ':' + millisecondsNum;
 	timeTable.innerHTML = time;
 }
 
