@@ -44,7 +44,7 @@ inputNum.hover(function(){
 });
 
 // button to Part 1
-createNewElement('div', 'body', ['row'])
+createNewElement('div', 'body', ['row']);
 createNewElement('a', '.row', ['btn', 'btn-default', 'col-sm-offset-5']);
 $( '.row > a' )
 .attr( 'href', 'http://andrewmiroshnichenko.github.io/GoIT/JS homeworks/homework7-8/Part 1/index.html' )
