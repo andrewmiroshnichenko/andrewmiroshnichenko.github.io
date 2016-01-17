@@ -19,114 +19,73 @@ $(document).ready(function() {
 
     $('<div/>', {
     	'class': 'wrapper',
-    }).appendTo('body');
+    }).prependTo('body');
 
+    function makeList (parentEl, ulClass, liClass, submenuLiIndex) {
+		var index = (submenuLiIndex === undefined) ? ' ' : submenuLiIndex + ' ';
+		var parent = (submenuLiIndex === undefined) ? parentEl : parentEl + ':eq( ' + submenuLiIndex + ' )';
 
+	    $('<ul/>').prependTo( parent ).addClass(ulClass);
 
-    $('<ul/>').appendTo('.wrapper').addClass('first_level_ul');
+	    for (var i = 0; i < 5; i++) {
+	    	$('<li/>', {
+	    		'class': liClass,
+	    	}).appendTo('.' + ulClass);
 
-    for (var i = 0; i < 5; i++) {
-    	$('<li/>', {
-    		'class': 'first_level_li',
-    	}).appendTo('.first_level_ul');
-
-    	$('<span/>', {
-    		'text': 'Nav ' + i
-    	}).appendTo('.first_level_li:eq( ' + i + ' )');
+	    	$('<span/>', {
+	    		'text': 'Nav' + index + i
+	    	}).appendTo('.' + liClass + ':eq( ' + i + ' )');
+	    };
     };
 
+    makeList('.wrapper', 'first_level_ul', 'first_level_li');
+    makeList('.first_level_li', 'second_level_ul', 'second_level_li', 2);
+    makeList('.second_level_li', 'third_level_ul', 'third_level_li', 3);
 
-
-    $('<ul/>', {
-    	'class': 'second_level_ul'
-    }).appendTo('.first_level_li:eq( 2 )');
-
-    for (var i = 0; i < 5; i++) {
-    	$('<li/>', {
-    	'class': 'second_level_li'
-    	}).appendTo('.second_level_ul');
-
-    	$('<span/>', {
-    		'text': 'Nav 2.' + i
-    	}).appendTo('.second_level_li:eq( ' + i + ' )');
-    };
-
-
-
-    $('<ul/>', {
-    	'class': 'third_level_ul'
-    }).appendTo('.second_level_li:eq( 3 )');
-
-    for (var i = 0; i < 5; i++) {
-    	$('<li/>', {
-    	'class': 'third_level_li'
-    	}).appendTo('.third_level_ul');
-
-    	$('<span/>', {
-    		'text': 'Nav 2.3.' + i
-    	}).appendTo('.third_level_li:eq( ' + i + ' )');
-    };
-
-    $('.test-field').appendTo('body').show();
-
+    $('.test-field').insertAfter('.wrapper').show();
     
     // Handlers
 
+    function listHandler(captionEl, event, startAnimateEl, interval, timeout, value) {
+	    $(captionEl).on(event, function() {
+	    	if (startAnimateEl.indexOf('first')) {
+	    		$(startAnimateEl).parent().show();
+	    	}
+	    	var animateObject = $(startAnimateEl);
+	    		animateObject.animate({height: value}, interval);
+	    	if (startAnimateEl.indexOf('first') !== -1) {
+	    		var creator = setInterval(function(){
+	    			animateObject = animateObject.next();
+	    			animateObject.animate({height: value}, interval);
+	    		}, interval);
+	    	} else if (startAnimateEl.indexOf('first') == -1) {
+	    		var creator = setInterval(function(){
+	    			animateObject = animateObject.prev();
+		    		animateObject.animate({height: value}, interval);
+	    		}, interval);
+		 	}
+	    	setTimeout(function(){
+	    		clearInterval(creator);
+	    	}, timeout);
+	    	return false;
+	    });
+    };
 
-    $('.first_level_li:eq( 2 )').on('mouseenter', function() {
-    	var animateObject = $('.second_level_li:first-child');
-    		animateObject.animate({height: 20}, 100);
-    	var interval = setInterval(function(){
-    		animateObject = animateObject.next();
-    		animateObject.animate({height: 20}, 100);
-    		console.log(animateObject);
-    	}, 100);
-    	setTimeout(function(){
-    		clearInterval(interval);
-    	}, 600);
-    });
-
-    $('.first_level_li:eq( 2 )').on('mouseleave', function() {
-    	var animateObject = $('.second_level_li:last-child');
-    		animateObject.animate({height: 0}, 100);
-    	var interval = setInterval(function(){
-    		animateObject = animateObject.prev();
-    		animateObject.animate({height: 0}, 100);
-    		console.log(animateObject);
-    	}, 100);
-    	setTimeout(function(){
-    		clearInterval(interval);
-    	}, 600);
-    });
+    var firstLiIn = listHandler('.first_level_li:eq( 2 )', 'mouseenter', '.second_level_li:first-child', 50, 6000, 20);
+    var firstLiOut = listHandler('.first_level_li:eq( 2 )', 'mouseleave', '.second_level_li:last-child', 50, 6000, 0);
+    var secondLiIn = listHandler('.second_level_li:eq( 3 )', 'mouseenter', '.third_level_li:first-child', 50, 6000, 20);
+    var secondLiOut = listHandler('.second_level_li:eq( 3 )', 'mouseleave', '.third_level_li:last-child', 50, 6000, 0);
 
 
+    // Misc (button handler)
 
-    $('.second_level_li:eq( 3 )').on('mouseenter', function() {
-    	$('.third_level_ul').show();
-    	var animateObject = $('.third_level_li:first-child');
-    		animateObject.animate({height: 20}, 100);
-    	var interval = setInterval(function(){
-    		animateObject = animateObject.next();
-    		animateObject.animate({height: 20}, 100);
-    		console.log(animateObject);
-    	}, 100);
-    	setTimeout(function(){
-    		clearInterval(interval);
-    	}, 600);
-    });
-
-    $('.second_level_li:eq( 3 )').on('mouseleave', function() {
-    	var animateObject = $('.third_level_li:last-child');
-    		animateObject.animate({height: 0}, 100);
-    	var interval = setInterval(function(){
-    		animateObject = animateObject.prev();
-    		animateObject.animate({height: 0}, 100);
-    		console.log(animateObject);
-    	}, 100);
-    	setTimeout(function(){
-    		clearInterval(interval);
-	    	$('.third_level_ul').hide();
-
-    	}, 600);
+    $('button').on('click', function() {
+		if ($('#checkbox2').prop('checked')) {
+    			$('#ms-my-select').show(); 
+    		} else if ($('#checkbox2').is(':checked')) {
+    			$('.checkbox-css').show();
+    		}
+    	alert($('#my-select').prop('multiply'));
+    	// return false;
     });
 });
