@@ -64,9 +64,9 @@ $(document).ready(function() {
 		    		animateObject.animate({height: value}, interval);
 	    		}, interval);
 		 	}
-	    	setTimeout(function(){
-	    		clearInterval(creator);
-	    	}, timeout);
+	    	// setTimeout(function(){
+	    	// 	clearInterval(creator);
+	    	// }, timeout);
 	    	return false;
 	    });
     };
@@ -79,13 +79,16 @@ $(document).ready(function() {
 
     // Misc (button handler)
 
+    // $('#testbox').addClass('buddy');
+   	// alert($('#testbox').prop('checked'));
+
     $('button').on('click', function() {
-		if ($('#checkbox2').prop('checked')) {
+		if ($('#checkbox1').prop('checked')) {
     			$('#ms-my-select').show(); 
     		} else if ($('#checkbox2').is(':checked')) {
     			$('.checkbox-css').show();
     		}
-    	alert($('#my-select').prop('multiply'));
-    	// return false;
+    	alert($('#checkbox1').prop('checked'));
+    	return false;
     });
 });

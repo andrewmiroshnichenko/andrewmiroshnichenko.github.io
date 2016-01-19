@@ -75,9 +75,10 @@ input[type=checkbox]:checked + label:hover:before {
 
 .second_level_ul {
 	position: absolute;
-	left: -40px;
 	list-style: none;
 	top: 25px;
+	padding: 0;
+	z-index: 2;
 }
 
 .second_level_li {
@@ -101,6 +102,14 @@ input[type=checkbox]:checked + label:hover:before {
 	border-bottom: none;
 }
 
+.third_level_ul {
+	position: absolute;
+	left: 10px;
+	display: none;
+	top: 60px;
+	z-index: 1;
+}
+
 .third_level_li {
 	list-style: none;
 	height: 0;
@@ -108,14 +117,6 @@ input[type=checkbox]:checked + label:hover:before {
 	overflow: hidden;
 	width: 71px;
 	background-color: #ff6655;
-}
-
-.third_level_ul {
-	position: absolute;
-	left: 50px;
-	display: none;
-	top: 60px;
-	z-index: 1;
 }
 
 /*Misc*/

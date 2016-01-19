@@ -2,3 +2,8 @@ http://www.jqueryrain.com/?svJwdUKx - multiply custom select on jQuery
 http://xiper.net/collect/html-and-css-tricks/verstka-form/nice-checkbox - non-standart checkbox. Domain expired.
 http://xiper.net/collect/html-and-css-tricks/verstka-form/kastomnie-checkbox-i-radio-na-css - non-standart checkbox. Domain expired.
 http://owlgraphic.com/owlcarousel/demos/images.html - carousel
+
+prop("checked")
+http://api.jquery.com/prop/
+http://stackoverflow.com/questions/901712/check-checkbox-checked-property
+http://stackoverflow.com/questions/24444062/jquery-propchecked-false-does-not-work
