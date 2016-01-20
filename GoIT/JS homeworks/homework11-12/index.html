@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework11-12</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+	// <script src="js/tmpl.js"></script>
+	<script src="js/jquery.carousel.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<div class="slider">
+		<div class="slider_element"><img src="img/img1.jpg" alt="panda"></div>
+		<div class="slider_element"><img src="img/img2.jpg" alt="cyclists"></div>
+		<div class="slider_element"><img src="img/img3.jpg" alt="Louis"></div>
+		<div class="slider_element"><img src="img/img4.jpg" alt="Soup"></div>
+		<div class="slider_element"><img src="img/img5.jpg" alt="Moose"></div>
+		<div class="slider_element"><img src="img/img6.jpg" alt="Dog"></div>
+	</div>
+
+<!-- 	<div class="tml">
+		<p class="text-center">Louis with heater</p>
+		<p>Louis de Funès, who smiles and heat himself by rubber heater</p>
+		<p><strong>Upload date: </strong><span>28.11.14</span></p>
+		<p class="text-center">Do you like it?</p>
+		<div class="col-md-1 col-md-offset-3">
+			<button class="btn btn-success btn-xs">Yes</button>
+		</div>
+		<div class="col-md-1 col-md-offset-3">
+			<button class="btn btn-danger btn-xs">No</button>
+		</div>
+		<br>
+		<br>
+	</div> -->
+
+	<script type="text/html" id="picture_description">
+
+	<div class="template col-md-offset-4">
+		<p class="text-center"><%= data.title %></p>
+		<p><%= data.description %></p>
+		<p><strong>Upload date: </strong><span><%= data.date%></span></p>
+		<p class="text-center">Do you like it?</p>
+		<div class="col-md-1 col-md-offset-3">
+			<button class="btn btn-success btn-xs">Yes</button>
+		</div>
+		<div class="col-md-1 col-md-offset-3">
+			<button class="btn btn-danger btn-xs">No</button>
+		</div>
+		<br>
+		<br>
+	</div>
+
+	</script>
+	
+</body>
+</html>
