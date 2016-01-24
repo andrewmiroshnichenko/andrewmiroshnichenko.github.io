@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework13-14</title>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+	<script src="js/tmpl.js"></script>
+</head>
+<body>
+
+	<script type="text/html" id="questionTemplate">
+		<div class="question">
+			<h3><%= data.question %></h3>
+			<div><input type="checkbox"><span><%= data.answer1 %></span></div>
+			<div><input type="checkbox"><span><%= data.answer2 %></span></div>
+			<div><input type="checkbox"><span><%= data.answer3 %></span></div>
+		</div>
+	</script>
+	<script src="js/script.js"></script>
+</body>
+</html>
