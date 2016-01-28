@@ -11,18 +11,18 @@
 
 	<script type="text/html" id="questionTemplate">
 		<div class="question">
-			<h3><%= question %></h3>
-			<div><input type="checkbox"><span><%= answer1 %></span></div>
-			<div><input type="checkbox"><span><%= answer2 %></span></div>
-			<div><input type="checkbox"><span><%= answer3 %></span></div>
-			<div><input type="checkbox"><span><%= answer4 %></span></div>
-			<div><input type="checkbox"><span><%= answer5 %></span></div>
-			<div><input type="checkbox"><span><%= answer6 %></span></div>
+			<h4><%= question %></h4>
+			<div><input id="check1" type="checkbox"><label for="check1"><%= answer1 %></label></div>
+			<div><input id="check2" type="checkbox"><label for="check2"><%= answer2 %></label></div>
+			<div><input id="check3" type="checkbox"><label for="check3"><%= answer3 %></label></div>
+			<div><input id="check4" type="checkbox"><label for="check4"><%= answer4 %></label></div>
+			<div><input id="check5" type="checkbox"><label for="check5"><%= answer5 %></label></div>
+			<div><input id="check6" type="checkbox"><label for="check6"><%= answer6 %></label></div>
 		</div>
 	</script>
 	<script type="text/html" id="resultsTemplate">
 		<div class="results_item">
-			<h3><%= question %></h3>
+			<strong><%= question %></strong>
 			<div><span><%= result %></span></div>
 			<div><span>You have <%= yourCount %> of <%= correctCount %> correct answers</span></div>
 		</div>

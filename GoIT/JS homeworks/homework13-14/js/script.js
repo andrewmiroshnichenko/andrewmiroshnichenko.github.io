@@ -147,6 +147,8 @@ $(function(){
 
 	// DOM creation
 
+	var questionWrap = $('<div class="wrapper"></div>');
+	var buttonsWrap = $('<div class="btn_wrapper"></div>');
 	var prevButton = $('<button>Previous question</button>');
 	var saveAnswerButton = $('<button>Save answer</button>');
 	var nextButton = $('<button>Next question</button>');
@@ -154,10 +156,12 @@ $(function(){
 	var confirm;
 	var decline;
 
-	prevButton.appendTo('body');
-	saveAnswerButton.appendTo('body');
-	nextButton.appendTo('body');
-	copleteTest.appendTo('body');
+	questionWrap.appendTo('body');
+	buttonsWrap.appendTo('body');
+	prevButton.appendTo('.btn_wrapper');
+	nextButton.appendTo('.btn_wrapper');
+	saveAnswerButton.appendTo('.btn_wrapper');
+	copleteTest.appendTo('.btn_wrapper');
 
 	// Question 
 
@@ -175,43 +179,47 @@ $(function(){
 		}
 
 		var html = $('#questionTemplate').html();
-		$('body').prepend( tmpl(html, data) );
+		$('.wrapper').prepend( tmpl(html, data) );
 	};
 
 	// Button handlers
 
 	function showPrevQuestion() {
-		prevButton.on('click', function() {
-			 if (questionIndex > 0) {
-				generateQuestion(--questionIndex);
-			};
-			return false;
-		});
+		if (questionIndex > 0) {
+			generateQuestion(--questionIndex);
+		};
+
+		return false;
 	};
 
 	function showNextQuestion(){
-		nextButton.on('click', function(){
-			if (questionIndex < numberOfQuestions - 1){
-				generateQuestion(++questionIndex);
-			};
-			return false;
-		});
+		if (questionIndex < numberOfQuestions - 1){
+			generateQuestion(++questionIndex);
+		};
+
+		return false;
 	};
 
+
 	function saveAnswer(){
-		saveAnswerButton.on('click', function(){
-			var answersCount = Object.keys(questions[questionIndex]).length;
-			for (var i = 0; i < answersCount; i++) {
-				if ( $( 'input' ).eq( i ).prop( 'checked' ) ){
-					questions[questionIndex]['answer' + (i + 1)].check = true;
-				};
+		var answersCount = Object.keys(questions[questionIndex]).length;
+		
+		for (var i = 0; i < answersCount; i++) {
+			if ( $( 'input' ).eq( i ).prop( 'checked' ) ){
+				questions[questionIndex]['answer' + (i + 1)].check = true;
 			};
-		});
+		};
+		showNextQuestion();
+		return false;
 	};
+	prevButton.on('click', showPrevQuestion);
+	nextButton.on('click', showNextQuestion);
+	saveAnswerButton.on('click', saveAnswer);
 
 	function showResults(){
 		copleteTest.on('click', function() {
 			$('<div class="results"></div>').appendTo('body');
+			$('<h3>Corect answers</h3>').appendTo('.results');
 			for (var j = 0; j < numberOfQuestions; j++) {
 				(function () {
 					var numberOfAnswers = Object.keys(questions[j]).length;
