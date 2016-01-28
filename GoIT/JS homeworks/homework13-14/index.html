@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Homework13-14</title>
+	<link rel="stylesheet" href="css/styles.css">
 	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
 	<script src="js/tmpl.js"></script>
 </head>
@@ -17,9 +18,16 @@
 			<div><input type="checkbox"><span><%= answer4 %></span></div>
 			<div><input type="checkbox"><span><%= answer5 %></span></div>
 			<div><input type="checkbox"><span><%= answer6 %></span></div>
-
+		</div>
+	</script>
+	<script type="text/html" id="resultsTemplate">
+		<div class="results_item">
+			<h3><%= question %></h3>
+			<div><span><%= result %></span></div>
+			<div><span>You have <%= yourCount %> of <%= correctCount %> correct answers</span></div>
 		</div>
 	</script>
 	<script src="js/script.js"></script>
 </body>
 </html>
+<!-- <p> -->

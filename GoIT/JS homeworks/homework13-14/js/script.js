@@ -1,47 +1,143 @@
 'use strict';
 var questions = [
 	{
-		question: 'Goats are:',
-		'answer1': 'with wings',
-		'answer2': 'with fins',
-		'answer3': 'Fishes'
-		'answer4': 'Insects',
-		'answer5': 'with paws',
-		'answer6': 'Animals'
-	}, 	{
-		question: 'Bees are:',
-		'answer1': 'Fishes',
-		'answer2': 'Animals',
-		'answer3': 'with fins',
-		'answer4': 'with paws',
-		'answer5': 'with wings',
-		'answer6': 'Insects'
-	}, 	{
-		question: 'Bears are:',
-		'answer1': 'with wings',
-		'answer2': 'with fins',
-		'answer3': 'Fishes'
-		'answer4': 'Insects',
-		'answer5': 'with paws',
-		'answer6': 'Animals'
-	}, 	{
-		question: 'Sharks are:',
-		'answer1': 'Animals',
-		'answer2': 'with wings',
-		'answer3': 'with paws',
-		'answer4': 'Insects',
-		'answer5': 'with fins',
-		'answer6': 'Fishes'
-	}, 	{
-		question: 'Butterflyes are:',
-		'answer1': 'Fishes',
-		'answer2': 'Animals',
-		'answer3': 'with fins',
-		'answer4': 'with paws',
-		'answer5': 'with wings',
-		'answer6': 'Insects'
+		question: 'Goats:',
+		'answer1': {
+			text: 'have wings',
+			correct: false
+		},
+		'answer2': {
+			text: 'have fins',
+			correct: false
+		},
+		'answer3': {
+			text: 'are Fishes',
+			correct: false
+		},
+		'answer4': {
+			text: 'are Insects',
+			correct: false
+		},
+		'answer5': {
+			text: 'have paws',
+			correct: true
+		},
+		'answer6': {
+			text: 'are Animals',
+			correct: true
+		}
+	}, 	
+	{
+		question: 'Bees:',
+		'answer1': {
+			text: 'are Fishes',
+			correct: false
+		},
+		'answer2': {
+			text: 'are Animals',
+			correct: false
+		},
+		'answer3': {
+			text: 'have fins',
+			correct: false
+		},
+		'answer4': {
+			text: 'have paws',
+			correct: false
+		},
+		'answer5': {
+			text: 'have wings',
+			correct: true
+		},
+		'answer6': {
+			text: 'are Insects',
+			correct: true
+		}
+	}, 	
+	{
+		question: 'Bears:',
+		'answer1': {
+			text: 'have wings',
+			correct: false
+		},
+		'answer2': {
+			text: 'have fins',
+			correct: false
+		},
+		'answer3': {
+			text: 'are Fishes',
+			correct: false
+		},
+		'answer4': {
+			text: 'are Insects',
+			correct: false
+		},
+		'answer5': {
+			text: 'have paws',
+			correct: true
+		},
+		'answer6': {
+			text: 'are Animals',
+			correct: true
+		}
+	},
+	{
+		question: 'Sharks:',
+		'answer1': {
+			text: 'are Animals',
+			correct: false
+		},
+		'answer2': {
+			text: 'have wings',
+			correct: false
+		},
+		'answer3': {
+			text: 'have paws',
+			correct: false
+		},
+		'answer4': {
+			text: 'are Insects',
+			correct: false
+		},
+		'answer5': {
+			text: 'have fins',
+			correct: true
+		},
+		'answer6': {
+			text: 'are Fishes',
+			correct: true
+		}
+	},
+	{
+		question: 'Butterflyes:',
+		'answer1': {
+			text: 'are Fishes',
+			correct: false
+		},
+		'answer2': {
+			text: 'are Animals',
+			correct: false
+		},
+		'answer3': {
+			text: 'have fins',
+			correct: false
+		},
+		'answer4': {
+			text: 'have paws',
+			correct: false
+		},
+		'answer5': {
+			text: 'have wings',
+			correct: true
+		},
+		'answer6': {
+			text: 'are Insects',
+			correct: true
+		}
 	}
 ];
+
+var numberOfQuestions = questions.length;
 
 localStorage.setItem('test', JSON.stringify(questions));
 // var parsed = JSON.parse(localStorage.getItem('test'));
@@ -69,101 +165,87 @@ $(function(){
 
 	function generateQuestion(questionIndex) {
 		$('.question').remove();
-		var answer1Number, answer2Number, answer3Number;
 
-		answer1Number = randomNumberFromRange(1, 6);
+		var numberOfAnswers = Object.keys(questions[questionIndex]).length;
 
-		(function generateAnswer2Number() {
-			answer2Number = randomNumberFromRange(1, 6);
-			if (answer2Number == answer1Number) {
-				generateAnswer2Number();
-			}
-			return answer2Number;
-		})();
-
-
-		(function generateAnswer3Number() {
-			answer3Number = randomNumberFromRange(1, 6);
-			if (answer3Number == answer1Number || answer3Number == answer2Number) {
-				generateAnswer3Number();
-			}
-			return answer3Number;
-		})();
+		var data = {};
+		data.question = questions[questionIndex].question;
+		for (var i = 1; i < numberOfAnswers; i++) {
+			data['answer' + i] = questions[questionIndex]['answer' + i].text;
+		}
 
 		var html = $('#questionTemplate').html();
-		var content = tmpl(html, {
-			question: questions[questionIndex].question,
-			answer1: questions[questionIndex]['answer' + answer1Number],
-			answer2: questions[questionIndex]['answer' + answer2Number],
-			answer3: questions[questionIndex]['answer' + answer3Number],
-			answer4: questions[questionIndex]['answer' + answer4Number],
-			answer5: questions[questionIndex]['answer' + answer5Number],
-			answer6: questions[questionIndex]['answer' + answer6Number]
-		});
-		$('body').prepend(content);
-
+		$('body').prepend( tmpl(html, data) );
 	};
 
 	// Button handlers
 
-	function showPrevQuestion (){
-		prevButton.on('click', function(){
-			if (questionIndex == 0) {
-				generateQuestion(questionIndex);
-			} else if (questionIndex > 0) {
-				questionIndex = questionIndex - 1;
-				generateQuestion(questionIndex);
-			}
+	function showPrevQuestion() {
+		prevButton.on('click', function() {
+			 if (questionIndex > 0) {
+				generateQuestion(--questionIndex);
+			};
 			return false;
 		});
 	};
 
-	function showNextQuestion (){
+	function showNextQuestion(){
 		nextButton.on('click', function(){
-			if (questionIndex == 7) {
-				generateQuestion(questionIndex);
-			} else if (questionIndex < 7) {
-				questionIndex = questionIndex + 1;
-				generateQuestion(questionIndex);
-			}
+			if (questionIndex < numberOfQuestions - 1){
+				generateQuestion(++questionIndex);
+			};
 			return false;
 		});
 	};
 
-	var answersArray= [];
-
-	function saveAnswer (){
+	function saveAnswer(){
 		saveAnswerButton.on('click', function(){
-			for (var i = 0; i < 3; i++) {
-				if ( $( 'input' ).eq( i ).prop( 'checked' )) {
-					var checked = $( 'input' ).eq( i ).next().html();
-					if (checked === questions[questionIndex]['answer3']) {
-						answersArray[questionIndex] = true;
-					} else {
-						answersArray[questionIndex] = false;
-					};
-				}
+			var answersCount = Object.keys(questions[questionIndex]).length;
+			for (var i = 0; i < answersCount; i++) {
+				if ( $( 'input' ).eq( i ).prop( 'checked' ) ){
+					questions[questionIndex]['answer' + (i + 1)].check = true;
+				};
 			};
 		});
 	};
 
-	function showResults (){
+	function showResults(){
 		copleteTest.on('click', function() {
-			console.log(answersArray);
+			$('<div class="results"></div>').appendTo('body');
+			for (var j = 0; j < numberOfQuestions; j++) {
+				(function () {
+					var numberOfAnswers = Object.keys(questions[j]).length;
+
+					var data = {
+						correctCount: 0,
+						yourCount: 0,
+						result: '',
+						question: questions[j].question
+					}
+
+					for (var i = 1; i < numberOfAnswers; i++) {
+						if (questions[j]['answer' + i].correct) {
+							data.result = data.result + ' & ' + questions[j]['answer' + i].text;
+							data.correctCount += 1;
+							if (questions[j]['answer' + i].check) {
+								data.yourCount += 1
+							};
+						}
+					}
+					
+					data.result = data.result.slice(2);
+
+					var html = $('#resultsTemplate').html();
+					$('.results').append( tmpl(html, data) );
+				})();
+			};
 		});
 	};
-
 
 	generateQuestion(questionIndex);
 	showNextQuestion();
 	showPrevQuestion();
 	saveAnswer();
-	showResults ();
-
-	// Misc functions
-
-	function randomNumberFromRange(min, max){
- 	   return Math.floor(Math.random()*(max-min+1)+min);
-	}
+	showResults();
 
 });
