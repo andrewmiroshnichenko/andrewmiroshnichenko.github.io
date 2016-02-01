@@ -1,0 +1,293 @@
+@font-face {
+    font-family: 'Helvetica Neue Medium';
+    src: url('../fonts/Helvetica Neue Medium/helveticaneue-medium-webfont.eot');
+    src: url('../fonts/Helvetica Neue Medium/helveticaneue-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Helvetica Neue Medium/helveticaneue-medium-webfont.woff2') format('woff2'),
+         url('../fonts/Helvetica Neue Medium/helveticaneue-medium-webfont.woff') format('woff'),
+         url('../fonts/Helvetica Neue Medium/helveticaneue-medium-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pacifico Regular';
+    src: url('../fonts/Pacifico Regular/pacifico_allfont.ru-webfont.eot');
+    src: url('../fonts/Pacifico Regular/pacifico_allfont.ru-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Pacifico Regular/pacifico_allfont.ru-webfont.woff2') format('woff2'),
+         url('../fonts/Pacifico Regular/pacifico_allfont.ru-webfont.woff') format('woff'),
+         url('../fonts/Pacifico Regular/pacifico_allfont.ru-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway Semibold';
+    src: url('../fonts/Raleway Semibold/raleway.semibold-webfont.eot');
+    src: url('../fonts/Raleway Semibold/raleway.semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Raleway Semibold/raleway.semibold-webfont.woff2') format('woff2'),
+         url('../fonts/Raleway Semibold/raleway.semibold-webfont.woff') format('woff'),
+         url('../fonts/Raleway Semibold/raleway.semibold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+header {
+	border-top: 10px solid #2ecc71;
+	background: url('../img/header_background.jpg') no-repeat;
+	height: 437px;
+	width: 100%;
+	padding-top: 160px;
+}
+
+header h1 {
+	color: #fff;
+	font-size: 60px;
+	margin: 0 0 57px 16%;
+	font-family: 'Pacifico Regular';
+	width: 200px;
+}
+
+header h1 span {
+	color: #2ecc71;
+	font-family: 'Pacifico Regular';
+}
+
+header p {
+	color: #fff;
+	font-size: 24px;
+	width: 400px;
+	line-height: 30px;
+	margin: 0 0 30px 16%;
+}
+
+header a {
+	border-radius: 50%;
+	width: 52px;
+	height: 52px;
+	margin-right: 13px;
+	background: rgba(3, 3, 3, .5) url('../img/apps-sprite.png') no-repeat;
+	display: inline-block;
+	transition: background-color .5s ease-in-out;
+}
+
+header .apps {
+	margin-left: 16%;
+	width: 210px;
+}
+
+header .google {
+	background-position: 16px 10px;
+}
+
+header .apple {
+	background-position: -53px 10px;
+}
+
+header .ms {
+	background-position: -120px 10px;
+}
+
+header a:hover{
+	background-color: #2ecc71;
+}
+
+.key_features {
+	width: 100%;
+	height: 335px;
+	padding: 60px 0 0 7%;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.key_features article {
+	display: inline-block;
+	width: 340px;
+	margin-right: 86px;
+}
+
+.key_features article:last-child {
+	margin-right: 0;
+}
+
+.key_features h4 {
+	font-size: 22px;
+	font-family: 'Raleway Semibold';
+	margin: 27px 0;
+}
+
+.key_features span {
+	font-size: 16px;
+    font-family: 'Helvetica Neue Medium';
+}
+
+.get_notified {
+	background-color: #e3e3e3;
+	height: 427px;
+	width: 100%;
+	padding: 30px 2% 0 7%;
+	box-sizing: border-box;
+}
+
+.get_notified video {
+	float: right;
+	width: 500px;
+}
+
+.get_notified h4 {
+	font-size: 22px;
+	font-family: 'Raleway Semibold';
+	margin: 27px 0;
+}
+
+.get_notified p {
+	font-size: 16px;
+    font-family: 'Helvetica Neue Medium';
+    width: 560px;
+    color: #848484;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+.get_notified form {
+	height: 56px;
+}
+
+.get_notified input {
+	color: #848484;
+	width: 275px;
+	height: 100%;
+	border: 1px solid #c8c8c8;
+	border-radius: 10px 0 0 10px;
+	font-size: 18px;
+	padding: 0 0 0 26px;
+}
+
+.get_notified button {
+	background-color: #2ecc71;
+	color: #fff;
+	height: calc(100% + 1px);
+	border-radius: 0 10px 10px 0;
+	border: none;
+	font-size: 22px;
+	font-family: 'Raleway Semibold';
+	width: 140px;
+}
+
+.testemonials {
+	height: 420px;
+	width: 100%;
+	text-align: center;
+}
+
+.testemonials .quotation {
+	font-size: 18px;
+	font-family: 'Helvetica Neue';
+	font-style: italic;
+	width: 850px;
+	margin: 46px auto 20px;
+	line-height: 32px;
+}
+
+.testemonials .author strong {
+	font-style: normal;
+	font-family: 'Raleway Semibold';
+}
+
+.testemonials #owl-demo {
+	margin: 30px auto 54px;
+}
+
+.testemonials #owl-demo a {
+	background-color: rgba(46, 204, 113, .6);
+	width: 84%;
+	height: 50px;
+	display: inline-block;
+}
+
+.testemonials #owl-demo img {
+	opacity: 1;
+	transition: opacity 1s ease-in;
+}
+
+.testemonials #owl-demo img:hover {
+	opacity: .5;
+}
+
+.testemonials h4 {
+	font-family: 'Raleway Semibold';
+	font-size: 24px;
+}
+
+.testemonials .social_action {
+	font-size: 16px;
+	font-family: 'Helvetica Neue';
+	margin: 21px auto;
+}
+
+.testemonials li {
+	display: inline-block;
+}
+
+.tw, .fb, .pin, .gplus, .linkedin, .youtube {
+	border-radius: 50%;
+	width: 34px;
+	height: 34px;
+	display: block;
+	margin-right: 10px;
+	background: url('../img/social-sprite.png') no-repeat;
+	background-color: rgba(197, 197, 197, 1);
+	transition: background-color .5s ease-in-out;
+}
+
+.tw {
+	background-position: 9px 4px;
+}
+
+.fb {
+	background-position: -35px 4px;
+}
+
+.pin {
+	background-position: -79px 4px;
+}
+
+.gplus {
+	background-position: -124px 4px;
+}
+
+.linkedin {
+	background-position: -167px 4px;
+}
+
+.youtube {
+	background-position: -211px 4px;
+}
+
+.testemonials ul li a:hover {
+	background-color: #2ecc71;
+}
+
+footer {
+	height: 130px;
+	width: 100%;
+	background-color: #e3e3e3;
+	padding: 50px 0;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+footer ul {
+	display: inline-block;
+}
+
+footer li {
+	display: inline-block;
+	margin-right: 39px;
+}
+
+footer a {
+	font-family: 'Helvetica Neue';
+	font-size: 16px;
+	text-decoration: none;
+	color: #848484;
+}
