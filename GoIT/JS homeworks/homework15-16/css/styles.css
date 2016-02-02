@@ -3,36 +3,67 @@ body {
 	height: 100%;
 }
 
-body form {
+.btn_group_main {
+	display: block;
+	margin: 0 auto;
+	width: 40%;
+}
+
+.search_wrapper {
+	width: 45%;
+	float: left;
+	overflow: hidden;
+	display: none;
+}
+
+.search_wrapper form {
 	text-align: center;
 }
 
-body .wrapper {
-	width: 30%;
-	margin: 0 auto;
-}
-
-body li {
+.search_wrapper li {
 	margin-bottom: 20px;
 }
 
-body li a {
+.search_wrapper li a {
 	text-decoration: none;
 }
 
-body li a h4 {
+.search_wrapper li a h4 {
 	font-size: 18px;
 	font-family: arial, sans-serif;
 }
 
-body li p {
+.search_wrapper li p {
 	font-family: arial, sans-serif;
 	font-size: small;
 	line-height: 17px;
 }
 
-body li p:nth-child(2) {
+.search_wrapper li p:nth-child(2) {
 	color: #006621;
 	font-size: 14px;
 	line-height: 20px;
+}
+
+.proto_wrapper {
+	width: 45%;
+	float: right;
+	overflow: hidden;
+	display: none;
+}
+
+.proto_wrapper label {
+	width: 150px;
+	display: inline-block;
+	text-align: center;
+}
+
+.btn_group_proto {
+	display: none;
+}
+
+#worker_form,
+#student_form,
+#total_sheet {
+	display: none;
 }

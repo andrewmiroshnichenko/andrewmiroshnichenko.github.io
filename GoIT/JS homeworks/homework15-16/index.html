@@ -7,10 +7,86 @@
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<form name="form">
-		<input type="text" name="q" placeholder="Enter your query">
-		<input id="submitQuery" type="submit" name="submitButton" value="Submit">
-	</form>
+	<div class="btn_group_main">
+		<button id="search">Show "Search" part of homework</button>
+		<button id="prototyping">Show "Prototyping" part of homework</button>
+	</div>
+	<div class="search_wrapper">
+		<form id="request">
+			<input type="text" name="q" placeholder="Enter your query">
+			<input type="submit"  value="Submit">
+		</form>
+	</div>
+	<div class="proto_wrapper">
+		<form action="" method="get" id="human_form">
+			<ul>
+				<li>
+					<p>Enter Human class attributes:</p>
+				</li>
+				<li>
+					<label for="first_name">First name</label>
+					<input type="text" name="First name" placeholder="First Name" id="first_name">
+				</li>
+				<li>
+					<label for="last_name">Last Name</label>
+					<input type="text" name="Last Name" placeholder="Last Name" id="last_name"></li>
+				<li>
+					<label for="sex">Sex</label>
+					<input type="text" name="Sex" placeholder="Sex" id="sex"></li>
+				<li>
+					<label for="height">Height</label>
+					<input type="text" name="Height" placeholder="Height" id="height"></li>
+				<li>
+					<label for="weight">Weight</label>
+					<input type="text" name="Weight" placeholder="Weight" id="weight"></li>
+				<li>
+					<input type="submit" value="Create human">
+				</li>
+			</ul>
+		</form>
+		<div class="btn_group_proto">
+			<p>Great job, Frankentein - you've created Human!</p>
+			<button id="worker_class">Create Worker</button>
+			<button id="student_class">Create Student</button>
+		</div>
+		<form class="subtype" action="" method="get" id="worker_form">
+			<ul>
+				<li>
+					<p>Enter Worker class attributes:</p>
+				</li>
+				<li>
+					<label for="company_name">Company name</label>
+					<input type="text" name="Company name" placeholder="Company name" id="company_name">
+				</li>
+				<li>
+					<label for="salary">Salary</label>
+					<input type="text" name="Salary" placeholder="Salary" id="salary">
+				</li>
+				<li>
+					<input type="submit" value="Create worker">
+				</li>
+			</ul>
+		</form>
+		<form class="subtype" action="" method="get" id="student_form">
+			<ul>
+				<li>
+					<p>Enter Student class attributes:</p>
+				</li>
+				<li>
+					<label for="university_name">University name</label>
+					<input type="text" name="University name" placeholder="University name" id="university_name">
+				</li>
+				<li>
+					<label for="stipend">Stipend</label>
+					<input type="text" name="Stipend" placeholder="Stipend" id="stipend">
+				</li>
+				<li>
+					<input type="submit" value="Create student">
+				</li>
+			</ul>
+		</form>
+		<div id="total_sheet"></div>
+	</div>
 	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
 	<script src="js/script.js"></script>
 </body>
