@@ -3,89 +3,109 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Homework15-16</title>
-	<link rel="stylesheet" href="css/reset.css">
+	<!-- <link rel="stylesheet" href="css/reset.css"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<div class="btn_group_main">
-		<button id="search">Show "Search" part of homework</button>
-		<button id="prototyping">Show "Prototyping" part of homework</button>
+	<div id="btn_group_main" class="row text-center">
+		<button class="btn btn-primary" id="search">Show "Search" part of homework</button>
+		<button class="btn btn-success" id="prototyping">Show "Prototyping" part of homework</button>
 	</div>
 	<div class="search_wrapper">
-		<form id="request">
-			<input type="text" name="q" placeholder="Enter your query">
-			<input type="submit"  value="Submit">
+		<form id="request" class="form-inline">
+			<input type="text" name="q" placeholder="Enter your query" class="form-control">
+			<button type="submit" class="btn btn-info">
+				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+			</button>  
 		</form>
 	</div>
 	<div class="proto_wrapper">
-		<form action="" method="get" id="human_form">
-			<ul>
-				<li>
-					<p>Enter Human class attributes:</p>
-				</li>
-				<li>
-					<label for="first_name">First name</label>
-					<input type="text" name="First name" placeholder="First Name" id="first_name">
-				</li>
-				<li>
-					<label for="last_name">Last Name</label>
-					<input type="text" name="Last Name" placeholder="Last Name" id="last_name"></li>
-				<li>
-					<label for="sex">Sex</label>
-					<input type="text" name="Sex" placeholder="Sex" id="sex"></li>
-				<li>
-					<label for="height">Height</label>
-					<input type="text" name="Height" placeholder="Height" id="height"></li>
-				<li>
-					<label for="weight">Weight</label>
-					<input type="text" name="Weight" placeholder="Weight" id="weight"></li>
-				<li>
-					<input type="submit" value="Create human">
-				</li>
-			</ul>
+		<form action="" method="get" id="human_form" class="form-horizontal">
+			<div class="col-sm-offset-1"><h4>Enter Human class attributes:</h4></div>
+			<div class="form-group">
+				<label for="first_name" class="col-sm-2 control-label">First name</label>
+				<div class="col-sm-4">
+					<input type="text" name="First name" class="form-control" id="first_name" placeholder="First Name">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="last_name" class="col-sm-2 control-label">Last Name</label>
+				<div class="col-sm-4">
+					<input type="text" name="Last Name" class="form-control" id="last_name" placeholder="Last Name">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="sex" class="col-sm-2 control-label">Sex</label>
+				<div class="col-sm-4">
+					<input type="text" name="Sex" class="form-control" id="sex" placeholder="Sex">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="height" class="col-sm-2 control-label">Height</label>
+				<div class="col-sm-4">
+					<input type="text" name="Height" class="form-control" id="height" placeholder="Height">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="weight" class="col-sm-2 control-label">Weight</label>
+				<div class="col-sm-4">
+					<input type="text" name="Weight" class="form-control" id="weight" placeholder="Weight">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default">Create Human</button>
+				</div>
+			</div>
 		</form>
 		<div class="btn_group_proto">
 			<p>Great job, Frankentein - you've created Human!</p>
-			<button id="worker_class">Create Worker</button>
-			<button id="student_class">Create Student</button>
+			<button class="btn btn-default" id="worker_class">Create Worker</button>
+			<button class="btn btn-default" id="student_class">Create Student</button>
 		</div>
-		<form class="subtype" action="" method="get" id="worker_form">
-			<ul>
-				<li>
-					<p>Enter Worker class attributes:</p>
-				</li>
-				<li>
-					<label for="company_name">Company name</label>
-					<input type="text" name="Company name" placeholder="Company name" id="company_name">
-				</li>
-				<li>
-					<label for="salary">Salary</label>
-					<input type="text" name="Salary" placeholder="Salary" id="salary">
-				</li>
-				<li>
-					<input type="submit" value="Create worker">
-				</li>
-			</ul>
+		<form class="subtype form-horizontal" action="" method="get" id="worker_form">
+			<div class="col-sm-offset-1"><h4>Enter Worker class attributes:</h4></div>
+			<div class="form-group">
+				<label for="company_name" class="col-sm-4 control-label">Company name</label>
+				<div class="col-sm-4">
+					<input type="text" name="Company name" class="form-control" id="company_name" placeholder="Company name">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salary" class="col-sm-4 control-label">Salary</label>
+				<div class="col-sm-4">
+					<input type="text" name="Salary" class="form-control" id="salary" placeholder="Salary">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-4 col-sm-10">
+					<button type="submit" class="btn btn-default">Create Worker</button>
+				</div>
+			</div>
 		</form>
-		<form class="subtype" action="" method="get" id="student_form">
-			<ul>
-				<li>
-					<p>Enter Student class attributes:</p>
-				</li>
-				<li>
-					<label for="university_name">University name</label>
-					<input type="text" name="University name" placeholder="University name" id="university_name">
-				</li>
-				<li>
-					<label for="stipend">Stipend</label>
-					<input type="text" name="Stipend" placeholder="Stipend" id="stipend">
-				</li>
-				<li>
-					<input type="submit" value="Create student">
-				</li>
-			</ul>
-		</form>
-		<div id="total_sheet"></div>
+		<form class="subtype form-horizontal" action="" method="get" id="student_form">
+			<div class="col-sm-offset-1"><h4>Enter Student class attributes:</h4></div>
+			<div class="form-group">
+				<label for="university_name" class="col-sm-4 control-label">University name</label>
+				<div class="col-sm-4">
+					<input type="text" name="University name" class="form-control" id="university_name" placeholder="University name">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="stipend" class="col-sm-4 control-label">Stipend</label>
+				<div class="col-sm-4">
+					<input type="text" name="Stipend" class="form-control" id="stipend" placeholder="Stipend">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-4 col-sm-10">
+					<button type="submit" class="btn btn-default">Create Student</button>
+				</div>
+			</div>
+ 		</form>
+		<table class="table col-md-6" id="total_sheet">
+		</table>
 	</div>
 	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
 	<script src="js/script.js"></script>

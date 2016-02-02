@@ -1,12 +1,11 @@
 body {
 	width: 100%;
 	height: 100%;
+	font-family: arial, sans-serif;
 }
 
-.btn_group_main {
-	display: block;
-	margin: 0 auto;
-	width: 40%;
+#btn_group_main {
+	margin: 30px auto;
 }
 
 .search_wrapper {
@@ -24,25 +23,15 @@ body {
 	margin-bottom: 20px;
 }
 
-.search_wrapper li a {
-	text-decoration: none;
-}
-
 .search_wrapper li a h4 {
 	font-size: 18px;
-	font-family: arial, sans-serif;
+	margin-bottom: 0;
 }
 
 .search_wrapper li p {
-	font-family: arial, sans-serif;
 	font-size: small;
 	line-height: 17px;
-}
-
-.search_wrapper li p:nth-child(2) {
-	color: #006621;
-	font-size: 14px;
-	line-height: 20px;
+	margin: 0;
 }
 
 .proto_wrapper {
@@ -52,16 +41,7 @@ body {
 	display: none;
 }
 
-.proto_wrapper label {
-	width: 150px;
-	display: inline-block;
-	text-align: center;
-}
-
-.btn_group_proto {
-	display: none;
-}
-
+.btn_group_proto,
 #worker_form,
 #student_form,
 #total_sheet {

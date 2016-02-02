@@ -42,7 +42,7 @@ $(function() {
 		var humanFields = $( this ).serializeArray();
 
 		e.preventDefault();
-		$.each( humanFields, function( i, field ) {
+		$.each(humanFields, function(i, field) {
 			humanObject[field.name] = field.value;
 		});
 
@@ -65,7 +65,7 @@ $(function() {
 
 	// Subclass filling
 
-	$('.subtype').on('submit', function (e) {
+	$('.subtype').on('submit', function(e) {
 		
 		if ( $( this ).attr('id') === 'worker_form' ) {
 			var obj = workerObject;
@@ -90,25 +90,42 @@ $(function() {
 		creatingTotalSheet(obj);
 	});
 
+	// Total sheet creation
+
 	function creatingTotalSheet(class_item) {
-		$('#total_sheet').show();
+		
+		// Creating DOM elements
+		var $total = $('#total_sheet');
+		var $tr = $('<tr></tr>');
+
+		// Showing total table
+		$total.show();
 		$('#student_form').remove();
 		$('#worker_form').remove();
+		
+		// Creating staticelements
+		$tr.prependTo($total);
+		$('<th></th>').appendTo($tr).html('Key');
+		$('<th></th>').appendTo($tr).html('Value');
+		$('<h4>Total class</h4>').prependTo($total);
+		
+		// creating table body
 		$.each(class_item, function(key, value) {
 			if (key != 'method') {
-				$('<p>' + key + ':' + value + '</p>').appendTo('#total_sheet');
+				var $tr = $('<tr></tr>').appendTo($total);;
+				$('<td>' + key + '</td>').appendTo($tr);
+				$('<td>' + value + '</td>').appendTo($tr);
 			} else {
-				$('<button>Method</button>').appendTo('#total_sheet').on('click', value);
+				$('<button class="btn btn-warning">Call method</button>').appendTo($total).on('click', value);
 			}
 		});
-		$('<h4>Total class</h4>').prependTo('#total_sheet');
 	}
 });
 
 function GoogleCallback (somejQueryObject, data) {
-	var ul = $('<ul></ul>');
+	var $ul = $('<ul class="col-md-10 col-md-offset-1"></ul>');
 
-	ul.appendTo('.search_wrapper');
+	$ul.appendTo('.search_wrapper');
 	
 	for (var i = 0; i < 8; i++) {
 
@@ -117,18 +134,19 @@ function GoogleCallback (somejQueryObject, data) {
 		var title = data.results[i].title;
 		var content = data.results[i].content;
 
-		// Creating DOM
-		var result = $('<li></li>');
-		var headerLink = $('<a href=' + url + '></a>');
-		var headerTitle = $('<h4></h4>');
-		var linkToCash = $('<p></p>');
-		var resultContent = $('<p></p>');
+		// Creating DOM elemnts
+		var $result = $('<li></li>');
+		var $headerLink = $('<a href=' + url + '></a>');
+		var $headerTitle = $('<h4></h4>');
+		var $linkToCash = $('<p class="text-success"></p>');
+		var $resultContent = $('<p></p>');
 
-		result.appendTo(ul);
-		headerLink.appendTo(result);
-		headerTitle.appendTo(headerLink).html(title);
-		linkToCash.appendTo(result).html(url);
-		resultContent.appendTo(result).html(content);
+		// Creating DOM
+		$result.appendTo($ul);
+		$headerLink.appendTo($result);
+		$headerTitle.appendTo($headerLink).html(title);
+		$linkToCash.appendTo($result).html(url);
+		$resultContent.appendTo($result).html(content);
 
 	};
 };
