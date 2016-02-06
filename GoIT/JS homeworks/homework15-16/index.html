@@ -18,6 +18,10 @@
 				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 			</button>  
 		</form>
+		<nav>
+ 			<ul class="pagination">
+ 			</ul>
+ 		</nav>
 	</div>
 	<div class="proto_wrapper">
 		<div class="btn_group_proto">
@@ -26,6 +30,11 @@
 			<button class="btn btn-default" id="student_class">Create Student</button>
 		</div>
 		<table class="table col-md-6" id="total_sheet">
+			<caption><h4>Total class</h4></caption>
+			<tr>
+				<th>Key</th>
+				<th>Value</th>
+			</tr>
 		</table>
 	</div>
 
@@ -47,6 +56,20 @@
 				<input type="text" name="<%= field_name %>" class="form-control" id="<%= field_id %>" placeholder="<%= field_name %>">
 			</div>
 		</div>
+	</script>
+
+	<script type="text/template" id="google_result_instance">
+		<dl class="col-sm-offset-1">
+			<dt>
+				<a href=<%= url %> ><h4><%= title %></h4></a>
+			</dt>
+			<dd>
+				<p class="text-success"><%= url %></p>
+			</dd>
+			<dd>
+				<p><%= content %></p>
+			</dd>
+		</dl>
 	</script>
 
 	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>

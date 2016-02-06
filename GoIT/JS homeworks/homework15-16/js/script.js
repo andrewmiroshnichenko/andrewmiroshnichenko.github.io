@@ -1,4 +1,6 @@
-var human = {
+// Objects for form templates
+
+var humanFormFields = {
 	form_id: 'human_form',
 	class_name: 'Human',
 	fields: [
@@ -26,7 +28,7 @@ var human = {
 }
 
 
-var worker = {
+var workerFormFields = {
 	form_id: 'worker_form',
 	class_name: 'Worker',
 	fields: [
@@ -41,7 +43,7 @@ var worker = {
 	]
 }
 
-var student = {
+var studentFormFields = {
 	form_id: 'student_form',
 	class_name: 'Student',
 	fields: [
@@ -68,21 +70,21 @@ $(function() {
 	$('#prototyping').on('click', function() {
 		$('.proto_wrapper').show();
 		$('.search_wrapper').hide();
-		createForm(human);
+		createForm(humanFormFields);
 		$('#human_form').removeClass('subtype');
 	});
 	
 	// AJAX data requesting
 
 	$('#request').on('submit', function(e) {
-		var myQueryArray = $( this ).serialize();
+		var myQueryArray = $('#request input').val();
 		
 		e.preventDefault();
-		$('.search_wrapper ul').remove();
+		$('.search_wrapper dl').remove();
 
-		if (myQueryArray.length - 2) {
+		if (myQueryArray.length) {
 			$.ajax({
-				url: 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&key=ABQIAAAACKQaiZJrS0bhr9YARgDqUxQBCBLUIYB7IF2WaNrkYqF0tBovNBQFDtM_KNtb3xQxWff2mI5hipc3lg&rsz=large&' + myQueryArray + '&callback=GoogleCallback&context=?',
+				url: 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&key=ABQIAAAACKQaiZJrS0bhr9YARgDqUxQBCBLUIYB7IF2WaNrkYqF0tBovNBQFDtM_KNtb3xQxWff2mI5hipc3lg&rsz=large&q=' + myQueryArray + '&callback=GoogleCallback&context=?',
 				dataType: 'jsonp'
 			});
 		}
@@ -93,12 +95,11 @@ $(function() {
 	// Classes creation
 
 	var humanObject = {};
-	var workerObject = Object.create(humanObject)
-	var studentObject = Object.create(humanObject)
+	var workerObject = Object.create(humanObject);
+	var studentObject = Object.create(humanObject);
 
 	// Human class filling
 
-	// $('#human_form').on('submit', function(e) {
 	$('.proto_wrapper').on('submit', '#human_form', function(e) {
 		e.preventDefault();
 		var humanFields = $( this ).serializeArray();
@@ -116,17 +117,16 @@ $(function() {
 
 	$('#worker_class').on('click', function() {
 		$('.btn_group_proto').hide();
-		createForm(worker);
+		createForm(workerFormFields);
 	});
 
 	$('#student_class').on('click', function() {
 		$('.btn_group_proto').hide();
-		createForm(student);
+		createForm(studentFormFields);
 	});
 
 	// Subclass filling
 
-	// $('.btn').on('mouseover', function() {
 	$('.proto_wrapper').on('submit', '.subtype', function(e) {
 
 		var obj = {};
@@ -158,22 +158,14 @@ $(function() {
 
 	function creatingTotalSheet(class_item) {
 		
-		// Creating DOM elements
 		var $total = $('#total_sheet');
-		var $tr = $('<tr></tr>');
 
 		// Showing total table
 		$total.show();
-		$('#student_form').remove();
-		$('#worker_form').remove();
+		$('#student_form').hide();
+		$('#worker_form').hide();
 		
-		// Creating staticelements
-		$tr.prependTo($total);
-		$('<th></th>').appendTo($tr).html('Key');
-		$('<th></th>').appendTo($tr).html('Value');
-		$('<h4>Total class</h4>').prependTo($total);
-		
-		// creating table body
+		// Creating table body
 		$.each(class_item, function(key, value) {
 			if (key != 'method') {
 				var $tr = $('<tr></tr>').appendTo($total);;
@@ -203,30 +195,15 @@ $(function() {
 });
 
 function GoogleCallback (somejQueryObject, data) {
-	var $ul = $('<ul class="col-md-10 col-md-offset-1"></ul>');
 
-	$ul.appendTo('.search_wrapper');
-	
+	var resultInstance = {};
+	var templateHtml = $('#google_result_instance').html();
+
 	for (var i = 0; i < data.results.length; i++) {
-
-		// Retrieving data from AJAX
-		var url = data.results[i].unescapedUrl;
-		var title = data.results[i].title;
-		var content = data.results[i].content;
-
-		// Creating DOM elemnts
-		var $result = $('<li></li>');
-		var $headerLink = $('<a href=' + url + '></a>');
-		var $headerTitle = $('<h4></h4>');
-		var $linkToCash = $('<p class="text-success"></p>');
-		var $resultContent = $('<p></p>');
-
-		// Creating DOM
-		$result.appendTo($ul);
-		$headerLink.appendTo($result);
-		$headerTitle.appendTo($headerLink).html(title);
-		$linkToCash.appendTo($result).html(url);
-		$resultContent.appendTo($result).html(content);
+		resultInstance.url = data.results[i].unescapedUrl;
+		resultInstance.title = data.results[i].title;
+		resultInstance.content = data.results[i].content;
+		$('.search_wrapper form').after( tmpl(templateHtml, resultInstance) );
 
 	};
 };
