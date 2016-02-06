@@ -1,3 +1,31 @@
+var human = {
+	form_id: 'human_form',
+	class_name: 'Human',
+	fields: [
+		{
+			field_id: 'weight',
+			field_name: 'Weight'
+		}, 
+		{
+			field_id: 'height',
+			field_name: 'Height'
+		}, 
+		{
+			field_id: 'sex',
+			field_name: 'Sex'
+		},
+		{
+			field_id: 'last_name',
+			field_name: 'Last Name'
+		}, 
+		{
+			field_id: 'first_name',
+			field_name: 'First Name'
+		}
+	]
+}
+
+
 var worker = {
 	form_id: 'worker_form',
 	class_name: 'Worker',
@@ -40,6 +68,7 @@ $(function() {
 	$('#prototyping').on('click', function() {
 		$('.proto_wrapper').show();
 		$('.search_wrapper').hide();
+		createForm(human);
 	});
 	
 	// AJAX data requesting
@@ -68,15 +97,19 @@ $(function() {
 
 	// Human class filling
 
-	$('#human_form').on('submit', function(e) {
+	// $('.proto_wrapper').on('mouseover', '#human_form', function(e) {
+	// 	alert('btn_group_main');
+	// });
+
+	$('.proto_wrapper').on('submit', '#human_form', function(e) {
+		e.preventDefault();
 		var humanFields = $( this ).serializeArray();
 
-		e.preventDefault();
 		$.each(humanFields, function(i, field) {
 			humanObject[field.name] = field.value;
 		});
 
-		$( this ).remove();
+		$( this ).hide();
 		$('.btn_group_proto').show();
 
 	});
@@ -95,16 +128,19 @@ $(function() {
 
 	// Subclass filling
 
+	// $('.subtype').on('submit', , function(e) {
 	$('.subtype').on('submit', function(e) {
-		
+
+		var obj = {};
+
 		if ( $( this ).attr('id') === 'worker_form' ) {
-			var obj = workerObject;
+			obj = workerObject;
 			obj.method = function makeCode() {
 				alert('Go to work');
 			}
 
 		} else if ($( this ).prop('id') === 'student_form' ) {
-			var obj = studentObject;
+			obj = studentObject;
 			obj.method = function makeCode() {
 				alert('Lets code!');
 			}
@@ -150,6 +186,21 @@ $(function() {
 			}
 		});
 	}
+
+	function createForm(object) {
+
+	//Creation of header and submit 
+		var data = object;
+		var headerContent = tmpl( $('#form_header').html(), data);
+		$('.proto_wrapper').append(headerContent);
+
+	//Creation of form body
+		$.each(data.fields, function(i) {
+			var fieldContent = tmpl( $('#form_field').html(), data.fields[i] );
+			$('#' + data.form_id + ' div:first').after(fieldContent);
+		});
+
+	}
 });
 
 function GoogleCallback (somejQueryObject, data) {
@@ -180,18 +231,3 @@ function GoogleCallback (somejQueryObject, data) {
 
 	};
 };
-
-function createForm(object) {
-
-//Creation of header and submit 
-	var data = object;
-	var headerContent = tmpl( $('#form_header').html(), data);
-	$('.proto_wrapper').append(headerContent);
-
-//Creation of form body
-	$.each(data.fields, function(i) {
-		var fieldContent = tmpl( $('#form_field').html(), data.fields[i] );
-		$('#' + data.form_id + ' div:first').after(fieldContent);
-	});
-
-}
