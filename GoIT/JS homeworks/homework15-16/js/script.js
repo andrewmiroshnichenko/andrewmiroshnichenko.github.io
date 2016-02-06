@@ -69,6 +69,7 @@ $(function() {
 		$('.proto_wrapper').show();
 		$('.search_wrapper').hide();
 		createForm(human);
+		$('#human_form').removeClass('subtype');
 	});
 	
 	// AJAX data requesting
@@ -97,10 +98,6 @@ $(function() {
 
 	// Human class filling
 
-	// $('.proto_wrapper').on('mouseover', '#human_form', function(e) {
-	// 	alert('btn_group_main');
-	// });
-
 	$('.proto_wrapper').on('submit', '#human_form', function(e) {
 		e.preventDefault();
 		var humanFields = $( this ).serializeArray();
@@ -128,33 +125,35 @@ $(function() {
 
 	// Subclass filling
 
-	// $('.subtype').on('submit', , function(e) {
-	$('.subtype').on('submit', function(e) {
-
-		var obj = {};
-
-		if ( $( this ).attr('id') === 'worker_form' ) {
-			obj = workerObject;
-			obj.method = function makeCode() {
-				alert('Go to work');
-			}
-
-		} else if ($( this ).prop('id') === 'student_form' ) {
-			obj = studentObject;
-			obj.method = function makeCode() {
-				alert('Lets code!');
-			}
-		}
-			
-		var formFields = $( this ).serializeArray();
-
-		e.preventDefault();
-		$.each( formFields, function( i, field ) {
-			obj[field.name] = field.value;
-		});
-
-		creatingTotalSheet(obj);
+	$('.subtype').on('mouseover', function(e) {
+		console.log('red');
 	});
+	// $('.subtype').on('submit', function(e) {
+
+	// 	var obj = {};
+	// 	var formFields = $( this ).serializeArray();
+
+	// 	if ( $( this ).attr('id') === 'worker_form' ) {
+	// 		obj = workerObject;
+	// 		obj.method = function makeCode() {
+	// 			alert('Go to work');
+	// 		}
+
+	// 	} else if ($( this ).prop('id') === 'student_form' ) {
+	// 		obj = studentObject;
+	// 		obj.method = function makeCode() {
+	// 			alert('Lets code!');
+	// 		}
+	// 	}
+
+	// 	e.preventDefault();
+	// 	$.each( formFields, function( i, field ) {
+	// 		obj[field.name] = field.value;
+	// 	});
+	// 	creatingTotalSheet(obj);
+
+	// 	return false;
+	// });
 
 	// Total sheet creation
 
