@@ -42,8 +42,6 @@ body {
 }
 
 .btn_group_proto,
-#worker_form,
-#student_form,
 #total_sheet {
 	display: none;
 }

@@ -1,3 +1,33 @@
+var worker = {
+	form_id: 'worker_form',
+	class_name: 'Worker',
+	fields: [
+		{
+			field_id: 'company_name',
+			field_name: 'Company name'
+		}, 
+		{
+			field_id: 'salary',
+			field_name: 'Salary'
+		}
+	]
+}
+
+var student = {
+	form_id: 'student_form',
+	class_name: 'Student',
+	fields: [
+		{
+			field_id: 'university_name',
+			field_name: 'University name'
+		}, 
+		{
+			field_id: 'stipend',
+			field_name: 'Stipend'
+		}
+	]
+}
+
 $(function() {
 	
 	// Choosing part of the homework
@@ -55,12 +85,12 @@ $(function() {
 
 	$('#worker_class').on('click', function() {
 		$('.btn_group_proto').remove();
-		$('#worker_form').show();
+		createForm(worker);
 	});
 
 	$('#student_class').on('click', function() {
 		$('.btn_group_proto').remove();
-		$('#student_form').show();
+		createForm(student);
 	});
 
 	// Subclass filling
@@ -80,10 +110,10 @@ $(function() {
 			}
 		}
 			
-		var fields = $( this ).serializeArray();
+		var formFields = $( this ).serializeArray();
 
 		e.preventDefault();
-		$.each( fields, function( i, field ) {
+		$.each( formFields, function( i, field ) {
 			obj[field.name] = field.value;
 		});
 
@@ -150,3 +180,18 @@ function GoogleCallback (somejQueryObject, data) {
 
 	};
 };
+
+function createForm(object) {
+
+//Creation of header and submit 
+	var data = object;
+	var headerContent = tmpl( $('#form_header').html(), data);
+	$('.proto_wrapper').append(headerContent);
+
+//Creation of form body
+	$.each(data.fields, function(i) {
+		var fieldContent = tmpl( $('#form_field').html(), data.fields[i] );
+		$('#' + data.form_id + ' div:first').after(fieldContent);
+	});
+
+}
