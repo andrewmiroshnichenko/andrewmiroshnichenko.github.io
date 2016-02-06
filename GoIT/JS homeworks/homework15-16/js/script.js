@@ -127,7 +127,7 @@ function GoogleCallback (somejQueryObject, data) {
 
 	$ul.appendTo('.search_wrapper');
 	
-	for (var i = 0; i < 8; i++) {
+	for (var i = 0; i < data.results.length; i++) {
 
 		// Retrieving data from AJAX
 		var url = data.results[i].unescapedUrl;
