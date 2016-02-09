@@ -1,0 +1,14 @@
+{
+  "name": "homework17-18",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt-cli": "^0.1.13"
+  }
+}
