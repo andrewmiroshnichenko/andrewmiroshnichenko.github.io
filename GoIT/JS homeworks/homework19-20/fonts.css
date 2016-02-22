@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Ubuntu Medium';
+    src: url('../fonts/Ubuntu Medium/ubuntu-m-webfont.eot');
+    src: url('../fonts/Ubuntu Medium/ubuntu-m-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Ubuntu Medium/ubuntu-m-webfont.woff2') format('woff2'),
+         url('../fonts/Ubuntu Medium/ubuntu-m-webfont.woff') format('woff'),
+         url('../fonts/Ubuntu Medium/ubuntu-m-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ubuntu Light';
+    src: url('../fonts/Ubuntu Light/ubuntu-l-webfont.eot');
+    src: url('../fonts/Ubuntu Light/ubuntu-l-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Ubuntu Light/ubuntu-l-webfont.woff2') format('woff2'),
+         url('../fonts/Ubuntu Light/ubuntu-l-webfont.woff') format('woff'),
+         url('../fonts/Ubuntu Light/ubuntu-l-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ubuntu Condensed Regular';
+    src: url('../fonts/Ubuntu Condensed Regular/ubuntu-c-webfont.eot');
+    src: url('../fonts/Ubuntu Condensed Regular/ubuntu-c-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Ubuntu Condensed Regular/ubuntu-c-webfont.woff2') format('woff2'),
+         url('../fonts/Ubuntu Condensed Regular/ubuntu-c-webfont.woff') format('woff'),
+         url('../fonts/Ubuntu Condensed Regular/ubuntu-c-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

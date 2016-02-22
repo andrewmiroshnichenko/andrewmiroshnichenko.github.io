@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework19-20</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/owl.theme.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<header class="wrapper clearfix">
+		<div class="logo">
+			<span class="logo__slogan_strong">Build Home</span>
+			<span class="logo__slogan">Industrial Theme</span>
+		</div>
+		<ul class="links-list clearfix">
+			<li class="links-list__item"><a class="links-list__link_fb" href=""></a></li>
+			<li class="links-list__item"><a class="links-list__link_linkedin" href=""></a></li>
+			<li class="links-list__item"><a class="links-list__link_rss" href=""></a></li>
+			<li class="links-list__item"><a class="links-list__link_skype" href=""></a></li>
+			<li class="links-list__item"><a class="links-list__link_twitter" href=""></a></li>
+		</ul>
+	</header>
+	<nav class="main-nav wrapper">
+		<ul class="nav-menu">
+			<li class="nav-menu__item"><a class="nav-menu__link" href="#">Home</a></li>
+			<li class="nav-menu__item"><a class="nav-menu__link" href="#">Features</a></li>
+			<li class="nav-menu__item"><a class="nav-menu__link" href="#">Services</a></li>
+			<li class="nav-menu__item"><a class="nav-menu__link" href="#">News</a></li>
+			<li class="nav-menu__item"><a class="nav-menu__link" href="#">Shop</a></li>
+		</ul>
+		<form class="search-form" action="">
+			<input class="search-form__submit" type="submit" value="">
+			<input class="search-form__input" type="search" placeholder="Search...">
+		</form>
+	</nav>
+	<div class="carousel">
+		<div id="owl" class="wrapper">
+	    	<div class="item"><img src="img/carousel/photo3.jpg" alt="Owl Image"></div>
+	    	<div class="item"><img src="img/carousel/photo2.jpg" alt="Owl Image"></div>
+		</div>
+	</div>
+	<article class="wrapper clearfix"></article>
+	<section class="services">
+			<h2 class="services__header wrapper">Our Services</h2>
+			<ul class="services__list wrapper clearfix">
+				<li class="services__list-item">
+					<a class="services__link" href="">
+						<img class="services__img" src="img/services/1.jpg" alt="">
+					</a>
+					<a class="services__link-desc" href="">Schedule Services</a>
+				</li>
+				<li class="services__list-item">
+					<a class="services__link" href="">
+						<img class="services__img" src="img/services/2.jpg" alt="">
+					</a>
+					<a class="services__link-desc" href="">Preventive Maintence</a>
+					</li>
+				<li class="services__list-item">
+					<a class="services__link" href="">
+						<img class="services__img" src="img/services/3.jpg" alt="">
+					</a>
+					<a class="services__link-desc" href="">Tire & Wheel Services</a>
+				</li>
+				<li class="services__list-item">
+					<a class="services__link" href="">
+						<img class="services__img" src="img/services/4.jpg" alt="">
+					</a>
+					<a class="services__link-desc" href="">Repair Services</a>
+				</li>
+			</ul>
+	</section>
+	<div class="miscellaneous">
+		<div class="wrapper">
+			<section class="news clearfix">
+				<header class="news__header">Latest News</header>
+			</section>
+			<section class="banner">
+				<header class="news__header">Banners Place</header>
+			</section>
+		</div>
+	</div>
+	<div class="partners wrapper"></div>
+	<div class="useful-links">
+		<div class="wrapper">
+		</div>
+	</div>
+	<footer class="contacts">
+		<div class="wrapper">
+			<img src="img/contacts/location.png" alt="">
+			<span class="contacts__text">BuildHomeLtd.  Street Name 123   23 45 Cityname</span>
+			<img src="img/contacts/phone.png" alt="">
+			<span class="contacts__text"><a class="contacts__link" href="tel://+123 900 123 456">+123 900 123 456</a></span>
+			<img src="img/contacts/mail.png" alt="">
+			<span class="contacts__text"><a class="contacts__link" href="mailto://info@buildhome.web">info@buildhome.web</a></span>
+		</div>
+	</footer>
+	<script type="text/html" id="advantage">
+		<section class="advantage">
+			<span class="advantage__number"><%= number %></span>
+			<img class="advantage__image clearfix" src="img/advantage/<%= number %>.png" alt="<%= number %>.png">
+			<h3 class="advantage__header"><%= header %></h3>
+			<p class="advantage__description"><%= text %></p>
+			<a class="advantage__link" href="">Read More</a>
+		</section>
+	</script>
+	<script type="text/html" id="news-item">
+			<div class="news__item clearfix">
+				<div class="news__item-img-wrapper">
+					<img class="news__item-img" src=<%= image %> alt=<%= image %>>
+				</div>
+				<div class="news__item-date">
+					<div class="news__item-date-field"><%= dateMonth %></div>
+					<div class="news__item-date-field_yellow"><%= dateNumber %></div>
+				</div>
+				<section class="news__item-body">
+					<header class="news__item-body-header"><strong><%= header %></strong></header>
+					<span class="news__item-body-params">by 
+						<a href="" class="news__item-body-params-link"><%= author %></a>
+						Comments (<a href="" class="news__item-body-params-link"><%= commentsCount %></a>)
+					</span>
+					<p class="news__item-body-text"><%= text %></p>
+				</section>
+			</div>
+	</script>
+	<script type="text/html" id="banner-item">
+		<div class="banner__item clearfix">
+			<div class="banner__plus"></div>
+			<div class="banner__body">
+				<div class="banner__desc"><%= desc %></div>
+				<div class="banner__text"><%= text %></div>
+			</div>
+		</div>
+	</script>
+	<script type="text/html" id="partner-item">
+		<img src=<%= url %> alt=<%= url %> class="partners__item">
+	</script>
+	<script type="text/html" id="useful-links-block">
+		<div class="useful-links__block">
+			<header class="useful-links__header"><%= li %></header>
+			<div class="useful-links__list">
+				<a href="" class="useful-links__link"><%= link[0] %></a>
+				<a href="" class="useful-links__link"><%= link[1] %></a>
+				<a href="" class="useful-links__link"><%= link[2] %></a>
+				<a href="" class="useful-links__link"><%= link[3] %></a>
+			</div>
+		</div>
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+	<script src="js/owl.carousel.js"></script>
+	<script src="js/tmpl.js"></script>
+	<script src="js/data/advantage.js"></script>
+	<script src="js/data/news.js"></script>
+	<script src="js/data/banners.js"></script>
+	<script src="js/data/partners.js"></script>
+	<script src="js/data/links.js"></script>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
