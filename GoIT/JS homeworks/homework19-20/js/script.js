@@ -348,10 +348,10 @@ var data = [{
 
 (function() {
 	var allFriendsInObjects = _.map(data, 'friends');
-	var allFriendsInObjectsName = _.join(allFriendsInObjects, ',');
-	var result = [];
-	_.forEach(allFriendsInObjectsName, function(i){
-		result.push( _.map(allFriendsInObjectsName[i], 'name') );
-	});
-	console.log(result);
+	allFriendsInObjects = _.flatten(allFriendsInObjects, ',');
+	allFriendsInObjects = _.map(allFriendsInObjects, 'name');
+	allFriendsInObjects = _.union(allFriendsInObjects, 'name');
+	
+	console.log(allFriendsInObjects);
 })();
+
