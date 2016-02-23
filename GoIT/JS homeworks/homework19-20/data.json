@@ -1,45 +1,5 @@
-(function($){
-	$(document).ready(function() {
-		$("#owl").owlCarousel({
-			items: 1
-		});
-	});
-
-	function templating(arr, parentElement, template){
-		for (var i = 0; i < arr.length; i++) {
-			$(parentElement).append( tmpl( $(template).html(), arr[i] ) );
-		}
-	};
-
-	var index;
-	function bannerClickHandler() {
-		if ( $('.banner__item').index(this) !== index) {
-			console.log(index);
-			$('.banner__text').hide();
-			$('.banner__desc').removeClass( 'banner__active' );
-			$('.banner__plus').removeClass( 'banner__active' );
-		}
-		index = $('.banner__item').index(this);
-			console.log(index);
-		
-		$('.banner__text').eq(index).toggle();
-		$('.banner__plus').eq(index).addClass( 'banner__active' );
-		$('.banner__desc').eq(index).addClass( 'banner__active' );
-
-	};
-
-	templating(advantage, 'article.wrapper', '#advantage')
-	templating(news, 'section.news', '#news-item');
-	templating(banners, 'section.banner', '#banner-item');
-	templating(partners, 'div.partners', '#partner-item');
-	templating(links, '.useful-links div.wrapper', '#useful-links-block');
-
-	$('.banner__item').on('click',  bannerClickHandler)
-
-
-})(jQuery);
-
-var data = [{
+[
+  {
     "guid": "701b29c3-b35d-4cf1-a5f6-8b12b29a5081",
     "index": 0,
     "favoriteFruit": "banana",
@@ -313,45 +273,3 @@ var data = [{
     "_id": "56bdc3396fdbaec5ee4ca929"
   }
 ]
-
-// Step 1
-	var newData = _.map(data, 'skills');
-	newData = _.flatten(newData);
-	newData = _.union(newData);
-	newData = _.orderBy(newData);
-	console.log(newData);
-
-// Step 2
-
-(function() {
-	var namesAndFriends = [];
-
-	function Friend (name, friends) {
-		this.friends = friends;
-		this.name = name;
-	}
-
-	_.forEach(data, function(value){
-		var friends = _.size(value.friends);
-		var name = value.name;
-		var friendData = new Friend(name, friends);
-		namesAndFriends.push(friendData);
-	});
-
-	var result = _.orderBy(namesAndFriends, ['friends'], ['asc']);
-	var orderedFriends = _.map(result, 'name');
-
-	console.log(orderedFriends);
-})();
-
-// Step 3
-
-(function() {
-	var allFriendsInObjects = _.map(data, 'friends');
-	var allFriendsInObjectsName = _.join(allFriendsInObjects, ',');
-	var result = [];
-	_.forEach(allFriendsInObjectsName, function(i){
-		result.push( _.map(allFriendsInObjectsName[i], 'name') );
-	});
-	console.log(result);
-})();
