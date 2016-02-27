@@ -37,6 +37,7 @@ header {
 	height: 437px;
 	width: 100%;
 	padding-top: 160px;
+	background-size: 100% auto;
 }
 
 header h1 {
