@@ -2,9 +2,8 @@
 @import 'font';
 
 .questions-answers {
-	background: url(../img/main-background.png);
+	background: url(../img/main-background.png) no-repeat;
 	background-size: 100% 1095px;
-	height: 1094px;
 	width: 100%;
 	padding-top: 155px;
 }
@@ -16,14 +15,12 @@
 
 .questions-answers__part1 {
 	width: 100%;
-	height: 1095px;
+	height: 940px;
 }
 
 .questions-answers__part2 {
 	width: 100%;
-	height: 1095px;
 	border: 1px solid #fff;
-	overflow: hidden;
 }
 
 .questions-answers__header p:first-child {
@@ -120,6 +117,119 @@
 	background-position: -60px 2px;
 }
 
+.carousel {
+	width: 100%;
+	margin-bottom: 100px;
+}
+
 .carousel__header {
 	@include font('Playfair Display Italic', 33px, #262626, none);
+	margin: 50px 0 0 180px;
+}
+
+.carousel__body {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.carousel__item {
+	text-align: center;
+	@include font('Museo Sans Cyrillic 100', 12px, #000, none);
+}
+
+.carousel__item p {
+	margin-bottom: 10px;
+}
+
+.carousel__item p:nth-child(2) {
+	@include font('Museo Sans Cyrillic 900', 12px, #000, none);
+}
+
+footer {
+	width: 100%;
+	border-top: 1px solid #e5e5e5;
+}
+
+.feedback,
+.news {
+	width: 28%;
+	display: inline-block;
+	text-align: center;
+	margin: 50px 30px 0;
+	vertical-align: top;
+}
+
+.border {
+	border: 1px solid #e5e5e5;
+	display: inline-block;
+	height: 274px;
+	margin-top: 115px;
+}
+
+.feedback__header {
+	@include font('Museo Sans Cyrillic 900', 13px, #262626, uppercase);
+	margin-top: 100px;
+}
+
+.feedback__text {
+	@include font('Museo Sans Cyrillic 100', 12px, #262626, none);
+	margin: 5px 0 5px;
+}
+
+.feedback__copyright {
+	@include font('Museo Sans Cyrillic 100', 13px, #9f9f9f, none);
+	text-align: left;
+	margin: 225px 0 10px;
+}
+
+.news__header {
+	@include font('Playfair Display Italic', 33px, #262626, none);
+	margin-top: 60px;
+}
+
+.news__description {
+	@include font('Museo Sans Cyrillic 300', 14px, #262626, none);
+	margin-top: 40px;
+}
+
+.news__image {
+	float: right;
+	margin-left: 39px;
+}
+
+.subscribe {
+	width: 317px;
+	height: 63px;
+	margin: 62px auto;
+}
+
+.subscribe__form {
+	height: 100%;
+	width: 100%;
+	font-size: 0;
+}
+
+.subscribe__input {
+	@include font('Museo Sans Cyrillic 100', 12px, #606060, none);
+	height: 100%;
+	width: 214px;
+	border: 1px solid #d7d7d7;
+	text-align: center;
+}
+
+.subscribe__button {
+	@include font('Museo Sans Cyrillic 700', 12px, #302f2f, uppercase);
+	height: 100%;
+	width: 98px;
+	background-color: #e8dadc;
+}
+
+.contacts {
+	margin-top: 115px;
+}
+
+.contacts__item {
+	@include font('Museo Sans Cyrillic 100', 14px, #606060, none);
+	text-decoration: none;
+	margin: 0 20px 20px 0;
 }

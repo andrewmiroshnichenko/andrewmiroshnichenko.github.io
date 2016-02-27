@@ -53,9 +53,8 @@
   font-style: normal; }
 
 .questions-answers {
-  background: url(../img/main-background.png);
+  background: url(../img/main-background.png) no-repeat;
   background-size: 100% 1095px;
-  height: 1094px;
   width: 100%;
   padding-top: 155px; }
 
@@ -65,11 +64,10 @@
 
 .questions-answers__part1 {
   width: 100%;
-  height: 1095px; }
+  height: 940px; }
 
 .questions-answers__part2 {
   width: 100%;
-  height: 1095px;
   border: 1px solid #fff; }
 
 .questions-answers__header p:first-child {
@@ -156,3 +154,132 @@
 
 .social__link_gp {
   background-position: -60px 2px; }
+
+.carousel {
+  width: 100%;
+  margin-bottom: 100px; }
+
+.carousel__header {
+  font-family: "Playfair Display Italic";
+  font-size: 33px;
+  color: #262626;
+  text-transform: none;
+  margin: 50px 0 0 180px; }
+
+.carousel__body {
+  width: 50%;
+  margin: 0 auto; }
+
+.carousel__item {
+  text-align: center;
+  font-family: "Museo Sans Cyrillic 100";
+  font-size: 12px;
+  color: #000;
+  text-transform: none; }
+
+.carousel__item p {
+  margin-bottom: 10px; }
+
+.carousel__item p:nth-child(2) {
+  font-family: "Museo Sans Cyrillic 900";
+  font-size: 12px;
+  color: #000;
+  text-transform: none; }
+
+footer {
+  width: 100%;
+  border-top: 1px solid #e5e5e5; }
+
+.feedback,
+.news {
+  width: 28%;
+  display: inline-block;
+  text-align: center;
+  margin: 50px 30px 0;
+  vertical-align: top; }
+
+.border {
+  border: 1px solid #e5e5e5;
+  display: inline-block;
+  height: 274px;
+  margin-top: 115px; }
+
+.feedback__header {
+  font-family: "Museo Sans Cyrillic 900";
+  font-size: 13px;
+  color: #262626;
+  text-transform: uppercase;
+  margin-top: 100px; }
+
+.feedback__text {
+  font-family: "Museo Sans Cyrillic 100";
+  font-size: 12px;
+  color: #262626;
+  text-transform: none;
+  margin: 5px 0 5px; }
+
+.feedback__copyright {
+  font-family: "Museo Sans Cyrillic 100";
+  font-size: 13px;
+  color: #9f9f9f;
+  text-transform: none;
+  text-align: left;
+  margin: 225px 0 10px; }
+
+.news__header {
+  font-family: "Playfair Display Italic";
+  font-size: 33px;
+  color: #262626;
+  text-transform: none;
+  margin-top: 60px; }
+
+.news__description {
+  font-family: "Museo Sans Cyrillic 300";
+  font-size: 14px;
+  color: #262626;
+  text-transform: none;
+  margin-top: 40px; }
+
+.news__image {
+  float: right;
+  margin-left: 39px; }
+
+.subscribe {
+  width: 317px;
+  height: 63px;
+  margin: 62px auto; }
+
+.subscribe__form {
+  height: 100%;
+  width: 100%;
+  font-size: 0; }
+
+.subscribe__input {
+  font-family: "Museo Sans Cyrillic 100";
+  font-size: 12px;
+  color: #606060;
+  text-transform: none;
+  height: 100%;
+  width: 214px;
+  border: 1px solid #d7d7d7;
+  text-align: center; }
+
+.subscribe__button {
+  font-family: "Museo Sans Cyrillic 700";
+  font-size: 12px;
+  color: #302f2f;
+  text-transform: uppercase;
+  height: 100%;
+  width: 98px;
+  background-color: #e8dadc; }
+
+.contacts {
+  margin-top: 115px; }
+
+.contacts__item {
+  font-family: "Museo Sans Cyrillic 100";
+  font-size: 14px;
+  color: #606060;
+  text-transform: none;
+  text-decoration: none;
+  margin: 0 20px 20px 0; }
