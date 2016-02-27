@@ -23,6 +23,7 @@
 	width: 100%;
 	height: 1095px;
 	border: 1px solid #fff;
+	overflow: hidden;
 }
 
 .questions-answers__header p:first-child {
@@ -117,4 +118,8 @@
 
 .social__link_gp {
 	background-position: -60px 2px;
+}
+
+.carousel__header {
+	@include font('Playfair Display Italic', 33px, #262626, none);
 }
