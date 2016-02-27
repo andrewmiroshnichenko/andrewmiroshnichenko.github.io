@@ -1,0 +1,18 @@
+.clearfix:after {
+	content: '';
+	clear: both;
+	display: block;
+}
+
+@mixin font($family, $size, $color, $transform) {
+	font-family: $family;
+	font-size: $size;
+	color: $color;
+	text-transform: $transform;
+}
+
+@mixin horizontal($margin, $width) {
+	float: left;
+	margin-right: $margin;
+	width: $width;
+}
