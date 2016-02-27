@@ -1,0 +1,120 @@
+@import 'mixins';
+@import 'font';
+
+.questions-answers {
+	background: url(../img/main-background.png);
+	background-size: 100% 1095px;
+	height: 1094px;
+	width: 100%;
+	padding-top: 155px;
+}
+
+.questions-answers__header {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.questions-answers__part1 {
+	width: 100%;
+	height: 1095px;
+}
+
+.questions-answers__part2 {
+	width: 100%;
+	height: 1095px;
+	border: 1px solid #fff;
+}
+
+.questions-answers__header p:first-child {
+	@include font('Museo Sans Cyrillic 300', 22px, #000, none);
+}
+
+.questions-answers__header p:last-child {
+	@include font('Code Pro Light', 45px, #000, none);
+}
+
+.questions-answers__image {
+	float: left;
+	margin-right: 59px;
+}
+
+.questions-answers__image_mar-72 {
+	margin: 72px 59px 0 152px;
+}
+
+.questions-answers__image_mar-129 {
+	margin-top: 129px;
+}
+
+.questions-answers__image_mar-80 {
+	margin: 80px 59px 0 235px;
+}
+
+.questions-answers-item {
+	width: 85%;
+}
+
+.questions-answers-item_mar-110 {
+	margin-top: 110px;
+}
+
+.questions-answers-item_mar-156 {
+	margin-top: 156px;
+}
+
+.questions-answers-item_mar-40 {
+	margin-top: 40px;
+}
+
+.questions-answers-item_mar-115 {
+	margin-top: 115px;
+}
+
+.questions-answers-item_mar-140 {
+	padding-left: 660px;
+	margin-top: 140px;
+	text-align: left;
+}
+
+.questions-answers-item_mar-270 {
+	margin-top: 270px;
+}
+
+.questions-answers-item_mar-36 {
+	margin-top: 36px;
+}
+
+.questions-answers-item__question {
+	@include font('Museo Sans Cyrillic 500', 15px, #262626, none);
+	margin-bottom: 20px;
+}
+
+.questions-answers-item__answer {
+	@include font('Museo Sans Cyrillic 100', 15px, #262626, none);
+}
+
+.social {
+	float: left;
+	width: 200px;
+	height: 20px;
+	margin-top: 75px;
+}
+
+.social__link {
+	display: inline-block;
+	background: url(../img/social.png) no-repeat;
+	width: 25px;
+	height: 100%;
+}
+
+.social__link_fb {
+	background-position: 10px 2px;
+}
+
+.social__link_vk {
+	background-position: -25px 2px;
+}
+
+.social__link_gp {
+	background-position: -60px 2px;
+}
