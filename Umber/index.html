@@ -7,9 +7,6 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
-	<script src="js/owl.carousel.js"></script>
-	<script src="js/script.js"></script>
 	<main class="questions-answers">
 		<div class="questions-answers__part1">
 			<header class="questions-answers__header">
@@ -116,8 +113,8 @@
 			<header class="feedback__header">рассылка</header>
 			<p class="feedback__text">Будьте в курсе последних тенденций и главных новинок, вдохновляйтесь и экспериментируйте с образом вместе с POSH.</p>
 			<div class="subscribe">
-				<form class="subscribe__form" action="">
-					<input class="subscribe__input" type="email" placeholder="Ваш Email">
+				<form class="subscribe__form" action="POST">
+					<input class="subscribe__input" type="email" name="email" placeholder="Ваш Email">
 					<button class="subscribe__button" type="submit">окей</button>
 				</form>
 			</div>
@@ -129,6 +126,12 @@
 				<a href="" class="contacts__item">Instagram</a>
 			</div>
 		</div>
+		<div class="popup">
+			<span class="popup__text">Тест</span>
+		</div>
 	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+	<script src="js/owl.carousel.js"></script>
+	<script src="js/script.js"></script>
 </body>
 </html>

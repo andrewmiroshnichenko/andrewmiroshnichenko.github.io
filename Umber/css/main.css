@@ -438,7 +438,7 @@ footer {
   color: #9f9f9f;
   text-transform: none;
   text-align: left;
-  margin: 225px 0 10px;
+  margin: 225px 0 30px;
 }
 
 .news__header {
@@ -505,5 +505,26 @@ footer {
   color: #606060;
   text-transform: none;
   text-decoration: none;
-  margin: 0 20px 20px 0;
+  margin: 0 20px 30px 0;
+}
+
+.popup {
+  display: none;
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  top: 40%;
+  right: 40%;
+  border: 1px solid gray;
+  box-shadow: 0 0 2px 1px gray inset;
+  border-radius: 50%;
+  text-align: center;
+  background-color: pink;
+}
+
+.popup:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
