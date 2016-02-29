@@ -1,5 +1,15 @@
 (function($){
 
+	$(document).ready(function() {
+		$("#owl").owlCarousel({
+			items: 3,
+			itemsDesktop: [1000,2],
+			itemsDesktopSmall: [800,2],
+			itemsTablet: [600,1],
+			itemsMobile: true
+		});
+	});
+
 	var user;
 	$('.subscribe__form').on('submit', function(e) {
 	user = $('.subscribe__input').val();
@@ -14,12 +24,6 @@
 
 	$('.popup').on('click', function() {
 		$('.popup').hide();
-	});
-
-	$(document).ready(function() {
-		$("#owl").owlCarousel({
-			items: 2
-		});
 	});
 
 })(jQuery);

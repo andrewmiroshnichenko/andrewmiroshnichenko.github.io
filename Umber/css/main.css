@@ -242,16 +242,6 @@
   text-align: center;
 }
 
-.questions-answers__part1 {
-  width: 100%;
-  height: 940px;
-}
-
-.questions-answers__part2 {
-  width: 100%;
-  border: 1px solid #fff;
-}
-
 .questions-answers__header p:first-child {
   font-family: "Museo Sans Cyrillic 300";
   font-size: 22px;
@@ -266,55 +256,29 @@
   text-transform: none;
 }
 
-.questions-answers__image {
+.questions-answers-part1 {
+  width: 100%;
+  height: 940px;
+}
+
+.questions-answers-part2 {
+  width: 100%;
+}
+
+.questions-answers-part1__image {
   float: left;
-  margin-right: 59px;
 }
 
-.questions-answers__image_mar-72 {
-  margin: 72px 59px 0 152px;
-}
-
-.questions-answers__image_mar-129 {
-  margin-top: 129px;
-}
-
-.questions-answers__image_mar-80 {
-  margin: 80px 59px 0 235px;
+.questions-answers-part2__image {
+  padding: 10px;
+  float: left;
 }
 
 .questions-answers-item {
-  width: 85%;
-}
-
-.questions-answers-item_mar-110 {
-  margin-top: 110px;
-}
-
-.questions-answers-item_mar-156 {
-  margin-top: 156px;
-}
-
-.questions-answers-item_mar-40 {
-  margin-top: 40px;
-}
-
-.questions-answers-item_mar-115 {
-  margin-top: 115px;
-}
-
-.questions-answers-item_mar-140 {
-  padding-left: 660px;
-  margin-top: 140px;
-  text-align: left;
-}
-
-.questions-answers-item_mar-270 {
-  margin-top: 270px;
-}
-
-.questions-answers-item_mar-36 {
-  margin-top: 36px;
+  width: 45%;
+  padding: 50px;
+  display: inline-block;
+  float: left;
 }
 
 .questions-answers-item__question {
@@ -334,9 +298,9 @@
 
 .social {
   float: left;
-  width: 200px;
+  width: 45%;
   height: 20px;
-  margin-top: 75px;
+  padding-left: 50px;
 }
 
 .social__link {
@@ -372,7 +336,7 @@
 }
 
 .carousel__body {
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -398,15 +362,35 @@
 footer {
   width: 100%;
   border-top: 1px solid #e5e5e5;
+  height: 480px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex: column nowrap;
+  justify-content: flex-end;
 }
 
 .feedback,
 .news {
-  width: 28%;
+  width: 100%;
   display: inline-block;
   text-align: center;
-  margin: 50px 30px 0;
+  padding: 50px 30px 0;
   vertical-align: top;
+}
+
+.news {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  height: 100%;
 }
 
 .border {
@@ -447,6 +431,8 @@ footer {
   color: #262626;
   text-transform: none;
   margin-top: 60px;
+  /*align-self: flex-start;*/
+  width: 160px;
 }
 
 .news__description {
@@ -454,12 +440,15 @@ footer {
   font-size: 14px;
   color: #262626;
   text-transform: none;
+  width: 160px;
   margin-top: 40px;
+  /*align-self: flex-start;*/
 }
 
 .news__image {
   float: right;
   margin-left: 39px;
+  /*align-self: flex-start;*/
 }
 
 .subscribe {
