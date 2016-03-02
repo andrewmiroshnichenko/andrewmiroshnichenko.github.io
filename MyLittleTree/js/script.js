@@ -15,25 +15,58 @@ _.forEach(data, function(object){
 
 level0.item = levelOne;
 
-_.forEach(levelOne, function(levelOneObject){
-	var levelTwo = [];
-	var id = 1;
-			// console.log(levelOneObject.name);
-	_.forEach(data, function(dataObject){
-			// console.log(dataObject.parents);
-		if (levelOneObject.name == dataObject.parents) {
-			var stage = {};
-			stage.id = levelOneObject.id + '' + id++;
-			stage.text = dataObject.title;
-			levelTwo.push(stage);
-			// console.log(levelTwo);
-		};
+
+	_.forEach(levelOne, function(parentLevelObject){
+		var nextLevel = [];
+		var id = 1;
+		_.forEach(data, function(dataObject){
+			if (parentLevelObject.name == dataObject.parents) {
+				var stage = {};
+				stage.id = parentLevelObject.id + '' + id++;
+				stage.text = dataObject.title;
+				stage.name = dataObject.alias;
+				nextLevel.push(stage);
+				// console.log(nextLevel);
+			};
+		});
+		parentLevelObject.item = nextLevel;
 	});
-	levelOneObject.item = levelTwo;
-	// console.log(levelOneObject);
-	// console.log(level0.item.levelOneObject);
-});
 
 
-// console.log(level0.item);
-// console.log(level0);
+function buildTree(parentLevelArray) {
+	_.forEach(parentLevelArray, function(parentLevelObject){
+		var nextLevel = [];
+		var id = 1;
+		_.forEach(data, function(dataObject){
+			if (parentLevelObject.name == dataObject.parents) {
+				var stage = {};
+				stage.id = parentLevelObject.id + '' + id++;
+				stage.text = dataObject.title;
+				stage.name = dataObject.alias;
+				nextLevel.push(stage);
+				// console.log(nextLevel);
+			};
+		});
+
+		if (nextLevel.length) {
+			parentLevelObject.item = nextLevel;
+		}
+		// console.log(parentLevelObject.item);
+
+	});
+};
+
+for (var i = 0; i < level0.item.length; i++) {
+	// console.log(i);
+	buildTree(level0.item[i].item);
+	for (var j = 0; j < level0.item[i].item.length; j++) {
+		if (level0.item[i].item[j].item != undefined){
+			buildTree(level0.item[i].item[j].item);
+			console.log(level0.item[i].item[j].name);
+		}
+	}
+}
+	// console.log(level0.item[0].item);
+	// console.log(level0.item[0].item[23].item);
+	// console.log(level0.item[0].item[23].name);
+
