@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MyLittleTree</title>
+	<link rel="stylesheet" href="css/dhtmlxtree.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.min.js"></script>
+	<script src="js/categories.js"></script>
+	<script src="js/dhtmlxtree.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<div id="treeBox" class="treeBox"></div>
+	<script>
+		var myTree;
+		function doOnLoad(){
+			myTree = new dhtmlXTreeObject("treeBox","100%","100%",0);
+			myTree.setImagePath("imgs/dhxtree_skyblue/");
+			myTree.enableSmartXMLParsing(true);
+			myTree.enableCheckBoxes(1);
+			// myTree.load("js/test.json", "json");
+			myTree.parse(level0, "json");
+		};
+		doOnLoad();
+	</script>
+</body>
+</html>
