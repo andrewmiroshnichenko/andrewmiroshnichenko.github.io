@@ -11,6 +11,7 @@
 	<button class="button">I make my decision</button>
 	<div class="popup"></div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
 	<script src="js/categories.js"></script>
 	<script src="js/dhtmlxtree.js"></script>
 	<script src="js/script.js"></script>
@@ -24,7 +25,7 @@
 			myTree.enableThreeStateCheckboxes(true);
 			myTree.parse(level0, "json");
 			myTree.attachEvent('onCheck', function(id, state){
-				formResults(id, state);
+				// formResults(id, state);
 			});
 		};
 		doOnLoad();

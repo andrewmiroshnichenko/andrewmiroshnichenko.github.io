@@ -1,6 +1,7 @@
 var level0 = {};
 var flatObjects = [];
 var results = [];
+var category;
 
 (function(){
 // Preparing JSON for tree generation
@@ -60,30 +61,41 @@ var results = [];
 	}
 })();
 
-function formResults(id, state) {
-		if (id.length === undefined) {
-			var checkedObject = _.find(flatObjects, { 'id': id });
-		} else {
-			var checkedObjectId = id.split('_');
-			var checkedObject = _.findLast(flatObjects, { 'id': checkedObjectId[0] });
+function findChecked (category) {
+	_.forEach(data, function(dataObject) {
+		if (dataObject.title == category) {
+			results.push(dataObject.alias);
 		}
-	
-		if(state) {
-			results.push(checkedObject.text);
-		} else {
-			console.log(checkedObject.text);
-			_.pull(results, checkedObject.text);
-		}
-};
+	})
+}
 
-(function saveSelection() {
-	var button = document.querySelector('.button');
-
-	button.onclick = function(e) {
+$('button').on('click', function(e) {
+	results = [];
 	e.preventDefault();
-	document.querySelector('.popup').innerHTML = '';
-	document.querySelector('.popup').innerHTML = results;
+	var imageState = $('.dhx_bg_img_fix').css('background-image');
+	$('.dhx_bg_img_fix').each(function() {
+
+		if ( $(this).css('background-image') === 'url("file:///F:/Frontend/study/andrewmiroshnichenko.github.io/MyLittleTree/imgs/dhxtree_skyblue/iconCheckAll.gif")'){
+			$(this).parent().siblings().each(function(){
+				if ($(this).children().html() !== '&nbsp;') {
+					category = $(this).children().html();
+					category = category.replace(/&amp;/g, '&');
+					findChecked(category);
+					console.log(category);
+				}
+			})
+		}
+	});
 	console.log(results);
-      document.querySelector('.popup').style.display = 'block';
-    };
-})();
+});
+
+// (function saveSelection() {
+// 	var button = document.querySelector('.button');
+
+// 	button.onclick = function(e) {
+// 	e.preventDefault();
+// 	document.querySelector('.popup').innerHTML = '';
+// 	document.querySelector('.popup').innerHTML = results;
+//     document.querySelector('.popup').style.display = 'block';
+//     };
+// })();

@@ -11,9 +11,11 @@ button {
 
 .popup {
 	position: fixed;
+	white-space: pre-line;
 	top: 50%;
 	left: 40%;
-	width: auto;
-	height: 100px;
+	max-width: 100px;
+	overflow: hidden;
+	height: auto;
 	display: none;
 }
