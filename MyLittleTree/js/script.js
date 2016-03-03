@@ -67,11 +67,11 @@ function findChecked (category) {
 $('button').on('click', function(e) {
 	results = [];
 	e.preventDefault();
-	var imageState = $('.dhx_bg_img_fix').css('background-image');
-	console.log(imageState);
+	// var imageState = $('.dhx_bg_img_fix').css('background-image');
+	// console.log(imageState);
 	$('.dhx_bg_img_fix').each(function() {
 
-		if ( $(this).css('background-image') === 'url("file:///F:/Frontend/study/andrewmiroshnichenko.github.io/MyLittleTree/imgs/dhxtree_skyblue/iconCheckAll.gif")'){
+		if ( $(this).css('background-image') === 'url("http://andrewmiroshnichenko.github.io/MyLittleTree/imgs/dhxtree_skyblue/iconCheckAll.gif")'){
 			$(this).parent().siblings().each(function(){
 				if ($(this).children().html() !== '&nbsp;') {
 					category = $(this).children().html();
