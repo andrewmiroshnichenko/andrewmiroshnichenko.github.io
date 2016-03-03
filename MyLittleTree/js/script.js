@@ -18,8 +18,6 @@ var category;
 			stage.name = object.alias;
 			levelOne.push(stage);
 			flatObjects.push(stage);
-			// console.log(stage.id);
-
 		};
 	});
 
@@ -37,15 +35,12 @@ var category;
 					stage.name = dataObject.alias;
 					nextLevel.push(stage);
 					flatObjects.push(stage);
- 		   			// console.log(stage.id);
-
 				};
 			});
 
 			if (nextLevel.length) {
 				parentLevelObject.item = nextLevel;
 			}
-
 		});
 	};
 
@@ -88,14 +83,3 @@ $('button').on('click', function(e) {
 	});
 	console.log(results);
 });
-
-// (function saveSelection() {
-// 	var button = document.querySelector('.button');
-
-// 	button.onclick = function(e) {
-// 	e.preventDefault();
-// 	document.querySelector('.popup').innerHTML = '';
-// 	document.querySelector('.popup').innerHTML = results;
-//     document.querySelector('.popup').style.display = 'block';
-//     };
-// })();
