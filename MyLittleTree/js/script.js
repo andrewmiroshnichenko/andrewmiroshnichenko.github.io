@@ -68,6 +68,7 @@ $('button').on('click', function(e) {
 	results = [];
 	e.preventDefault();
 	var imageState = $('.dhx_bg_img_fix').css('background-image');
+	console.log(imageState);
 	$('.dhx_bg_img_fix').each(function() {
 
 		if ( $(this).css('background-image') === 'url("file:///F:/Frontend/study/andrewmiroshnichenko.github.io/MyLittleTree/imgs/dhxtree_skyblue/iconCheckAll.gif")'){
