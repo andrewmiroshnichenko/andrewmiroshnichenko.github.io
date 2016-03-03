@@ -1,4 +1,19 @@
 .treeBox {
-	width: 200px;
+	width: 400px;
 	height: 400px;
+	float: left;
+}
+
+button {
+	width: 200px;
+	margin: 0 auto;
+}
+
+.popup {
+	position: fixed;
+	top: 50%;
+	left: 40%;
+	width: auto;
+	height: 100px;
+	display: none;
 }

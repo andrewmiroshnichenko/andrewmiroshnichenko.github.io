@@ -5,13 +5,15 @@
 	<title>MyLittleTree</title>
 	<link rel="stylesheet" href="css/dhtmlxtree.css">
 	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div id="treeBox" class="treeBox"></div>
+	<button class="button">I make my decision</button>
+	<div class="popup"></div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.min.js"></script>
 	<script src="js/categories.js"></script>
 	<script src="js/dhtmlxtree.js"></script>
 	<script src="js/script.js"></script>
-</head>
-<body>
-	<div id="treeBox" class="treeBox"></div>
 	<script>
 		var myTree;
 		function doOnLoad(){
@@ -19,8 +21,11 @@
 			myTree.setImagePath("imgs/dhxtree_skyblue/");
 			myTree.enableSmartXMLParsing(true);
 			myTree.enableCheckBoxes(1);
-			// myTree.load("js/test.json", "json");
+			myTree.enableThreeStateCheckboxes(true);
 			myTree.parse(level0, "json");
+			myTree.attachEvent('onCheck', function(id, state){
+				formResults(id, state);
+			});
 		};
 		doOnLoad();
 	</script>
