@@ -13,6 +13,12 @@
 		<button class="submit" value="Authorize">Login</button>
 	</form>
 	<div id="treeBox" class="treeBox"></div>
+	<div class="previous-categories">
+		<p>Your previuos choices:</p>
+		<ul class="previous-categories__list">
+			
+		</ul>
+	</div>
 	<button class="save-results">I made my decision</button>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.min.js"></script>
@@ -42,15 +48,28 @@
 
 			login = $('input[type="text"]').val();
 			password = $('input[type="password"]').val();
-			$('form').hide();
-			$('.save-results').show();
 
 			// Authorization and loading data about previously checked boxes from PHP side
 
 			$.post('../MyLittleTree/php/users.php', { name: login, password: password }, function(result) { 
+			if (result === '') {
+				alert('Wrong login!');
+				return;
+			}
+			$('form').hide();
+			$('.save-results').show();
+			$('.previous-categories').show();
+
 			var array = result.split('"');
 			array = _.pullAll(array, ['[', ',', ']']);
 			checkedBoxes = new CheckedBoxes(array);
+			console.log(previouslySeletedCategories(array));
+			for (var i = 0; i < previouslySeletedCategories(array).length; i++) {
+				var li = $('<li></li>');
+				li.html(previouslySeletedCategories(array)[i]) ;
+				li.appendTo('.previous-categories__list');
+			}
+
 			doOnLoad();
 		});
 

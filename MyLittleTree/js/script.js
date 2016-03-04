@@ -122,6 +122,20 @@ var login;					 // User's login
 		return checkedBoxesIds;
 	}
 
+	function previouslySeletedCategories(JSON)	{
+		var categories = JSON;
+		var checkedBoxesText = [];
+		_.forEach(flatObjects, function(object) {
+			_.forEach(categories, function(arrayItem) {
+				if (arrayItem === object.name) {
+					checkedBoxesText.push(object.text);
+				}
+			});
+		});
+		return checkedBoxesText;
+	}
+	
+
 	// This searches for checked boxes and populates results
 
 	function findChecked (category) {

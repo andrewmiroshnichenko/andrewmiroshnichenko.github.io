@@ -11,13 +11,13 @@
 	margin: 0 auto;
 }
 
-.popup {
-	position: fixed;
-	white-space: pre-line;
-	top: 50%;
-	left: 40%;
-	max-width: 100px;
-	overflow: hidden;
-	height: auto;
+.previous-categories {
 	display: none;
+	float: left;
+	width: 400px;
+	height: 100px;
+}
+
+.previous-categories__list {
+	display: block;
 }
