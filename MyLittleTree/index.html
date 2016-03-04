@@ -7,9 +7,14 @@
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+	<form method="POST" action="">
+		<input type="text" placeholder="login" name="login">
+		<input type="password" placeholder="password" name="pass">
+		<button class="submit" value="Authorize">Login</button>
+	</form>
 	<div id="treeBox" class="treeBox"></div>
-	<button class="button">I make my decision</button>
-	<div class="popup"></div>
+	<button class="save-results">I made my decision</button>
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
 	<script src="js/categories.js"></script>
@@ -24,8 +29,32 @@
 			myTree.enableCheckBoxes(1);
 			myTree.enableThreeStateCheckboxes(true);
 			myTree.parse(level0, "json");
+			for (var i = 0; i < checkedBoxes.length; i++){
+				myTree.setCheck( checkedBoxes[i], true );
+			}
 		};
-		doOnLoad();
+
+
+		$('.submit').on('click', function(e){
+			e.preventDefault();
+
+			// Page elements manipulation
+
+			login = $('input[type="text"]').val();
+			password = $('input[type="password"]').val();
+			$('form').hide();
+			$('.save-results').show();
+
+			// Authorization and loading data about previously checked boxes from PHP side
+
+			$.post('../MyLittleTree/php/users.php', { name: login, password: password }, function(result) { 
+			var array = result.split('"');
+			array = _.pullAll(array, ['[', ',', ']']);
+			checkedBoxes = new CheckedBoxes(array);
+			doOnLoad();
+		});
+
+	});
 	</script>
 </body>
 </html>
