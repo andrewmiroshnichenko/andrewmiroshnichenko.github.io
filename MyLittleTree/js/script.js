@@ -122,20 +122,6 @@ var login;					 // User's login
 		return checkedBoxesIds;
 	}
 
-	function previouslySeletedCategories(JSON)	{
-		var categories = JSON;
-		var checkedBoxesText = [];
-		_.forEach(flatObjects, function(object) {
-			_.forEach(categories, function(arrayItem) {
-				if (arrayItem === object.name) {
-					checkedBoxesText.push(object.text);
-				}
-			});
-		});
-		return checkedBoxesText;
-	}
-	
-
 	// This searches for checked boxes and populates results
 
 	function findChecked (category) {
@@ -146,3 +132,60 @@ var login;					 // User's login
 		})
 	}
 
+	function previouslySeletedBreadCrumbs(JSON) {
+
+		// Creating breadcrumbs
+
+		var title = '';
+		var totalHtml = '';
+		var imageState = $('.dhx_bg_img_fix').css('background-image');
+		imageState = imageState.split('/');
+		imageState = _.initial(imageState);
+		imageState = _.join(imageState, '/');
+
+		// Searching root
+
+		$('.dhx_bg_img_fix').each(function() {
+			if ( $(this).css('background-image') === imageState + '/iconCheckAll.gif")'){
+				$(this).parent().siblings().each(function(){
+					if ($(this).children().html() !== '&nbsp;') {
+						title = $(this).children().html();
+						title = title.replace(/&amp;/g, '&');
+						totalHtml = ' > ' + '<strong>' + title + '</strong>';
+						_.forEach(data, function(object) {
+							if (object.title === title) {
+								alias = object.parents[0];
+								findBreadCrumb(alias, totalHtml);
+							}
+						})
+						totalHtml = '';
+					}
+				})
+			} 
+		});
+	}
+
+	// Searching parents of the root
+
+	function findBreadCrumb(alias, html) {
+		_.forEach(data, function(object) {
+			if ( (object.alias === alias) && (object.parents[0] !== undefined) ) {
+				
+				totalHtml = ' > ' + object.title + html;
+				alias = object.parents[0];
+				
+				return findBreadCrumb(alias, totalHtml);
+			} else 
+			if ( (object.alias === alias) && (object.parents[0] === undefined) ) {
+				totalHtml = object.title + html;
+				
+				var li = $('<li></li>');
+				li.html(totalHtml);
+				li.appendTo('.previous-categories__list');
+				console.log(totalHtml);
+				
+				return;
+			}
+		})		
+
+	}

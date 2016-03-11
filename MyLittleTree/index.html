@@ -7,17 +7,17 @@
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<form method="POST" action="">
-		<input type="text" placeholder="login" name="login">
-		<input type="password" placeholder="password" name="pass">
-		<button class="submit" value="Authorize">Login</button>
+	<form class="auth-form" method="POST" action="">
+		<input class="auth-form__input" type="text" placeholder="Enter login" name="login">
+		<input  class="auth-form__input"type="password" placeholder="Enter password" name="pass">
+		<button class="submit auth-form__input" value="Authorize">Login</button>
 	</form>
 	<div id="treeBox" class="treeBox"></div>
 	<div class="previous-categories">
-		<p>Your previuos choices:</p>
-		<ul class="previous-categories__list">
+		<p>Your previous choices:</p>
+		<ol class="previous-categories__list">
 			
-		</ul>
+		</ol>
 	</div>
 	<button class="save-results">I made my decision</button>
 
@@ -44,33 +44,33 @@
 		$('.submit').on('click', function(e){
 			e.preventDefault();
 
-			// Page elements manipulation
+
+			// Authorization and loading data about previously checked boxes from PHP side
 
 			login = $('input[type="text"]').val();
 			password = $('input[type="password"]').val();
 
-			// Authorization and loading data about previously checked boxes from PHP side
-
 			$.post('../MyLittleTree/php/users.php', { name: login, password: password }, function(result) { 
 			if (result === '') {
-				alert('Wrong login!');
+				alert('Wrong login or password!');
 				return;
 			}
+			
+			// Page elements manipulation
+
 			$('form').hide();
 			$('.save-results').show();
 			$('.previous-categories').show();
 
+			// Handling results of POST
+
 			var array = result.split('"');
 			array = _.pullAll(array, ['[', ',', ']']);
 			checkedBoxes = new CheckedBoxes(array);
-			console.log(previouslySeletedCategories(array));
-			for (var i = 0; i < previouslySeletedCategories(array).length; i++) {
-				var li = $('<li></li>');
-				li.html(previouslySeletedCategories(array)[i]) ;
-				li.appendTo('.previous-categories__list');
-			}
-
+			
 			doOnLoad();
+			previouslySeletedBreadCrumbs(result);
+
 		});
 
 	});

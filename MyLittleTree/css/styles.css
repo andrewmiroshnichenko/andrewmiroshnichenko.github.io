@@ -1,7 +1,18 @@
+.auth-form__input {
+	display: block;
+	width: 10%;
+	margin: 0 auto;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	border: 1px solid gray;
+	margin-bottom: 5px;
+	text-align: center;
+}
 
 .treeBox {
 	width: 400px;
-	height: 400px;
+	height: 550px;
 	float: left;
 }
 
@@ -21,3 +32,7 @@
 .previous-categories__list {
 	display: block;
 }
+
+/*.previous-categories__item {
+	list-style: none;
+}*/
