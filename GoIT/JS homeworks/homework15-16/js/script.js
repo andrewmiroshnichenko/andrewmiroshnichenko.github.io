@@ -78,11 +78,10 @@ $(function() {
 
 	$('#request').on('submit', function(e) {
 		var myQuery = $('#request input').val();
-		
 		e.preventDefault();
 		$('.search_wrapper dl').remove();
 
-		if (myQueryArray.length) {
+		if (myQuery.length) {
 			$.ajax({
 				url: 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&key=ABQIAAAACKQaiZJrS0bhr9YARgDqUxQBCBLUIYB7IF2WaNrkYqF0tBovNBQFDtM_KNtb3xQxWff2mI5hipc3lg&rsz=large&q=' + myQuery + '&callback=GoogleCallback&context=?',
 				dataType: 'jsonp'
