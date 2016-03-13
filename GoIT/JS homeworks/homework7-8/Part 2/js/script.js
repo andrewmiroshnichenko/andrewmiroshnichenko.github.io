@@ -33,14 +33,49 @@ function createNewElement(elementName, searchName, classList, elementType) {
 	$( 'span' ).eq( 2 ).attr( 'style', 'opacity: 0;' ).text( 'Your home or work address' );
 	$( 'button' ).text( 'Show help' );
 
-// hover handler
-var inputNum = $( 'input' );
-inputNum.hover(function(){
-	var elNum = inputNum.index(this);
+// tips handler
+
+function showOneTip(elNum) {
     $( 'span' ).eq( elNum ).animate({opacity: 1}, 1000);
-}, function(){
-	var elNum = inputNum.index(this);
+};
+
+function hideOneTip(elNum) {
     $( 'span' ).eq( elNum ).animate({opacity: 0}, 1000);
+};
+
+function showAllTips(e) {
+	e.preventDefault();
+	$( 'button' ).text( 'Hide help' );
+	$( 'button' ).off('click');
+	$( 'button' ).on('click', function() {
+		hideAllTips(e);
+	});
+	for (var i = 0; i < 3; i++) {
+		showOneTip(i);
+	};
+};
+
+function hideAllTips(e) {
+	e.preventDefault();
+	$( 'button' ).text( 'Show help' );
+	$( 'button' ).off('click');
+	console.log(1);
+	$( 'button' ).on('click', function() {
+		showAllTips(e);
+	});
+	for (var i = 0; i < 3; i++) {
+		hideOneTip(i);
+	};
+};
+
+var inputNum = $( 'input' );
+inputNum.mouseenter(function(){
+	showOneTip( inputNum.index(this) ) });
+inputNum.mouseleave(function(){ 
+	hideOneTip( inputNum.index(this) )});
+
+$('button').on('click', function(e){
+	showAllTips(e);
 });
 
 // button to Part 1
