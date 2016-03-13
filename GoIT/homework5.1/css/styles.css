@@ -48,6 +48,11 @@ header ul li:nth-child(2) a {
 	border-left: 1px solid #4eabda;
 }
 
+header ul li:first-child {
+	background: linear-gradient(to top, #2e7ac4, #51b1dc);
+	color: #fff;
+}
+
 header ul li img {
 	height: 23px;
 	float: left;
