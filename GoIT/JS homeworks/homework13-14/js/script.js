@@ -152,7 +152,7 @@ $(function(){
 	var prevButton = $('<button>Previous question</button>');
 	var saveAnswerButton = $('<button>Save answer</button>');
 	var nextButton = $('<button>Next question</button>');
-	var copleteTest  = $('<button>Complete test</button>');
+	var completeTest  = $('<button>Complete test</button>');
 	var confirm;
 	var decline;
 
@@ -161,7 +161,7 @@ $(function(){
 	prevButton.appendTo('.btn_wrapper');
 	nextButton.appendTo('.btn_wrapper');
 	saveAnswerButton.appendTo('.btn_wrapper');
-	copleteTest.appendTo('.btn_wrapper');
+	completeTest.appendTo('.btn_wrapper');
 
 	// Question 
 
@@ -197,27 +197,27 @@ $(function(){
 			generateQuestion(++questionIndex);
 		};
 
-		return false;
+		for (var i = 0; i < 6; i++) {
+			console.log($('input').eq(i).prop('checked'));
+		};
+		// return false;
 	};
 
 
 	function saveAnswer(){
 		var answersCount = Object.keys(questions[questionIndex]).length;
 		
-		for (var i = 0; i < answersCount; i++) {
-			if ( $( 'input' ).eq( i ).prop( 'checked' ) ){
+		for (var i = 0; i < answersCount - 1; i++) {
+			console.log($('input').eq(i).prop('checked'));
+			if ( $('input').eq(i).prop('checked') ){
 				questions[questionIndex]['answer' + (i + 1)].check = true;
 			};
 		};
 		showNextQuestion();
-		return false;
+		// return false;
 	};
-	prevButton.on('click', showPrevQuestion);
-	nextButton.on('click', showNextQuestion);
-	saveAnswerButton.on('click', saveAnswer);
 
 	function showResults(){
-		copleteTest.on('click', function() {
 			$('<div class="results"></div>').appendTo('body');
 			$('<h3>Corect answers</h3>').appendTo('.results');
 			for (var j = 0; j < numberOfQuestions; j++) {
@@ -236,7 +236,7 @@ $(function(){
 							data.result = data.result + ' & ' + questions[j]['answer' + i].text;
 							data.correctCount += 1;
 							if (questions[j]['answer' + i].check) {
-								data.yourCount += 1
+								data.yourCount += 1;
 							};
 						}
 					}
@@ -247,13 +247,17 @@ $(function(){
 					$('.results').append( tmpl(html, data) );
 				})();
 			};
-		});
 	};
 
-	generateQuestion(questionIndex);
-	showNextQuestion();
-	showPrevQuestion();
-	saveAnswer();
-	showResults();
+	// function checkForChecked (){
+	// 	console.log($('input').eq(0).prop('checked'));
+	// 	// for (){};
+	// 	// return true;
+	// };
 
+	generateQuestion(questionIndex);
+	prevButton.on('click', showPrevQuestion);
+	nextButton.on('click', showNextQuestion);
+	saveAnswerButton.on('click', saveAnswer);
+	completeTest.on('click', showResults);
 });
