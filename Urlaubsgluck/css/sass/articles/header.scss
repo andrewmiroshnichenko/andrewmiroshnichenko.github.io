@@ -1,0 +1,36 @@
+.header {
+  background: url('../img/320/header.jpg') center center no-repeat;
+  height: 540px;
+  text-align: center;
+  position: relative;
+  padding-top: 19px;
+  background-color: #000;
+}
+
+.header__name {
+  @include font( '', 20px, #ffffff);
+  text-transform: uppercase;
+  margin-top: 120px;
+}
+
+.header__slogan {
+  @include font( '', 30px, #ffffff);
+  text-transform: uppercase;
+  margin-top: 40px;
+}
+
+.header__text {
+  @include font( '', 18px, #ffffff);
+  margin-top: 20px; 
+}
+
+.header__action {
+  @include font( '', 14px, #ffffff);  
+  width: 280px;
+  height: 40px;
+  margin-top: 18px;
+  background-color: #ff4e50;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}

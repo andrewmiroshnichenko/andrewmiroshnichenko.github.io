@@ -1,0 +1,10 @@
+.howitworks {
+	height: 815px;
+	text-align: center;
+	padding-top: 40px;
+}
+
+.howitworks__header {
+	@include font('', 22px, #333333);
+	padding-bottom: 15px;
+}

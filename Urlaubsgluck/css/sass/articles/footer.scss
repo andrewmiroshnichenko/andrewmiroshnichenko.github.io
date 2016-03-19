@@ -1,0 +1,29 @@
+.footer {
+	text-align: center;
+}
+
+.footer__name {
+	@include font( '', 16px, #ff4e50);
+	text-transform: uppercase;
+	padding-top: 16px;
+}
+
+.footer__list-name {
+	@include font( '', 14px, #333333);
+	padding-top: 18px;
+}
+
+.footer__list {
+	padding-top: 6px;
+}
+
+.footer__list-item {
+	@include font( '', 14px, #666666);
+	display: inline-block;
+}
+
+.footer__designed {
+	@include font('', 10px, #cccccc);
+	text-transform: uppercase;
+	padding: 20px 0 10px 0;
+}

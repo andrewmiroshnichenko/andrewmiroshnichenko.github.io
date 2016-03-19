@@ -1,0 +1,19 @@
+/* for account login/signup*/
+.account__login {
+	@include font( '', 14px, #fefefe);
+	text-decoration: none;
+	display: inline-block;
+	width: 90px;
+	height: 36px;
+}
+
+.account__signup {
+	@extend .account__login;
+	border: 2px solid #fff;
+	border-radius: 19px;
+}
+
+.account__login::after,
+.account__signup::after {
+	@include vertical_align;
+}

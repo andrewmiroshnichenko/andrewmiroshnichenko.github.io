@@ -1,0 +1,16 @@
+{
+  "name": "urlaubsgluck",
+  "version": "1.0.0",
+  "description": "responsive mockup with carousels",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Andrew Miroshnichenko",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0",
+    "gulp-watch": "^4.3.5"
+  }
+}

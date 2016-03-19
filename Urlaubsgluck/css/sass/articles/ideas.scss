@@ -1,0 +1,28 @@
+.ideas {
+	text-align: center;
+}
+
+.ideas__header {
+	@include font('', 22px, #333333);
+	padding: 40px 0 15px 0;
+}
+
+.ideas__item {
+	position: relative;
+	height: 130px;
+}
+
+.ideas__item::after {
+	@include vertical-align;
+}
+
+.ideas__image {
+	position: absolute;
+	z-index: -1;
+	left: 3%;
+}
+
+.ideas__text {
+	@include font('', 22px, #ffffff);
+	display: inline-block;
+}

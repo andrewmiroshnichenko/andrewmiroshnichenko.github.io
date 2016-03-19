@@ -1,0 +1,39 @@
+.carousel__item {
+	position: relative;
+	height: 250px;
+	padding: 20px;
+	text-align: left;
+	vertical-align: bottom;
+	display: table-cell;
+}
+
+.carousel__image {
+	position: absolute;
+	z-index: -1;
+	left: 3%;
+	top: 0;
+}
+
+.carousel__step {
+	@include font('', 10px, #ffffff);
+	height: 20px;
+	width: 70px;
+	border-radius: 10px;
+	background-color: #ff4e50;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.carousel__step::after {
+	@include vertical-align;
+}
+
+.carousel__header {
+	@include font('', 24px, #ffffff);
+	padding-top: 20px;
+}
+
+.carousel__text {
+	@include font('', 14px, #cccccc);
+	padding-top: 20px;
+}
