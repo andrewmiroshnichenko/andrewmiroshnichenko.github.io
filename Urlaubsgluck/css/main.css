@@ -46,7 +46,27 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/*@import 'base/_typography';*/
+@font-face {
+  font-family: 'Montserrat Regular';
+  src: url("../fonts/Montserrat Regular/montserrat-regular-webfont.eot");
+  src: url("../fonts/Montserrat Regular/montserrat-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat Regular/montserrat-regular-webfont.woff2") format("woff2"), url("../fonts/Montserrat Regular/montserrat-regular-webfont.woff") format("woff"), url("../fonts/Montserrat Regular/montserrat-regular-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Montserrat Bold';
+  src: url("../fonts/Montserrat Bold/montserrat-bold-webfont.eot");
+  src: url("../fonts/Montserrat Bold/montserrat-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat Bold/montserrat-bold-webfont.woff2") format("woff2"), url("../fonts/Montserrat Bold/montserrat-bold-webfont.woff") format("woff"), url("../fonts/Montserrat Bold/montserrat-bold-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Roboto Light';
+  src: url("../fonts/Roboto Light/roboto-light-webfont.eot");
+  src: url("../fonts/Roboto Light/roboto-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto Light/roboto-light-webfont.woff2") format("woff2"), url("../fonts/Roboto Light/roboto-light-webfont.woff") format("woff"), url("../fonts/Roboto Light/roboto-light-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
 /*Plugins styles import*/
 /* 
  * 	Core Owl Carousel CSS File
@@ -217,27 +237,27 @@ body {
   background-color: #000; }
 
 .header__name {
-  font-family: "";
+  font-family: "Montserrat Bold";
   font-size: 20px;
   color: #ffffff;
   text-transform: uppercase;
   margin-top: 120px; }
 
 .header__slogan {
-  font-family: "";
+  font-family: "Montserrat Bold";
   font-size: 30px;
   color: #ffffff;
   text-transform: uppercase;
   margin-top: 40px; }
 
 .header__text {
-  font-family: "";
+  font-family: "Roboto Light";
   font-size: 18px;
   color: #ffffff;
   margin-top: 20px; }
 
 .header__action {
-  font-family: "";
+  font-family: "Montserrat Bold";
   font-size: 14px;
   color: #ffffff;
   width: 280px;
@@ -254,7 +274,7 @@ body {
   padding-top: 40px; }
 
 .howitworks__header {
-  font-family: "";
+  font-family: "Montserrat Bold";
   font-size: 22px;
   color: #333333;
   padding-bottom: 15px; }
@@ -263,7 +283,7 @@ body {
   text-align: center; }
 
 .partners__header {
-  font-family: "";
+  font-family: "Montserrat Bold";
   font-size: 22px;
   color: #333333;
   padding-bottom: 13px;
@@ -288,19 +308,19 @@ body {
   bottom: 0; }
 
 .partners__name {
-  font-family: "";
+  font-family: "Montserrat Bold";
   font-size: 14px;
   color: #333333;
   padding: 15px 0 20px 0; }
 
 .partners__about {
-  font-family: "";
+  font-family: "Roboto Light";
   font-size: 14px;
   color: #666666;
   padding-bottom: 29px; }
 
 .partners__more {
-  font-family: "";
+  font-family: "Montserrat Bold";
   font-size: 14px;
   color: #ff4e50;
   width: 280px;
@@ -320,51 +340,52 @@ body {
   text-align: center; }
 
 .ideas__header {
-  font-family: "";
+  font-family: "Montserrat Bold";
   font-size: 22px;
   color: #333333;
   padding: 40px 0 15px 0; }
 
-.ideas__item {
-  position: relative;
-  height: 130px; }
+/*.ideas__item {
+	position: relative;
+	height: 130px;
+	overflow: hidden;
+}
 
 .ideas__item::after {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%; }
+	@include vertical-align;
+}
 
 .ideas__image {
-  position: absolute;
-  z-index: -1;
-  left: 3%; }
+	position: absolute;
+	z-index: -1;
+	left: 3%;
+	width: 300px;
+	height: auto;
+}
 
 .ideas__text {
-  font-family: "";
-  font-size: 22px;
-  color: #ffffff;
-  display: inline-block; }
-
+	@include font('Montserrat Bold', 22px, #000000);
+	display: inline-block;
+}*/
 .partners-search {
   text-align: center;
   height: 270px;
   border-bottom: 2px solid #ff4e50; }
 
 .partners-search__header {
-  font-family: "";
+  font-family: "Montserrat Bold";
   font-size: 22px;
   color: #333333;
   padding: 30px 0 18px 0; }
 
 .partners-search__question {
-  font-family: "";
+  font-family: "Roboto Light";
   font-size: 18px;
   color: #333333;
   padding-bottom: 16px; }
 
 .partners-search__input {
-  font-family: "";
+  font-family: "Roboto Light";
   font-size: 14px;
   color: #999999;
   width: 280px;
@@ -374,7 +395,7 @@ body {
   padding-left: 15px; }
 
 .partners-search__submit {
-  font-family: "";
+  font-family: "Montserrat Bold";
   font-size: 14px;
   color: #ffffff;
   height: 40px;
@@ -395,14 +416,14 @@ body {
   text-align: center; }
 
 .footer__name {
-  font-family: "";
+  font-family: "Montserrat Bold";
   font-size: 16px;
   color: #ff4e50;
   text-transform: uppercase;
   padding-top: 16px; }
 
 .footer__list-name {
-  font-family: "";
+  font-family: "Montserrat Bold";
   font-size: 14px;
   color: #333333;
   padding-top: 18px; }
@@ -411,13 +432,13 @@ body {
   padding-top: 6px; }
 
 .footer__list-item {
-  font-family: "";
+  font-family: "Roboto Light";
   font-size: 14px;
   color: #666666;
   display: inline-block; }
 
 .footer__designed {
-  font-family: "";
+  font-family: "Montserrat Bold";
   font-size: 10px;
   color: #cccccc;
   text-transform: uppercase;
@@ -425,7 +446,7 @@ body {
 
 /* for account login/signup*/
 .account__login, .account__signup {
-  font-family: "";
+  font-family: "Montserrat Bold";
   font-size: 14px;
   color: #fefefe;
   text-decoration: none;
@@ -459,7 +480,7 @@ body {
   top: 0; }
 
 .carousel__step {
-  font-family: "";
+  font-family: "Montserrat Regular";
   font-size: 10px;
   color: #ffffff;
   height: 20px;
@@ -476,13 +497,43 @@ body {
   height: 100%; }
 
 .carousel__header {
-  font-family: "";
+  font-family: "Montserrat Bold";
   font-size: 24px;
   color: #ffffff;
   padding-top: 20px; }
 
 .carousel__text {
-  font-family: "";
+  font-family: "Roboto Light";
   font-size: 14px;
   color: #cccccc;
   padding-top: 20px; }
+
+.grid {
+  text-align: center;
+  width: 100%; }
+
+.grid__item {
+  position: relative;
+  height: 130px;
+  width: 100%;
+  margin-bottom: 10px;
+  overflow: hidden; }
+
+.grid__item::after {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%; }
+
+.grid__image {
+  position: absolute;
+  z-index: -1;
+  left: 3%;
+  width: 300px;
+  height: auto; }
+
+.grid__text {
+  font-family: "Montserrat Bold";
+  font-size: 22px;
+  color: #fff;
+  display: inline-block; }

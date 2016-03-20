@@ -1,0 +1,29 @@
+.grid {
+	text-align: center;
+	width: 100%;
+}
+
+.grid__item {
+	position: relative;
+	height: 130px;
+	width: 100%;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.grid__item::after {
+	@include vertical-align;
+}
+
+.grid__image {
+	position: absolute;
+	z-index: -1;
+	left: 3%;
+	width: 300px;
+	height: auto;
+}
+
+.grid__text {
+	@include font('Montserrat Bold', 22px, #fff);
+	display: inline-block;
+}

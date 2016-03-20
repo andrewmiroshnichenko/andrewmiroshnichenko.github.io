@@ -15,7 +15,7 @@
 }
 
 .carousel__step {
-	@include font('', 10px, #ffffff);
+	@include font('Montserrat Regular', 10px, #ffffff);
 	height: 20px;
 	width: 70px;
 	border-radius: 10px;
@@ -29,11 +29,11 @@
 }
 
 .carousel__header {
-	@include font('', 24px, #ffffff);
+	@include font('Montserrat Bold', 24px, #ffffff);
 	padding-top: 20px;
 }
 
 .carousel__text {
-	@include font('', 14px, #cccccc);
+	@include font('Roboto Light', 14px, #cccccc);
 	padding-top: 20px;
 }

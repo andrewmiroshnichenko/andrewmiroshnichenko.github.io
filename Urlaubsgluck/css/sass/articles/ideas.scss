@@ -3,13 +3,14 @@
 }
 
 .ideas__header {
-	@include font('', 22px, #333333);
+	@include font('Montserrat Bold', 22px, #333333);
 	padding: 40px 0 15px 0;
 }
 
-.ideas__item {
+/*.ideas__item {
 	position: relative;
 	height: 130px;
+	overflow: hidden;
 }
 
 .ideas__item::after {
@@ -20,9 +21,11 @@
 	position: absolute;
 	z-index: -1;
 	left: 3%;
+	width: 300px;
+	height: auto;
 }
 
 .ideas__text {
-	@include font('', 22px, #ffffff);
+	@include font('Montserrat Bold', 22px, #000000);
 	display: inline-block;
-}
+}*/

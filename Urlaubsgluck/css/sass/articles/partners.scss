@@ -3,7 +3,7 @@
 }
 
 .partners__header {
-	@include font('', 22px, #333333);
+	@include font('Montserrat Bold', 22px, #333333);
 	padding-bottom: 13px;
 	padding: 38px 0 13px 0;
 }
@@ -31,17 +31,17 @@
 }
 
 .partners__name {
-	@include font('', 14px, #333333);
+	@include font('Montserrat Bold', 14px, #333333);
 	padding: 15px 0 20px 0;
 }
 
 .partners__about {
-	@include font('', 14px, #666666);
+	@include font('Roboto Light', 14px, #666666);
 	padding-bottom: 29px;
 }
 
 .partners__more {
-	@include font('', 14px, #ff4e50);
+	@include font('Montserrat Bold', 14px, #ff4e50);
 	width: 280px;
 	height: 36px;
 	border: 2px solid #ff4e50;
