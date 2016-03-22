@@ -1,29 +1,69 @@
 .footer {
 	text-align: center;
+	@include breakpoint(tablet) {
+		padding-top: 40px;
+	}
+}
+
+.hor-extender {
+	display: inline-block;
+	vertical-align: top;
+	width: 24%;
 }
 
 .footer__name {
 	@include font('Montserrat Bold', 16px, #ff4e50);
 	text-transform: uppercase;
 	padding-top: 16px;
+	@include breakpoint(tablet) {
+		@extend .hor-extender;
+		width: 35%;
+	}
 }
 
 .footer__list-name {
 	@include font('Montserrat Bold', 14px, #333333);
-	padding-top: 18px;
+	text-align: center;
+	padding: 18px 0 6px;
+	@include breakpoint(tablet) {
+		text-align: left;
+	}
 }
 
 .footer__list {
-	padding-top: 6px;
+	@include breakpoint(tablet) {
+		@extend .hor-extender;
+		width: 13%;
+	}
+}
+
+.footer__partners {
+	@include font('Montserrat Bold', 14px, #333333);
+	padding: 18px 0 6px;
+	@include breakpoint(tablet) {
+		@extend .hor-extender;
+	}
 }
 
 .footer__list-item {
 	@include font('Roboto Light', 14px, #666666);
 	display: inline-block;
+	@include breakpoint(tablet) {
+		padding: 7px 0;
+		width: 100%;
+		text-align: left;
+	}
 }
 
 .footer__designed {
 	@include font('Montserrat Bold', 10px, #cccccc);
 	text-transform: uppercase;
-	padding: 20px 0 10px 0;
+	padding: 18px 0 10px;
+	@include breakpoint(tablet) {
+		@extend .hor-extender;
+	}
+}
+
+.footer__designed > * {
+	padding-bottom: 10px;
 }

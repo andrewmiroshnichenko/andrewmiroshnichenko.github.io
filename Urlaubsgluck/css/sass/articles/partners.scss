@@ -1,16 +1,38 @@
 .partners {
 	text-align: center;
+	padding-bottom: 100px;
+}
+
+.partners__list {
+	overflow: hidden;
+
+	@include breakpoint(tablet) {
+		width: 550px;
+		margin: 0 auto;
+	}
 }
 
 .partners__header {
 	@include font('Montserrat Bold', 22px, #333333);
 	padding-bottom: 13px;
 	padding: 38px 0 13px 0;
+	
+	@include breakpoint(tablet) {
+		width: 768px;
+		margin: 0 auto;
+		padding-bottom: 33px;
+	}
 }
 
 .partners__item {
 	padding: 0 50px;
-	width: 100%;
+	width: 320px;	
+	margin: 0 auto;
+
+	@include breakpoint(tablet) {
+		width: 50%;
+		float: left;
+	}
 }
 
 .partners__image-container {

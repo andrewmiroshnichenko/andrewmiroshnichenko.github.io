@@ -5,6 +5,9 @@
 .ideas__header {
 	@include font('Montserrat Bold', 22px, #333333);
 	padding: 40px 0 15px 0;
+	@include breakpoint(tablet) {
+		padding: 0 0 40px 0;
+	}
 }
 
 /*.ideas__item {

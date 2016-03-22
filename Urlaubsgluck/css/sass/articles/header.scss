@@ -1,36 +1,46 @@
 .header {
-  background: url('../img/320/header.jpg') center center no-repeat;
-  height: 540px;
-  text-align: center;
-  position: relative;
-  padding-top: 19px;
-  background-color: #000;
+	background: url('../img/bcg.jpg') center center no-repeat;
+	height: 540px;
+	text-align: center;
+	position: relative;
+	padding-top: 19px;
+	background-color: #000;
 }
 
 .header__name {
-  @include font( 'Montserrat Bold', 20px, #ffffff);
-  text-transform: uppercase;
-  margin-top: 120px;
+	@include font( 'Montserrat Bold', 20px, #ffffff);
+	text-transform: uppercase;
+	margin-top: 120px;
+
+	@include breakpoint(tablet) {
+		margin: 0 0 0 65px;
+		float: left;
+	}
+
 }
 
 .header__slogan {
-  @include font( 'Montserrat Bold', 30px, #ffffff);
-  text-transform: uppercase;
-  margin-top: 40px;
+	@include font( 'Montserrat Bold', 30px, #ffffff);
+	text-transform: uppercase;
+	margin-top: 40px;
+	
+	@include breakpoint(tablet) {
+		margin-top: 228px;
+	}
 }
 
 .header__text {
-  @include font( 'Roboto Light', 18px, #ffffff);
-  margin-top: 20px; 
+	@include font( 'Roboto Light', 18px, #ffffff);
+	margin-top: 20px; 
 }
 
 .header__action {
-  @include font( 'Montserrat Bold', 14px, #ffffff);  
-  width: 280px;
-  height: 40px;
-  margin-top: 18px;
-  background-color: #ff4e50;
-  border-radius: 25px;
-  border: none;
-  cursor: pointer;
+	@include font( 'Montserrat Bold', 14px, #ffffff);  
+	width: 280px;
+	height: 40px;
+	margin-top: 18px;
+	background-color: #ff4e50;
+	border-radius: 25px;
+	border: none;
+	cursor: pointer;
 }

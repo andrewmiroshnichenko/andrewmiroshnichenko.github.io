@@ -1,4 +1,11 @@
 /* for account login/signup*/
+.account {
+	@include breakpoint(tablet) {
+	   	float: right;
+	   	margin-right: 50px;
+	}
+}
+
 .account__login {
 	@include font('Montserrat Bold', 14px, #fefefe);
 	text-decoration: none;
