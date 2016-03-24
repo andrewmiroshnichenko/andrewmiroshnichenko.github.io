@@ -246,6 +246,9 @@ body {
     .header__name {
       margin: 0 0 0 65px;
       float: left; } }
+  @media (min-width: 1000px) {
+    .header__name {
+      margin: 0 0 0 250px; } }
 
 .header__slogan {
   font-family: "Montserrat Bold";
@@ -255,13 +258,23 @@ body {
   margin-top: 40px; }
   @media (min-width: 768px) {
     .header__slogan {
-      margin-top: 228px; } }
+      font-family: "Montserrat Bold";
+      font-size: 52px;
+      color: #ffffff;
+      width: 40%;
+      margin: 210px auto 0; } }
 
 .header__text {
   font-family: "Roboto Light";
   font-size: 18px;
   color: #ffffff;
   margin-top: 20px; }
+  @media (min-width: 768px) {
+    .header__text {
+      font-family: "Roboto Light";
+      font-size: 24px;
+      color: #ffffff;
+      margin-top: 37px; } }
 
 .header__action {
   font-family: "Montserrat Bold";
@@ -274,6 +287,9 @@ body {
   border-radius: 25px;
   border: none;
   cursor: pointer; }
+  @media (min-width: 768px) {
+    .header__action {
+      margin-top: 33px; } }
 
 .howitworks {
   overflow: hidden;
@@ -292,7 +308,7 @@ body {
   padding-bottom: 15px; }
   @media (min-width: 768px) {
     .howitworks__header {
-      padding-bottom: 33px; } }
+      padding: 100px 0 33px; } }
 
 .partners {
   text-align: center;
@@ -304,6 +320,9 @@ body {
     .partners__list {
       width: 550px;
       margin: 0 auto; } }
+  @media (min-width: 1000px) {
+    .partners__list {
+      width: 940px; } }
 
 .partners__header {
   font-family: "Montserrat Bold";
@@ -315,7 +334,7 @@ body {
     .partners__header {
       width: 768px;
       margin: 0 auto;
-      padding-bottom: 33px; } }
+      padding: 100px 0 33px; } }
 
 .partners__item {
   padding: 0 50px;
@@ -325,6 +344,9 @@ body {
     .partners__item {
       width: 50%;
       float: left; } }
+  @media (min-width: 1000px) {
+    .partners__item {
+      width: 25%; } }
 
 .partners__image-container {
   display: inline-block;
@@ -447,6 +469,9 @@ body {
   border-radius: 25px;
   background-color: #ff4e50;
   text-align: center; }
+  @media (min-width: 768px) {
+    .partners-search__submit {
+      width: 160px; } }
 
 .partners-search__submit::after {
   content: '';
@@ -522,6 +547,10 @@ body {
     float: right;
     margin-right: 50px; } }
 
+@media (min-width: 1000px) {
+  .account {
+    margin-right: 250px; } }
+
 .account__login, .account__signup {
   font-family: "Montserrat Bold";
   font-size: 14px;
@@ -542,33 +571,69 @@ body {
   vertical-align: middle;
   height: 100%; }
 
-.carousel__item {
+.jcarousel {
+  overflow: hidden;
+  position: relative;
+  width: 250px;
+  height: 400px;
+  display: inline-block; }
+
+.jcarousel ul {
+  position: relative;
+  width: 1000px; }
+
+.jcarousel__arrow-left, .jcarousel__arrow-right {
+  display: none; }
+  @media (min-width: 768px) {
+    .jcarousel__arrow-left, .jcarousel__arrow-right {
+      background: url("../img/768/arrow-left.png") no-repeat;
+      display: block;
+      position: absolute;
+      width: 32px;
+      height: 55px;
+      z-index: 2;
+      top: 10%;
+      left: 5%;
+      cursor: pointer; } }
+  @media (min-width: 1000px) {
+    .jcarousel__arrow-left, .jcarousel__arrow-right {
+      top: 40%; } }
+
+@media (min-width: 768px) {
+  .jcarousel__arrow-right {
+    background: url("../img/768/arrow-right.png") no-repeat;
+    left: 82%; } }
+
+.jcarousel__item {
   position: relative;
   height: 250px;
+  width: 250px;
   padding: 20px;
   text-align: left; }
   @media (min-width: 768px) {
-    .carousel__item {
+    .jcarousel__item {
       float: left;
-      width: 32%; } }
+      width: 25%;
+      height: 400px; } }
 
-.carousel__textblock {
+.jcarousel__textblock {
   position: absolute;
   bottom: 10%; }
   @media (min-width: 768px) {
-    .carousel__textblock {
-      bottom: 30%; } }
+    .jcarousel__textblock {
+      bottom: 5%;
+      width: 85%; } }
 
-.carousel__image {
+.jcarousel__image {
   position: absolute;
   z-index: -1;
   left: 3%;
   top: 0; }
   @media (min-width: 768px) {
-    .carousel__image {
+    .jcarousel__image {
       width: 235px; } }
 
-.carousel__step {
+.jcarousel__step {
   font-family: "Montserrat Regular";
   font-size: 10px;
   color: #ffffff;
@@ -579,19 +644,19 @@ body {
   text-align: center;
   text-transform: uppercase; }
 
-.carousel__step::after {
+.jcarousel__step::after {
   content: '';
   display: inline-block;
   vertical-align: middle;
   height: 100%; }
 
-.carousel__header {
+.jcarousel__header {
   font-family: "Montserrat Bold";
   font-size: 24px;
   color: #ffffff;
   padding-top: 20px; }
 
-.carousel__text {
+.jcarousel__text {
   font-family: "Roboto Light";
   font-size: 14px;
   color: #cccccc;
@@ -603,8 +668,7 @@ body {
   @media (min-width: 768px) {
     .grid {
       width: 768px;
-      margin: 0 auto;
-      /*padding-bottom: 33px;*/ } }
+      margin: 0 auto; } }
 
 .grid__item {
   position: relative;
@@ -627,7 +691,7 @@ body {
   position: absolute;
   z-index: -1;
   left: 3%;
-  width: 300px;
+  width: 450px;
   height: auto; }
 
 .grid__text {

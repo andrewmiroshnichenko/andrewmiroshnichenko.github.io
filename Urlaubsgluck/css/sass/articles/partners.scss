@@ -10,6 +10,10 @@
 		width: 550px;
 		margin: 0 auto;
 	}
+
+	@include breakpoint(desktop) {
+		width: 940px;
+	}
 }
 
 .partners__header {
@@ -20,7 +24,7 @@
 	@include breakpoint(tablet) {
 		width: 768px;
 		margin: 0 auto;
-		padding-bottom: 33px;
+		padding: 100px 0 33px;
 	}
 }
 
@@ -32,6 +36,10 @@
 	@include breakpoint(tablet) {
 		width: 50%;
 		float: left;
+	}
+
+	@include breakpoint(desktop) {
+		width: 25%;
 	}
 }
 

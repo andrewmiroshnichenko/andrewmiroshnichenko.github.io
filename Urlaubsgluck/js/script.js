@@ -13,8 +13,41 @@ $(document).ready( function() {
 		}
 	});
 
+		$('.jcarousel').jcarousel({
+			animation: 'slow',
+			wrap: 'circular'
+		})
+
+		.jcarouselAutoscroll({
+			interval: 1000,
+			target: '+=1',
+			autostart: false
+		});
+
+		$('.jcarousel__arrow-left')
+			.on('jcarouselcontrol:active', function() {
+				$(this).removeClass('inactive');
+			})
+			.on('jcarouselcontrol:inactive', function() {
+				$(this).addClass('inactive');
+			})
+			.jcarouselControl({
+				target: '-=1'
+			});
+
+		$('.jcarousel__arrow-right')
+			.on('jcarouselcontrol:active', function() {
+				$(this).removeClass('inactive');
+			})
+			.on('jcarouselcontrol:inactive', function() {
+				$(this).addClass('inactive');
+			})
+			.jcarouselControl({
+				target: '+=1'
+			});
+
 	$.ajax({
-		url: 'http://api.pixplorer.co.uk/image?word=wall&amount=7&size=s',
+		url: 'https://pixabay.com/api/?key=2265192-51dd2c2f31ead2f01bfba0ce5&image_type=photo',
 		dataType: 'json',
 		success: loadImages
 	});
@@ -26,10 +59,10 @@ $(document).ready( function() {
 
 
 	function getNewImages() {
-		var queryPhrase = $('.partners-search__input').val();
+		var queryPhrase = encodeURIComponent( $('.partners-search__input').val() );
 		var queryLength = $('.grid__item').length;
 		$.ajax({
-			url: 'http://api.pixplorer.co.uk/image?word=' + queryPhrase + '&amount=' + queryLength + '&size=s',
+			url: 'https://pixabay.com/api/?key=2265192-51dd2c2f31ead2f01bfba0ce5&q=' + queryPhrase + '&image_type=photo',
 			dataType: 'json',
 			success: loadImages
 		});
@@ -38,7 +71,7 @@ $(document).ready( function() {
 	function loadImages(data) {
 		var i = 0;
 		$('.grid__image').each(function () {
-			var src = data.images[i].imageurl;
+			var src = data.hits[i].webformatURL;
 			$(this).attr('src', src);
 			i++;
 		});

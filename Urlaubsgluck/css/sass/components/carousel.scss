@@ -1,25 +1,72 @@
-.carousel__item {
+.jcarousel {
+	overflow: hidden;
+	position: relative;
+	width: 250px;
+	height: 400px;
+	display: inline-block;
+}
+
+.jcarousel ul {
+	position: relative;
+	width: 1000px;
+}
+
+.jcarousel__arrow-left {
+	display: none;
+
+	@include breakpoint(tablet) {
+		background: url('../img/768/arrow-left.png') no-repeat;
+		display: block;
+		position: absolute;
+		width: 32px;
+		height: 55px;
+		z-index: 2;
+		top: 10%;
+		left: 5%;
+		cursor: pointer;
+	}
+
+	@include breakpoint(desktop) {
+		top: 40%;
+	}
+}
+
+.jcarousel__arrow-right {
+	@extend .jcarousel__arrow-left;
+
+	@include breakpoint(tablet) {
+		background: url('../img/768/arrow-right.png') no-repeat;
+		left: 82%;
+	}
+
+	
+}
+
+.jcarousel__item {
 	position: relative;
 	height: 250px;
+	width: 250px;
 	padding: 20px;
 	text-align: left;
 
 	@include breakpoint(tablet) {
 		float: left;
-		width: 32%;
+		width: 25%;
+		height: 400px;
 	}
 }
 
-.carousel__textblock {
+.jcarousel__textblock {
 	position: absolute;
 	bottom: 10%;
 	
 	@include breakpoint(tablet) {
-		bottom: 30%;
+		bottom: 5%;
+		width: 85%;
 	}
 }
 
-.carousel__image {
+.jcarousel__image {
 	position: absolute;
 	z-index: -1;
 	left: 3%;
@@ -30,7 +77,7 @@
 	}
 }
 
-.carousel__step {
+.jcarousel__step {
 	@include font('Montserrat Regular', 10px, #ffffff);
 	height: 20px;
 	width: 70px;
@@ -40,16 +87,16 @@
 	text-transform: uppercase;
 }
 
-.carousel__step::after {
+.jcarousel__step::after {
 	@include vertical-align;
 }
 
-.carousel__header {
+.jcarousel__header {
 	@include font('Montserrat Bold', 24px, #ffffff);
 	padding-top: 20px;
 }
 
-.carousel__text {
+.jcarousel__text {
 	@include font('Roboto Light', 14px, #cccccc);
 	padding-top: 20px;
 }

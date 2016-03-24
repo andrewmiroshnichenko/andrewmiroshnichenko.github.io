@@ -5,7 +5,6 @@
 	@include breakpoint(tablet) {
 		width: 768px;
 		margin: 0 auto;
-		/*padding-bottom: 33px;*/
 	}
 }
 
@@ -31,7 +30,7 @@
 	position: absolute;
 	z-index: -1;
 	left: 3%;
-	width: 300px;
+	width: 450px;
 	height: auto;
 }
 

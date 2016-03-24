@@ -4,6 +4,10 @@
 	   	float: right;
 	   	margin-right: 50px;
 	}
+
+	@include breakpoint(desktop) {
+		margin-right: 250px;
+	}
 }
 
 .account__login {
