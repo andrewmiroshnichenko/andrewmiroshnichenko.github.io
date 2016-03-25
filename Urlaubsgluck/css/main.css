@@ -87,6 +87,9 @@ body {
   text-align: center;
   position: relative;
   padding-top: 19px; }
+  @media (min-width: 768px) {
+    .header {
+      height: 700px; } }
 
 .header__name {
   font-family: "Montserrat Bold";
@@ -426,9 +429,14 @@ body {
 .jcarousel {
   overflow: hidden;
   position: relative;
-  width: 250px;
-  height: 400px;
-  display: inline-block; }
+  width: 300px;
+  height: 240px;
+  display: inline-block;
+  margin-bottom: 10px; }
+  @media (min-width: 768px) {
+    .jcarousel {
+      width: 250px;
+      height: 400px; } }
 
 .jcarousel ul {
   position: relative;
@@ -530,11 +538,16 @@ body {
   height: 310px;
   width: 230px;
   margin-bottom: 10px;
-  overflow: hidden; }
+  overflow: hidden;
+  margin: 0 auto;
+  right: 0;
+  padding: 20px; }
+  @media (min-width: 768px) {
+    .grid__item {
+      margin: 0; } }
   @media (min-width: 960px) {
     .grid__item {
-      width: 30%;
-      /*		margin: 0 auto;*/ } }
+      width: 30%; } }
 
 .grid__item::after {
   content: '';

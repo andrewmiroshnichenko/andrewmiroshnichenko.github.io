@@ -4,6 +4,10 @@
 	text-align: center;
 	position: relative;
 	padding-top: 19px;
+
+	@include breakpoint(tablet) {
+		height: 700px;
+	}
 }
 
 .header__name {
