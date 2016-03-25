@@ -6,6 +6,10 @@
 		width: 768px;
 		margin: 0 auto;
 	}
+
+	@include breakpoint(desktop) {
+		width: 960px;
+	}
 }
 
 .grid__item {
@@ -14,6 +18,11 @@
 	width: 230px;
 	margin-bottom: 10px;
 	overflow: hidden;
+	
+	@include breakpoint(desktop) {
+		width: 30%;
+/*		margin: 0 auto;*/
+	}
 }
 
 .grid__item::after {
