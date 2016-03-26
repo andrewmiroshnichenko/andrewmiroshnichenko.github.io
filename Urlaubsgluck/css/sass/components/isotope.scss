@@ -12,6 +12,14 @@
 	}
 }
 
+.grid__sizer {
+	
+
+	@include breakpoint(tablet) {
+		width: 1%;
+	}
+}
+
 .grid__item {
 	position: relative;
 	height: 310px;
@@ -37,7 +45,11 @@
 
 .grid__item_width {
 	@include breakpoint(tablet) {
-		width: 460px;
+		width: 480px;
+	}
+	
+	@include breakpoint(desktop) {
+		width: 585px;
 	}
 }
 
@@ -47,6 +59,15 @@
 	left: 3%;
 	width: 450px;
 	height: auto;
+}
+
+.grid__image_width {
+	@include breakpoint(tablet) {
+		width: 480px;
+	}
+	@include breakpoint(desktop) {
+		width: 585px;
+	}
 }
 
 .grid__text {

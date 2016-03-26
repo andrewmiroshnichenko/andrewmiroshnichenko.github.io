@@ -340,40 +340,56 @@ body {
     .footer {
       padding-top: 40px; } }
 
-.hor-extender, .footer__name, .footer__list, .footer__partners, .footer__designed {
-  display: inline-block;
-  vertical-align: top;
-  width: 24%; }
-
 .footer__name {
   font-family: "Montserrat Bold";
   font-size: 16px;
   color: #ff4e50;
   text-transform: uppercase;
-  padding-top: 16px; }
+  padding-top: 16px;
+  display: block;
+  width: 100%;
+  text-align: center; }
   @media (min-width: 768px) {
     .footer__name {
+      display: inline-block;
+      vertical-align: top;
+      width: 24%;
       width: 35%; } }
+
+.footer__list {
+  text-align: center;
+  width: 100%; }
+  @media (min-width: 768px) {
+    .footer__list {
+      display: inline-block;
+      vertical-align: top;
+      width: 24%;
+      width: 13%; } }
 
 .footer__list-name {
   font-family: "Montserrat Bold";
   font-size: 14px;
   color: #333333;
   text-align: center;
-  padding: 18px 0 6px; }
+  padding: 18px 0 6px;
+  display: block; }
   @media (min-width: 768px) {
     .footer__list-name {
       text-align: left; } }
-
-@media (min-width: 768px) {
-  .footer__list {
-    width: 13%; } }
 
 .footer__partners {
   font-family: "Montserrat Bold";
   font-size: 14px;
   color: #333333;
-  padding: 18px 0 6px; }
+  padding: 18px 0 6px;
+  display: block;
+  text-align: center;
+  width: 100%; }
+  @media (min-width: 768px) {
+    .footer__partners {
+      display: inline-block;
+      vertical-align: top;
+      width: 24%; } }
 
 .footer__list-item {
   font-family: "Roboto Light";
@@ -391,7 +407,15 @@ body {
   font-size: 10px;
   color: #cccccc;
   text-transform: uppercase;
-  padding: 18px 0 10px; }
+  padding: 18px 0 10px;
+  width: 30%;
+  display: block;
+  margin: 0 auto; }
+  @media (min-width: 768px) {
+    .footer__designed {
+      display: inline-block;
+      vertical-align: top;
+      width: 24%; } }
 
 .footer__designed > * {
   padding-bottom: 10px; }
@@ -533,6 +557,10 @@ body {
     .grid {
       width: 960px; } }
 
+@media (min-width: 768px) {
+  .grid__sizer {
+    width: 1%; } }
+
 .grid__item {
   position: relative;
   height: 310px;
@@ -557,7 +585,11 @@ body {
 
 @media (min-width: 768px) {
   .grid__item_width {
-    width: 460px; } }
+    width: 480px; } }
+
+@media (min-width: 960px) {
+  .grid__item_width {
+    width: 585px; } }
 
 .grid__image {
   position: absolute;
@@ -565,6 +597,14 @@ body {
   left: 3%;
   width: 450px;
   height: auto; }
+
+@media (min-width: 768px) {
+  .grid__image_width {
+    width: 480px; } }
+
+@media (min-width: 960px) {
+  .grid__image_width {
+    width: 585px; } }
 
 .grid__text {
   font-family: "Montserrat Bold";

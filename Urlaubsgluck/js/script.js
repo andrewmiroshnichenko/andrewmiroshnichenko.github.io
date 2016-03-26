@@ -7,9 +7,10 @@ $(document).ready( function() {
 	$('.grid').isotope({
 		itemSelector: '.grid__item',
 		layoutMode: 'masonry',
+		// percentPosition: true,
 		masonry: {
 			// gutter: 20
-			columnWidth: 50
+			columnWidth: '.grid__sizer'
 		}
 	});
 

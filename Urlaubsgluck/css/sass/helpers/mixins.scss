@@ -26,6 +26,12 @@
 	}
 }
 
+@mixin footer-aligner {
+	display: inline-block;
+	vertical-align: top;
+	width: 24%;
+}
+
 /*Prefix mixins*/
 /*@mixin border-radius() {
 
