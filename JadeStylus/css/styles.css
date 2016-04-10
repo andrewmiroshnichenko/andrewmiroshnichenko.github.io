@@ -1,3 +1,4 @@
+/*@import 'nib'*/
 html,
 body,
 div,
@@ -86,8 +87,6 @@ input {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 article,
@@ -134,11 +133,12 @@ table {
   display: inline-block;
   background: #f2f5f8;
   height: 346px;
-  -webkit-border-radius: 10px;
   border-radius: 10px;
   vertical-align: top;
   position: relative;
   margin: 30px 6px 0;
+  cursor: pointer;
+  text-decoration: none;
 }
 .item:after {
   content: '';

@@ -1,6 +1,6 @@
-mixin item(url, text1, text2, price, currency)
-	div.item
-		img.item__photo(src= url)
+mixin item(link_url, picture_url, text1, text2, price, currency)
+	a.item(href= link_url)
+		img.item__photo(src= picture_url)
 		p.item__desc-1= text1
 		p.item__desc-2= text2
 		p.item__price= price
@@ -14,10 +14,10 @@ html(lang='en')
 		link(rel='stylesheet' href='css/styles.css')
 	body
 		div.wrapper
-			+item('img/photos/1.jpg', 'Рюкзак', '«Ready for school»', '241.50 ', 'грн')
-			+item('img/photos/2.jpg', 'Рюкзак', '«Птичье царство»', '241.50 ', 'грн')
-			+item('img/photos/3.jpg', 'Рюкзак', '«Violent green»', '241.50 ', 'грн')
-			+item('img/photos/4.jpg', 'Рюкзак «Мадонна»', '', '241.50 ', 'грн')
-			+item('img/photos/5.jpg', 'Рюкзак', '«ripndip wilderness»', '241.50 ', 'грн')
-			+item('img/photos/6.jpg', 'Рюкзак', '«Off the wall»', '241.50 ', 'грн')
-			+item('img/photos/7.jpg', 'Просто красный', 'рюкзак', '241.50 ', 'грн')
+			+item('1', 'img/photos/1.jpg', 'Рюкзак', '«Ready for school»', '241.50 ', 'грн')
+			+item('2', 'img/photos/2.jpg', 'Рюкзак', '«Птичье царство»', '241.50 ', 'грн')
+			+item('3', 'img/photos/3.jpg', 'Рюкзак', '«Violent green»', '241.50 ', 'грн')
+			+item('4', 'img/photos/4.jpg', 'Рюкзак «Мадонна»', '', '241.50 ', 'грн')
+			+item('5', 'img/photos/5.jpg', 'Рюкзак', '«ripndip wilderness»', '241.50 ', 'грн')
+			+item('6', 'img/photos/6.jpg', 'Рюкзак', '«Off the wall»', '241.50 ', 'грн')
+			+item('7', 'img/photos/7.jpg', 'Просто красный', 'рюкзак', '241.50 ', 'грн')
