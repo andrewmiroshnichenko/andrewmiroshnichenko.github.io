@@ -5,11 +5,11 @@ require.config({
 
 	require (
 		[
-		'Model',
-		'View',
-		'Controller',
-		'jquery',
-		'tmpl'
+			'Model',
+			'View',
+			'Controller',
+			'jquery',
+			'tmpl'
 		],
 		function(Model, View, Controller) {
 			var base = ['Lorem ipsum', 'Dolor sit', 'Amet, consectetur!'];

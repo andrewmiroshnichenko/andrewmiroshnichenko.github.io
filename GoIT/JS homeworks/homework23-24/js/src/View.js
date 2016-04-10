@@ -15,6 +15,9 @@ define(
 				$('body').append(temp);
 
 				self.elements = {
+					item: $('.todo__item'),
+					list: $('.todo__list'),
+					edit: $('.todo__item-input'),
 					input: $('.todo__input'),
 					button: $('.todo__button'),
 					container: $('.todo__list')

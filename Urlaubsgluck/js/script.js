@@ -7,9 +7,7 @@ $(document).ready( function() {
 	$('.grid').isotope({
 		itemSelector: '.grid__item',
 		layoutMode: 'masonry',
-		// percentPosition: true,
 		masonry: {
-			// gutter: 20
 			columnWidth: '.grid__sizer'
 		}
 	});
@@ -20,9 +18,9 @@ $(document).ready( function() {
 		})
 
 		.jcarouselAutoscroll({
-			interval: 1000,
+			interval: 5000,
 			target: '+=1',
-			autostart: false
+			autostart: true
 		});
 
 		$('.jcarousel__arrow-left')

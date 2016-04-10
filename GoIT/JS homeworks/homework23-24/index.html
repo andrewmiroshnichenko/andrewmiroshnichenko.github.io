@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Homework23-24</title>
+	<link rel="stylesheet" href="css/styles.css">
 	<script src="js/src/require.js" data-main="js/todo"></script>
 </head>
 <body>
@@ -16,7 +17,11 @@
 </script>
 <script type="text/template" id="todo-item">
 	<% for(var i = 0; i < data.length; i++) { %>
-		<li class="todo__item"><%= data[i] %><span data-value="<%= data[i] %>" class="todo__item-delete"> x</span></li>
+		<li class="todo__item">
+			<!-- <span class="todo__item-text"><%= data[i] %></span> -->
+			<input class="todo__item-input" type="text" value="<%= data[i] %>">
+			<span data-value="<%= data[i] %>" class="todo__item-delete"> x</span>
+		</li>
 	<% }; %>
 </script>
 </body>

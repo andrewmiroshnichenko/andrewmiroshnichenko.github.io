@@ -7,11 +7,19 @@ define(
 
 			self.data = data;
 			
-			self.addItem = function(item) {
+			self.addItem = function(item, newIndex) {
+				var index = self.data.indexOf(item);
+				console.log(index);
+				
 				if (item.length === 0) {
 					return;
 				}
-				
+
+				if (index === -1) {
+					self.data[newIndex] = item;
+					return self.data;
+				}
+
 				self.data.push(item);
 				return self.data;
 			}
