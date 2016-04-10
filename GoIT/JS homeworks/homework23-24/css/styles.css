@@ -1,0 +1,12 @@
+/*.todo__item:nth-child(2n) {
+	display: none;
+}*/
+
+.todo__item-input {
+	/*display: none;*/
+	border: none;
+}
+
+.todo__item-input_border {
+	border: 1px solid black;
+}
