@@ -73,7 +73,7 @@ body>* {
 }
 
 .article {
-	padding-bottom: 25px;
+	padding: 20px 0 25px 0;
 	background: url(../img/background-grey.png) center bottom no-repeat;
 	position: relative;
 }
@@ -81,6 +81,7 @@ body>* {
 .article__header {
 	@include font('ProximaNova Bold', 50px, #e7e7e7, uppercase);
 	padding-left: 23px;
+
 }
 
 .article__image {
