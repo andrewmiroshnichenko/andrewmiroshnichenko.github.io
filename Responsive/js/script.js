@@ -11,7 +11,7 @@
 		$('#advantage-item').remove();
 		$('body>header').after( tmpl(templateHtml, advantages[advantageNumber]) );
 
-		$('#advantage-item li').eq(advantageNumber).addClass('active');
+		$('#advantage-item li').eq(advantageNumber).addClass('switcher__item_active');
 	};
 
 })(jQuery);
