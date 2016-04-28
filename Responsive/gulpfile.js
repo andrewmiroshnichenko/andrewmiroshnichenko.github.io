@@ -2,19 +2,19 @@
 var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	concatCss = require('gulp-concat-css'),
-	concat = require('gulp-concat');
+	concat = require('gulp-concat'),
+  bourbon = require('node-bourbon');
 
-
-gulp.task('sass', function () {
-  return gulp.src('./css/src/sass/320.scss')
-    .pipe( sass('') )
-    .pipe(gulp.dest('./css/src/css/'));
+gulp.task('bourbon', function() {
+  return gulp.src('./css/sass/main.scss')
+    // .pipe(bourbon.includePaths)
+    .pipe(gulp.dest('./css/sass/'))
 });
 
-gulp.task('concat-css', function () {
-  return gulp.src('./css/src/css/*.css')
-    .pipe(concatCss('main.css'))
-    .pipe(gulp.dest('css/'));
+gulp.task('sass', function() {
+  return gulp.src('./css/sass/main.scss')
+    .pipe( sass('') )
+    .pipe(gulp.dest('./css/'));
 });
 
 gulp.task('concat', function() {
@@ -23,7 +23,6 @@ gulp.task('concat', function() {
     .pipe(gulp.dest('js/'));
 });
  
-gulp.task('watch', function () {
-  gulp.watch('./css/**/*.scss', ['sass']);
-  gulp.watch('./css/src/css/*.css', ['concat-css']);
+gulp.task('watch', function() {
+  gulp.watch('./css/sass/**/*.scss', ['sass']);
 });

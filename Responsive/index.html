@@ -12,11 +12,11 @@
 	<script src="js/advantages.js"></script>
 </head>
 <body>
-	<header class="ending ending-header">
+	<header class="ending ending_header">
 		<div>
-			<img class="ending__logo ending__logo-header" src="img/header/logo.png" alt="">
+			<img class="ending__logo ending__logo_header" src="img/header/logo.png" alt="">
 		</div>
-		<div class="ending__slogan ending__slogan-header clearfix">
+		<div class="ending__slogan ending__slogan_header clearfix">
 			<p>Be recruited</p>
 			<p>Play college sports</p>
 		</div>
@@ -30,35 +30,35 @@
 			<li class="links__item"><a class="links__link" href="">ice hockey</a></li>
 		</ul>
 	</header>
-	<article class="article">
+	<article class="article article_opportunity">
 		<img class="article__image" src="img/opportunities/1.jpg" alt="img/opportunities/1.jpg">
-		<div class="count-number count-number__item">01</div>
-		<section class="section section_background_underline">
+		<div class="article__count-number article__count-number_square">01</div>
+		<section class="section">
 			<h3 class="section__header section__header_color">Be active</h3>
 			<p class="section__text">Post videos with your skills, Like and follow others to be more popular.</p>
 		</section>
 	</article>
-	<article class="article">
+	<article class="article article_opportunity">
 		<img class="article__image" src="img/opportunities/2.jpg" alt="img/opportunities/2.jpg">
-		<div class="count-number count-number__item">02</div>
-		<section class="section section_background_underline">
+		<div class="article__count-number article__count-number_square">02</div>
+		<section class="section">
 			<h3 class="section__header section__header_color">FIND CONTACT</h3>
 			<p class="section__text">Contact others to find right coach or athlete you are looking for.</p>
 		</section>
 	</article>
-	<article class="article">
+	<article class="article article_opportunity">
 		<img class="article__image" src="img/opportunities/3.jpg" alt="img/opportunities/3.jpg">
-		<div class="count-number count-number__item">03</div>
-		<section class="section section_background_underline">
+		<div class="article__count-number article__count-number_square">03</div>
+		<section class="section">
 			<h3 class="section__header section__header_color">WORK IT</h3>
 			<p class="section__text">Enjoy being a student athlete, the recruiting process can be overwhelming, we want to make this a enjoyable experience.</p>
 		</section>
 	</article>
-	<footer class="ending ending-footer">
+	<footer class="ending ending_footer">
 		<div>
-			<img class="ending__logo-footer" src="img/footer/logo.png" alt="">
+			<img class="ending__logo_footer" src="img/footer/logo.png" alt="">
 		</div>
-		<div class="ending__slogan ending__slogan-footer clearfix">
+		<div class="ending__slogan ending__slogan_footer clearfix">
 			<p>download app</p>
 			<p>Show everyone what yu can do!</p>
 		</div>
@@ -71,11 +71,11 @@
 		</div>
 	</footer>
 	<script type="html/template" id="advantages">
-		<article class="article" id="advantage-item">
+		<article class="article article_advantage">
 			<h3 class="article__header"><%= name %></h3>
 			<img class="article__image" src=<%= image  %> alt="<%= image %>">
 				<section class="section">
-					<div class="count-number count-number__item"><%= number %></div>
+					<div class="article__count-number article__count-number_inline"><%= number %></div>
 					<h4 class="section__header"><%= header %></h4>
 					<p class="section__text"><strong><%= paragraph %></strong></p>
 				</section>
