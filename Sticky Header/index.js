@@ -31,23 +31,25 @@
       if (getWindowScroll().top > originalRect.top - requiredTop) {
         for (key in styles) {
           el.style[key] = styles[key];
-          console.log(requiredTop);
+          // console.log(requiredTop);
         }
       } else {
         for (key in originalStyles) {
           el.style[key] = originalStyles[key];
-          console.log(requiredTop);
+          // console.log(requiredTop);
         }
       }
       onscroll && onscroll(event)
     }
   }
 
+
   function calcRect(el) {
     var rect = el.getBoundingClientRect();
-    var windowScroll = getWindowScroll()
+    var windowScroll = getWindowScroll();
+    console.log(rect.width);
     return {
-      left: rect.left + windowScroll.left,
+      left: (document.documentElement.clientWidth - rect.width) / 2 + windowScroll.left,
       top: rect.top + windowScroll.top,
       width: rect.width,
       height: rect.height
@@ -62,3 +64,4 @@
   }
 
 });
+  // console.log(window.devicePixelRatio);
