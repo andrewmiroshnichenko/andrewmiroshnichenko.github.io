@@ -3,17 +3,52 @@ var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	concatCss = require('gulp-concat-css'),
 	concat = require('gulp-concat'),
-  bourbon = require('node-bourbon');
+  autoprefixer = require('gulp-autoprefixer'),
+  svgSprite = require('gulp-svg-sprite');
 
-gulp.task('bourbon', function() {
-  return gulp.src('./css/sass/main.scss')
-    // .pipe(bourbon.includePaths)
-    .pipe(gulp.dest('./css/sass/'))
+var svgSpriteConfig = {
+  shape: {
+    dimension: {
+      maxHeight: 24,
+      maxWidth: 24
+    },
+    // spacing: {
+    //   padding: 10
+    // },
+  },
+  svg: {
+    rootAttributes: {
+      fill: 'rgba(0, 255, 0, .5)'
+    }
+  },
+  mode: {
+    // dest: 'sass',
+    css: {
+      dest: '.',
+      bust: false,
+      prefix: '.social__item_%s',
+      dimensions: false,
+      common: 'uselessClass',
+      layout: 'horizontal',
+      render: {
+        scss: true
+      },
+      sprite: '../../../img/socialsprite.svg'
+    },
+  }
+};
+
+gulp.task('svgsprite', function(){
+  return gulp.src('./files/svg/*.svg')
+    .pipe(svgSprite(svgSpriteConfig))
+    .pipe(gulp.dest('./css/sass/components'));
 });
+ 
 
 gulp.task('sass', function() {
   return gulp.src('./css/sass/main.scss')
-    .pipe( sass('') )
+    .pipe( sass() )
+    .pipe(autoprefixer())
     .pipe(gulp.dest('./css/'));
 });
 
