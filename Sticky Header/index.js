@@ -31,7 +31,7 @@
     }
 
     window.onresize = function(e) {
-        styles.left = ((document.documentElement.clientWidth - originalRect.width) / 2) + 'px';
+        styles.left = ((window.innerWidth - originalRect.width) / 2) + 'px';
         onresize && onresize(e)
     }
     
@@ -57,7 +57,7 @@
     var rect = el.getBoundingClientRect();
     var windowScroll = getWindowScroll();
     return {
-      left: (document.documentElement.clientWidth - rect.width) / 2 + windowScroll.left,
+      left: (window.innerWidth - rect.width) / 2 + windowScroll.left,
       top: rect.top + windowScroll.top,
       width: rect.width,
       height: rect.height
