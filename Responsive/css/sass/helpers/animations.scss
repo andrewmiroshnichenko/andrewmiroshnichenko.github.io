@@ -1,0 +1,16 @@
+@keyframes counter {
+	0% {
+		left: 20px;
+		border-radius: 0%;
+	}
+	50% {
+		transform: rotate(180deg);
+		left: 100px;
+		border-radius: 25%;
+	}
+	100% {
+		transform: rotate(360deg);
+		left: 200px;
+		border-radius: 50%;
+	}
+}

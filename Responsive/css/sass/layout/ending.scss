@@ -1,0 +1,43 @@
+.ending {
+	text-align: center;
+	height: 569px;
+	position: relative;
+	&_header {
+		background: url(../img/header/header_background.png) 100% 100% ;
+	}
+	&_footer {
+		background: url(../img/footer/footer_background.png) 100% 100% ;
+	}
+	&__logo {
+		display: inline-block;
+		&_header {
+			margin: 39px 0 140px;
+		}
+		&_footer {
+			margin: 97px 0 51px;
+		}
+	}
+	&__slogan {
+		@include font('ProximaNova Bold', 32px, #fff, uppercase);
+		text-align: left;
+		&_header p:first-child {
+			float: left;
+			margin: -4px 27px 29px 8px;
+		}
+		&_header p:last-child {
+			float: right;
+			margin: -7px 0 0 67px;
+		}
+		&_footer {
+			text-align: center;
+			display: block;
+			margin: 0 auto;
+			font-size: 34px;
+		}
+		&_footer p:last-child {
+			color: #9b8ec1;
+			font-size: 15px;
+			line-height: 24px
+		}
+	}
+}

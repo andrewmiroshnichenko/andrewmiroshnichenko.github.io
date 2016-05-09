@@ -1,0 +1,73 @@
+.button {
+	@include font('ProximaNova SemiBold', 8px, #fff, uppercase);
+    text-align: left;
+	border-radius: 20px;
+	border: none;
+	width: 142px;
+	height: 39px;
+    background: #5e42b0 url(../img/spritesheet.png) no-repeat;
+	cursor: pointer;
+    transition: background-color 1000ms ease;
+		&__google {
+		    background-position: 17px -51px;
+		    padding-left: 59px;
+		    &_header {
+				margin: 113px 0 30px 0;
+			}
+			&_footer {
+				margin: 65px 0 30px;
+			}
+		}
+		&__apple {
+		    background-position: 3px -3px;
+		    padding-left: 40px;
+			&_header {
+				margin: 113px 0 30px 0;
+			}
+			&_footer {
+				margin: 65px 0 30px;
+			}
+		}
+		&:hover {
+			background-color: #5e42ff;
+		}
+}
+
+.switcher {
+	position: absolute;
+	left: 50%;
+	top: 522px;
+	&__container {
+		position: relative;
+		left: -50%;
+		margin: 25px auto 0;
+	}
+	&__item {
+		display: inline-block;
+		height: 10px;
+		width: 10px;
+		border-radius: 50%;
+		background-color: #999;
+		margin-right: 5px;
+		cursor: pointer;
+		&:hover {
+			box-shadow: 0 0 2px 0 #000;
+		}
+		&_active {
+			background-color: #5e42b0;
+		}
+	}
+}
+
+.links {
+	padding-top: 10px;
+	&__item {
+		display: inline;
+		padding: 0 18px;
+		line-height: 20px;
+	}
+	&__link {
+		@include font('ProximaNova Light', 12px, #9071ea, uppercase);
+		text-decoration: none;
+	}
+}

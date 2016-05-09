@@ -1,0 +1,36 @@
+.social {
+	background: url(../img/footer/social-background.png);
+	position: absolute;
+	bottom: 0;
+	height: 48px;
+	width: 100%;
+	padding-left: 25px;
+/*	&__item {
+		display: inline-block;
+		width: 25px;
+		height: 25px;
+		margin: 10px 25px 0 0;
+		&_facebook {
+			background: url(../img/footer/spritesheet.png) -2px -6px no-repeat;
+		}
+		&_twitter {
+			background: url(../img/footer/spritesheet.png) -6px -79px no-repeat;
+		}
+		&_instagram {
+			background: url(../img/footer/spritesheet.png) -6px -43px no-repeat;
+		}
+	}*/
+	&__item {
+		display: inline-block;
+		width: 25px;
+		height: 25px;
+		margin: 10px 25px 0 0;
+		background-image: url('../img/socialsprite.svg');
+		background-color: #ffffff;
+		/*opacity: .6;*/
+		/*fill: red;*/
+	}
+	&__item:hover {
+		background-color: #11ff11;
+	}
+}

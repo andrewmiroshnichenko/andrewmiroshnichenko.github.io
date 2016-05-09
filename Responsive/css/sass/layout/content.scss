@@ -1,0 +1,73 @@
+.article {
+	position: relative;
+	&_opportunity {
+		height: 553px;
+		&:hover {
+			.article__count-number_square {
+				left: 200px; 
+				border-radius: 50%;
+				animation: counter 2s linear;
+			}
+		}
+	}
+	&_advantage {
+		background: url(../img/background-grey.png) center bottom no-repeat;
+		height: 587px;
+		padding-top: 13px;
+	}
+	&__header {
+		@include font('ProximaNova Bold', 50px, #e7e7e7, uppercase);
+		padding-left: 23px;
+	}
+	&__image {
+		margin: 10px auto 34px;
+		display: block;
+		padding: 0;
+	}
+	&__count-number {
+		@include font('ProximaNova Bold', 14px, #000, none);
+		font-weight: bold;
+		vertical-align: super;
+		&_square {
+			width: 70px;
+			height: 70px;
+			background: #5e42b0;
+			position: absolute;
+			text-align: center;
+			top: 292px;
+			left: 20px;
+			&:before {
+				content: "";
+				display: inline-block;
+				height: 100%;
+				vertical-align: middle;
+			}
+		}
+		&_inline {
+			display: inline-block;
+			background: url(../img/opportunities/underline.png) left bottom no-repeat;
+			height: 20px;
+		}
+	}
+}
+
+.section {
+	line-height: 18px;
+	letter-spacing: .04em;
+	padding: 0 0 15px 19px;
+		&_background_underline {
+			background: url(../img/opportunities/underline.png) left bottom no-repeat;
+		}
+		&__header {
+			@include font('ProximaNova Bold', 28px, #c1c1c1, uppercase);
+			display: inline-block;
+			padding-left: 7px;
+			&_color {
+				color: #e7e7e7;	
+			}
+		}
+		&__text {
+			@include font('ProximaNova Regular', 15px, #000, none);
+			margin-top: 22px;
+		}
+}
