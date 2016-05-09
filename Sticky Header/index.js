@@ -31,7 +31,8 @@
     }
 
     window.onresize = function(e) {
-        styles.left = ((document.documentElement.clientWidth - originalRect.width) / 2) + 'px';
+        styles.left = ((window.innerWidth - originalRect.width) / 2 + getWindowScroll().left) + 'px';
+        console.log(styles.left);
         onresize && onresize(e)
     }
     
@@ -40,7 +41,7 @@
         for (key in styles) {
           el.style[key] = styles[key];
           // console.log(requiredTop);
-        console.log(styles.left);  
+        // console.log(styles.left);  
         }
       } else {
         for (key in originalStyles) {
@@ -57,7 +58,7 @@
     var rect = el.getBoundingClientRect();
     var windowScroll = getWindowScroll();
     return {
-      left: (document.documentElement.clientWidth - rect.width) / 2 + windowScroll.left,
+      left: (window.innerWidth - rect.width) / 2 + windowScroll.left,
       top: rect.top + windowScroll.top,
       width: rect.width,
       height: rect.height
