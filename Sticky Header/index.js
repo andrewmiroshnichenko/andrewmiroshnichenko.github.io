@@ -22,9 +22,17 @@
       originalStyles[key] = el.style[key];
     });
 
-    var onscroll;
+    var onscroll, onresize;
     if (window.onscroll) {
       onscroll = window.onscroll;
+    }
+    if (window.onresize) {
+      onresize = window.onresize;
+    }
+
+    window.onresize = function(e) {
+        styles.left = ((document.documentElement.clientWidth - originalRect.width) / 2) + 'px';
+        onresize && onresize(e)
     }
     
     window.onscroll = function(event) {
@@ -32,6 +40,7 @@
         for (key in styles) {
           el.style[key] = styles[key];
           // console.log(requiredTop);
+        console.log(styles.left);  
         }
       } else {
         for (key in originalStyles) {
@@ -47,7 +56,6 @@
   function calcRect(el) {
     var rect = el.getBoundingClientRect();
     var windowScroll = getWindowScroll();
-    console.log(rect.width);
     return {
       left: (document.documentElement.clientWidth - rect.width) / 2 + windowScroll.left,
       top: rect.top + windowScroll.top,
