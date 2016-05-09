@@ -31,7 +31,8 @@
     }
 
     window.onresize = function(e) {
-        styles.left = ((window.innerWidth - originalRect.width) / 2) + 'px';
+        styles.left = ((window.innerWidth - originalRect.width) / 2 + getWindowScroll().left) + 'px';
+        console.log(styles.left);
         onresize && onresize(e)
     }
     
@@ -40,7 +41,7 @@
         for (key in styles) {
           el.style[key] = styles[key];
           // console.log(requiredTop);
-        console.log(styles.left);  
+        // console.log(styles.left);  
         }
       } else {
         for (key in originalStyles) {
