@@ -43,28 +43,24 @@
 		// document.body
 
 		window.onscroll = function(event) {
-			var interval = setTimeout(function() {
-
 			// grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-				if (getWindowScroll().top > originalRect.top - requiredTop) {
-					for (key in styles) {
-						el.style[key] = styles[key];
-					// console.log(styles.left);  
-					}
-				} else {
-					for (key in originalStyles) {
-						el.style[key] = originalStyles[key];
-						// console.log(requiredTop);
-					}
+			if (getWindowScroll().top > originalRect.top - requiredTop) {
+				for (key in styles) {
+					el.style[key] = styles[key];
+				// console.log(styles.left);  
 				}
-				onscroll && onscroll(event)
-			}, 10, event);
+			} else {
+				for (key in originalStyles) {
+					el.style[key] = originalStyles[key];
+					// console.log(requiredTop);
+				}
+			}
+			onscroll && onscroll(event)
 		}
 
 		function handleMove() {
 			// if (grayBar.getBoundingClientRect().top / )
 			grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-			// el.style.top = 
 			// console.log(grayBar.getBoundingClientRect().top);
 		}
 	}
