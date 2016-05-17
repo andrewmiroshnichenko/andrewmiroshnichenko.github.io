@@ -64,7 +64,7 @@
 		function handleMove() {
 			// if (grayBar.getBoundingClientRect().top / )
 			grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-			el.style.top = 
+			// el.style.top = 
 			// console.log(grayBar.getBoundingClientRect().top);
 		}
 	}
