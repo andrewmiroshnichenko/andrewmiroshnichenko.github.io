@@ -43,7 +43,7 @@
 		// document.body
 
 		window.onscroll = function(event) {
-			var interval = setInterval(function() {
+			var interval = setTimeout(function() {
 
 			// grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 				if (getWindowScroll().top > originalRect.top - requiredTop) {
