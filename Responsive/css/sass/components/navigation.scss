@@ -1,36 +1,57 @@
 .button {
 	@include font('ProximaNova SemiBold', 8px, #fff, uppercase);
-    text-align: left;
+	text-align: left;
 	border-radius: 20px;
 	border: none;
 	width: 142px;
 	height: 39px;
-    background: #5e42b0 url(../img/spritesheet.png) no-repeat;
+	background: #5e42b0 url(../img/spritesheet320.png) no-repeat;
 	cursor: pointer;
-    transition: background-color 1000ms ease;
-		&__google {
-		    background-position: 17px -51px;
-		    padding-left: 59px;
-		    &_header {
-				margin: 113px 0 30px 0;
-			}
-			&_footer {
-				margin: 65px 0 30px;
+	position: absolute;
+	transition: background-color 1000ms ease;
+	bottom: 96px;
+	@include breakpoint(tablet) {
+	@include font('ProximaNova SemiBold', 14px, #fff, uppercase);
+		background: #5e42b0 url(../img/spritesheet768.png) no-repeat;
+		border-radius: 38px;
+		width: 311px;
+		height: 77px;
+	}
+	&__google {
+		background-position: 17px -51px;
+		padding: 0 12px 0 52px;
+		right: 16px;
+		&_header {
+			@include breakpoint(tablet) {
+				background-position: -298px 19px;
+				margin: 0;
+				right: 58px;
+				padding: 0 85px 0 126px;
 			}
 		}
-		&__apple {
-		    background-position: 3px -3px;
-		    padding-left: 40px;
-			&_header {
-				margin: 113px 0 30px 0;
-			}
-			&_footer {
-				margin: 65px 0 30px;
+		&_footer {
+			bottom: 177px;
+		}
+	}
+	&__apple {
+		background-position: 3px -3px;
+		padding-left: 40px;
+		left: 15px;
+		&_header {
+			@include breakpoint(tablet) {
+				background-position: 43px 19px;
+				margin: 0;
+				left: 58px;
+				padding: 0 66px 0 105px;
 			}
 		}
-		&:hover {
-			background-color: #5e42ff;
+		&_footer {
+			bottom: 177px;
 		}
+	}
+	&:hover {
+		background-color: #5e42ff;
+	}
 }
 
 .switcher {
@@ -60,14 +81,23 @@
 }
 
 .links {
-	padding-top: 10px;
+	padding-top: 196px;
+	@include breakpoint(tablet) {
+		padding-top: 162px;
+	}
 	&__item {
 		display: inline;
 		padding: 0 18px;
 		line-height: 20px;
+		@include breakpoint(tablet) {
+			padding: 0 28px;
+		}
 	}
 	&__link {
 		@include font('ProximaNova Light', 12px, #9071ea, uppercase);
 		text-decoration: none;
+		@include breakpoint(tablet) {
+			font-size: 16px;
+		}
 	}
 }

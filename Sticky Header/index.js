@@ -24,13 +24,17 @@
       originalStyles[key] = el.style[key];
     });
 
-    var onscroll, onresize;
+    var onscroll, onresize, ontouchmove;
     if (window.onscroll) {
       onscroll = window.onscroll;
     }
     if (window.onresize) {
       onresize = window.onresize;
     }
+    if (window.ontouchmove) {
+      ontouchmove = window.ontouchmove;
+    }
+
 
     window.onresize = function(e) {
         styles.left = ((window.innerWidth - originalRect.width) / 2 + getWindowScroll().left) + 'px';
@@ -38,7 +42,22 @@
         onresize && onresize(e)
     }
     
-    window.onscroll = function(event) {
+    // window.onscroll = function(event) {
+    //   if (getWindowScroll().top > originalRect.top - requiredTop) {
+    //     for (key in styles) {
+    //       el.style[key] = styles[key];
+    //       // console.log(requiredTop);
+    //     // console.log(styles.left);  
+    //     }
+    //   } else {
+    //     for (key in originalStyles) {
+    //       el.style[key] = originalStyles[key];
+    //       // console.log(requiredTop);
+    //     }
+    //   }
+    //   onscroll && onscroll(event)
+    // }
+    window.ontouchmove = function(event) {
       if (getWindowScroll().top > originalRect.top - requiredTop) {
         for (key in styles) {
           el.style[key] = styles[key];
@@ -52,7 +71,7 @@
           // console.log(requiredTop);
         }
       }
-      onscroll && onscroll(event)
+      ontouchmove && ontouchmove(event)
     }
   }
 

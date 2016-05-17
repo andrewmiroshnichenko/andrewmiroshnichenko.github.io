@@ -4,7 +4,9 @@ var gulp = require('gulp'),
 	concatCss = require('gulp-concat-css'),
 	concat = require('gulp-concat'),
   autoprefixer = require('gulp-autoprefixer'),
-  svgSprite = require('gulp-svg-sprite');
+  svgSprite = require('gulp-svg-sprite'),
+  watch = require('gulp-watch'),
+  plumber = require('gulp-plumber');
 
 var svgSpriteConfig = {
   shape: {
@@ -47,7 +49,7 @@ gulp.task('svgsprite', function(){
 
 gulp.task('sass', function() {
   return gulp.src('./css/sass/main.scss')
-    .pipe( sass() )
+    .pipe(sass(({ includePaths : ['./css/sass/'] })))
     .pipe(autoprefixer())
     .pipe(gulp.dest('./css/'));
 });
@@ -61,3 +63,9 @@ gulp.task('concat', function() {
 gulp.task('watch', function() {
   gulp.watch('./css/sass/**/*.scss', ['sass']);
 });
+
+
+// https://github.com/dlmanning/gulp-sass/issues/396 - gulp-sass unexpected crashing
+
+// https://github.com/dlmanning/gulp-sass/issues/1 - problem solved(see comment  arnolali commented on 22 Jul 2015)
+// To solve problem (Sublime Text + slow HDD) set Preferences > Settings - User > "atomic_save": true

@@ -13,8 +13,10 @@
 </head>
 <body>
 	<header class="ending ending_header">
-		<div>
-			<img class="ending__logo ending__logo_header" src="img/header/logo.png" alt="">
+		<div class="ending__logo clearfix">
+			<img class="ending__logo_header320" src="img/header/logo.png" alt="">
+			<img class="ending__logo_header768" src="img/header/logo-768.png" alt="">
+			<span class="ending__logo-slogan">for athlets and coaches</span>
 		</div>
 		<div class="ending__slogan ending__slogan_header clearfix">
 			<p>Be recruited</p>
@@ -70,7 +72,7 @@
 			<a href="" class="social__item social__item_instagram"></a>
 		</div>
 	</footer>
-	<script type="html/template" id="advantages">
+	<script type="html/template" id="advantages320">
 		<article class="article article_advantage">
 			<h3 class="article__header"><%= name %></h3>
 			<img class="article__image" src=<%= image  %> alt="<%= image %>">
@@ -86,9 +88,37 @@
 					</ul>
 				</div>
 		</article>
-		
 	</script>
-
+	<script type="html/template" id="advantages768">
+		<article class="article article_advantage">
+			<h3 class="article__header"><%= name %></h3>
+			<img class="article__image" src=<%= image  %> alt="<%= image %>">
+			<% for(var i = 1; i < 4; i++) {; %>	
+				<%console.log(2);%>
+				<section class="section">
+					<div class="article__count-number article__count-number_inline"><%=0.number%></div>
+				</section>
+			<% }; %>
+				<div class="switcher">
+					<ul class="switcher__container">
+						<li class="switcher__item"></li>
+						<li class="switcher__item"></li>
+					</ul>
+				</div>
+		</article>
+	</script>
+<!-- 					<h4 class="section__header"><%=header1%><%=i%></h4>
+					<p class="section__text"><strong><%=paragraph1%><%=i%></strong></p> -->
+				<!--  <section class="section">
+				 	<div class="article__count-number article__count-number_inline"><%= number2 %></div>
+				 	<h4 class="section__header"><%= header2 %></h4>
+				 	<p class="section__text"><strong><%= paragraph2 %></strong></p>
+				 </section>
+				 <section class="section">
+				 	<div class="article__count-number article__count-number_inline"><%= number3 %></div>
+				 	<h4 class="section__header"><%= header3 %></h4>
+				 	<p class="section__text"><strong><%= paragraph3 %></strong></p>
+				 </section> -->
 	<script src="js/script.js"></script>
 </body>
 </html>
