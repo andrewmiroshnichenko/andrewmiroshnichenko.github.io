@@ -39,9 +39,10 @@
 				onresize && onresize(e)
 		}
 
-		document.documentElement.addEventListener('touchmove', handleMove);
+		document.body.addEventListener('touchmove', handleMove);
 		
 		window.onscroll = function(event) {
+			// grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 			if (getWindowScroll().top > originalRect.top - requiredTop) {
 				for (key in styles) {
 					el.style[key] = styles[key];
@@ -61,8 +62,6 @@
 		grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 		// console.log(grayBar.getBoundingClientRect().top);
 	}
-		
-
 
 	function calcRect(el) {
 		var rect = el.getBoundingClientRect();
@@ -83,4 +82,3 @@
 	}
 
 });
-	// console.log(window.devicePixelRatio);
