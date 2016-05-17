@@ -40,6 +40,7 @@
 		}
 
 		document.body.addEventListener('touchstart', handleMove);
+		// document.body
 		
 		window.onscroll = function(event) {
 			// grayBar.innerHTML = grayBar.getBoundingClientRect().top;
@@ -56,12 +57,12 @@
 			}
 			onscroll && onscroll(event)
 		}
+		function handleMove() {
+			grayBar.innerHTML = grayBar.getBoundingClientRect().top;
+			// console.log(grayBar.getBoundingClientRect().top);
+		}
 	}
 
-	function handleMove() {
-		grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-		// console.log(grayBar.getBoundingClientRect().top);
-	}
 
 	function calcRect(el) {
 		var rect = el.getBoundingClientRect();
