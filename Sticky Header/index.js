@@ -47,6 +47,7 @@
 			if (getWindowScroll().top > originalRect.top - requiredTop) {
 				for (key in styles) {
 					el.style[key] = styles[key];
+					grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 				// console.log(styles.left);  
 				}
 			} else {
@@ -60,7 +61,6 @@
 
 		function handleMove() {
 			// if (grayBar.getBoundingClientRect().top / )
-			grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 			// console.log(grayBar.getBoundingClientRect().top);
 		}
 	}
