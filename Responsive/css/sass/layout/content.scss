@@ -14,6 +14,9 @@
 		background: url(../img/background-grey.png) center bottom no-repeat;
 		height: 587px;
 		padding-top: 13px;
+		@include breakpoint(tablet) {
+			height: 793px;
+		}
 	}
 	&__header {
 		@include font('ProximaNova Bold', 50px, #e7e7e7, uppercase);
@@ -23,6 +26,9 @@
 		margin: 10px auto 34px;
 		display: block;
 		padding: 0;
+		@include breakpoint(tablet) {
+			float: left;
+		}
 	}
 	&__count-number {
 		@include font('ProximaNova Bold', 14px, #000, none);

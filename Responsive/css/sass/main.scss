@@ -1,15 +1,18 @@
 @import 'base/reset';
 @import 'base/fonts';
+@import 'helpers/mixins';
+@import 'helpers/animations';
 
 body>* {
 	width: 320px;
 	margin: 0 auto;
+	@include breakpoint(tablet) {
+		width: 768px;
+	}
 }
 
 /*Plugins styles import*/
 
-@import 'helpers/mixins';
-@import 'helpers/animations';
 @import 'layout/content';
 @import 'layout/ending';
 @import 'components/social';

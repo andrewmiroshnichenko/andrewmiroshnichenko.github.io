@@ -29,6 +29,10 @@
     if (window.onresize) {
       onresize = window.onresize;
     }
+    if (window.ontouchmove) {
+      ontouchmove = window.ontouchmove;
+    }
+
 
     window.onresize = function(e) {
         styles.left = ((window.innerWidth - originalRect.width) / 2 + getWindowScroll().left) + 'px';
@@ -36,7 +40,22 @@
         onresize && onresize(e)
     }
     
-    window.onscroll = function(event) {
+    // window.onscroll = function(event) {
+    //   if (getWindowScroll().top > originalRect.top - requiredTop) {
+    //     for (key in styles) {
+    //       el.style[key] = styles[key];
+    //       // console.log(requiredTop);
+    //     // console.log(styles.left);  
+    //     }
+    //   } else {
+    //     for (key in originalStyles) {
+    //       el.style[key] = originalStyles[key];
+    //       // console.log(requiredTop);
+    //     }
+    //   }
+    //   onscroll && onscroll(event)
+    // }
+    window.ontouchmove = function(event) {
       if (getWindowScroll().top > originalRect.top - requiredTop) {
         for (key in styles) {
           el.style[key] = styles[key];
@@ -49,7 +68,7 @@
           // console.log(requiredTop);
         }
       }
-      onscroll && onscroll(event)
+      ontouchmove && ontouchmove(event)
     }
   }
 
@@ -58,7 +77,7 @@
     var rect = el.getBoundingClientRect();
     var windowScroll = getWindowScroll();
     return {
-      left: (window.innerWidth - rect.width) / 2 + windowScroll.left,
+      left: (document.documentElement.clientWidth - rect.width) / 2 + windowScroll.left,
       top: rect.top + windowScroll.top,
       width: rect.width,
       height: rect.height

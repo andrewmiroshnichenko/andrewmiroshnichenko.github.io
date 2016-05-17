@@ -2,31 +2,70 @@
 	text-align: center;
 	height: 569px;
 	position: relative;
+	@include breakpoint(tablet) {
+		height: 957px;
+	}
 	&_header {
 		background: url(../img/header/header_background.png) 100% 100% ;
+		@include breakpoint(tablet) {
+			background: url(../img/header/header_background768.jpg) 100% 100% ;
+		}
 	}
 	&_footer {
 		background: url(../img/footer/footer_background.png) 100% 100% ;
 	}
 	&__logo {
-		display: inline-block;
-		&_header {
-			margin: 39px 0 140px;
+		display: block;
+		&-slogan {
+			display: none;
+			@include breakpoint(tablet) {
+				@include font('ProximaNova Light', 14px, #fff, uppercase);
+				padding: 63px 39px 190px 0;
+				display: block;
+				float: right;
+			}
+		}
+		&_header320 {
+			padding: 39px 0 136px;
+			@include breakpoint(tablet) {
+				display: none;
+			}
+		}
+		&_header768 {
+			display: none;
+			@include breakpoint(tablet) {
+				display: block;
+				float: left;
+				padding: 52px 0 182px 19px;
+			}
 		}
 		&_footer {
-			margin: 97px 0 51px;
+			padding: 97px 0 51px;
 		}
 	}
 	&__slogan {
 		@include font('ProximaNova Bold', 32px, #fff, uppercase);
-		text-align: left;
+		@include breakpoint(tablet) {
+			line-height: 76px;
+			font-size: 64px;
+		}
 		&_header p:first-child {
+			text-align: right;
 			float: left;
-			margin: -4px 27px 29px 8px;
+			padding: 0 0 16px 9px;
+			@include breakpoint(tablet) {
+				padding: 0 0 3px 0;
+				width: 528px;
+			}
 		}
 		&_header p:last-child {
+			text-align: left;
 			float: right;
-			margin: -7px 0 0 67px;
+			padding-left: 65px;
+			@include breakpoint(tablet) {
+				padding: 0;
+				width: 574px;
+			}
 		}
 		&_footer {
 			text-align: center;
