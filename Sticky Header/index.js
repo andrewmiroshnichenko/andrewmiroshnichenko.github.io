@@ -44,7 +44,7 @@
 
 		window.onscroll = function(event) {
 			var interval = setInterval(function() {
-				
+
 			// grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 				if (getWindowScroll().top > originalRect.top - requiredTop) {
 					for (key in styles) {
@@ -58,7 +58,7 @@
 					}
 				}
 				onscroll && onscroll(event)
-			}, 10);
+			}, 10, event);
 		}
 
 		function handleMove() {
