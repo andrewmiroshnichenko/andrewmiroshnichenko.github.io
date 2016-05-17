@@ -39,7 +39,7 @@
 				onresize && onresize(e)
 		}
 
-		document.body.addEventListener('touchmove', handleMove);
+		document.body.addEventListener('touchstart', handleMove);
 		
 		window.onscroll = function(event) {
 			// grayBar.innerHTML = grayBar.getBoundingClientRect().top;
