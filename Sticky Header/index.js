@@ -22,7 +22,7 @@
       originalStyles[key] = el.style[key];
     });
 
-    var onscroll, onresize;
+    var onscroll, onresize, ontouchmove;
     if (window.onscroll) {
       onscroll = window.onscroll;
     }
