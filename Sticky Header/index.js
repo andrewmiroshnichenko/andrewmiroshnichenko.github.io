@@ -59,7 +59,8 @@
 		}
 
 		function handleMove() {
-			grayBar.innerHTML += grayBar.getBoundingClientRect().top;
+			// if (grayBar.getBoundingClientRect().top / )
+			grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 			// console.log(grayBar.getBoundingClientRect().top);
 		}
 	}
