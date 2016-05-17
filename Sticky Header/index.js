@@ -39,7 +39,7 @@
 				onresize && onresize(e)
 		}
 
-		document.body.addEventListener('touchmove', handleMove);
+		// document.body.addEventListener('touchmove', handleMove);
 		// document.body
 
 		window.onscroll = function(event) {
