@@ -2,6 +2,7 @@ document.documentElement.addEventListener('touchmove', showTop);
 var grayBar = document.querySelectorAll('.bar')[1];
 
 function showTop() {
+	console.log(1);
 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 	var string = document.createElement('span');
 	var statisticsField = document.querySelector('.statistics');
