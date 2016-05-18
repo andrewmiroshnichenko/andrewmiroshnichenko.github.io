@@ -1,4 +1,4 @@
-document.documentElement.addEventlistener('touchmove', showTop);
+document.documentElement.addEventListener('scroll', showTop);
 var grayBar = document.querySelectorAll('.bar')[1];
 
 function showTop() {
