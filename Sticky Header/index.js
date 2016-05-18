@@ -64,28 +64,28 @@
 		}
 
 		function handleClick() {
-			var string = document.createElement('p');
+			var string = document.createElement('span');
 			var parent = document.querySelector('.statistics');
 			parent.appendChild(string);
-			string.innerHTML = 'click';
+			string.innerHTML = ' + (click) + ';
 		}
 		function handleStart() {
-			var string = document.createElement('p');
+			var string = document.createElement('span');
 			var parent = document.querySelector('.statistics');
 			parent.appendChild(string);
-			string.innerHTML = 'start';
+			string.innerHTML = ' + (start) + ';
 		}
 		function handleMove() {
-			var string = document.createElement('p');
+			var string = document.createElement('span');
 			var parent = document.querySelector('.statistics');
 			parent.appendChild(string);
-			string.innerHTML = 'move';
+			string.innerHTML = ' + (move) + ';
 		}
 		function handleEnd() {
-			var string = document.createElement('p');
+			var string = document.createElement('span');
 			var parent = document.querySelector('.statistics');
 			parent.appendChild(string);
-			string.innerHTML = 'end';
+			string.innerHTML = ' + (end) + ';
 		}
 			// if (grayBar.getBoundingClientRect().top / )
 			// console.log(grayBar.getBoundingClientRect().top);
