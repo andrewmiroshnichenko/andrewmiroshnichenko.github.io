@@ -45,7 +45,7 @@
 		// document.body
 
 				document.body.addEventListener('touchstart', handleStart);
-				document.body.addEventListener('touchmove', handleMove);
+				// document.body.addEventListener('touchmove', handleMove);
 				document.body.addEventListener('touchend', handleEnd);
 				document.body.addEventListener('click', handleClick);
 		window.onscroll = function(event) {
@@ -68,6 +68,10 @@
 
 		function handleWantedMove(el) {
 			el.top = 0;
+			var string = document.createElement('span');
+			var parent = document.querySelector('.statistics');
+			parent.appendChild(string);
+			string.innerHTML = ' + (move) + ';
 		}
 
 		function handleClick() {
@@ -82,12 +86,12 @@
 			parent.appendChild(string);
 			string.innerHTML = ' + (start) + ';
 		}
-		function handleMove() {
-			var string = document.createElement('span');
-			var parent = document.querySelector('.statistics');
-			parent.appendChild(string);
-			string.innerHTML = ' + (move) + ';
-		}
+		// function handleMove() {
+		// 	var string = document.createElement('span');
+		// 	var parent = document.querySelector('.statistics');
+		// 	parent.appendChild(string);
+		// 	string.innerHTML = ' + (move) + ';
+		// }
 		function handleEnd() {
 			var string = document.createElement('span');
 			var parent = document.querySelector('.statistics');
