@@ -1,4 +1,9 @@
-// document.documentElement.addEventlistener()
+document.documentElement.addEventlistener('ontouchmove', showTop);
+var grayBar = document.querySelectorAll('.bar')[1];
+
+function showTop() {
+	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
+}
 
 // function sticky(el, top) {
 
