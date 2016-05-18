@@ -24,7 +24,8 @@
 		requiredOriginalStyles.forEach(function(key) {
 			originalStyles[key] = el.style[key];
 		});
-
+		var string = document.createElement('p');
+		var parent = document.querySelector('.statistics');
 		var onscroll, onresize;
 		if (window.onscroll) {
 			onscroll = window.onscroll;
@@ -39,7 +40,10 @@
 				onresize && onresize(e)
 		}
 
+		document.body.addEventListener('touchstart', handleStart);
 		document.body.addEventListener('touchmove', handleMove);
+		document.body.addEventListener('touchend', handleEnd);
+		document.body.addEventListener('click', handleClick);
 		// document.body
 
 		window.onscroll = function(event) {
@@ -59,10 +63,24 @@
 			onscroll && onscroll(event)
 		}
 
+		function handleClick() {
+			parent.appendChild(string);
+			string.innerHTML = 'click';
+		}
+		function handleStart() {
+			parent.appendChild(string);
+			string.innerHTML = 'start';
+		}
 		function handleMove() {
+			parent.appendChild(string);
+			string.innerHTML = 'move';
+		}
+		function handleEnd() {
+			parent.appendChild(string);
+			string.innerHTML = 'end';
+		}
 			// if (grayBar.getBoundingClientRect().top / )
 			// console.log(grayBar.getBoundingClientRect().top);
-		}
 	}
 
 
