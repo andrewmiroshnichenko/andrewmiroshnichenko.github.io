@@ -50,17 +50,17 @@
 				document.body.addEventListener('click', handleClick);
 		window.onscroll = function(event) {
 			// grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-			if (getWindowScroll().top > originalRect.top - requiredTop) {
 					var string = document.createElement('span');
 					var parent = document.querySelector('.statistics');
 					parent.appendChild(string);
 					string.innerHTML = ' + (scroll) + ';
+			if (getWindowScroll().top > originalRect.top - requiredTop) {
 				for (key in styles) {
 					el.style[key] = styles[key];
 					grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 				// console.log(styles.left);  
 				}
-				document.documentElement.addEventListener('touchmove', handleWantedMove(el));
+				// document.documentElement.addEventListener('touchmove', handleWantedMove(el));
 			} else {
 				for (key in originalStyles) {
 					el.style[key] = originalStyles[key];
@@ -71,12 +71,12 @@
 		}
 
 		function handleWantedMove(el) {
-			console.log(el);
-			el.top = 0;
-			var string = document.createElement('span');
-			var parent = document.querySelector('.statistics');
-			parent.appendChild(string);
-			string.innerHTML = ' + (move) + ';
+			// console.log(el);
+			// el.top = 0;
+			// var string = document.createElement('span');
+			// var parent = document.querySelector('.statistics');
+			// parent.appendChild(string);
+			// string.innerHTML = ' + (move) + ';
 		}
 
 		function handleClick() {
