@@ -64,18 +64,26 @@
 		}
 
 		function handleClick() {
+			var string = document.createElement('p');
+			var parent = document.querySelector('.statistics');
 			parent.appendChild(string);
 			string.innerHTML = 'click';
 		}
 		function handleStart() {
+			var string = document.createElement('p');
+			var parent = document.querySelector('.statistics');
 			parent.appendChild(string);
 			string.innerHTML = 'start';
 		}
 		function handleMove() {
+			var string = document.createElement('p');
+			var parent = document.querySelector('.statistics');
 			parent.appendChild(string);
 			string.innerHTML = 'move';
 		}
 		function handleEnd() {
+			var string = document.createElement('p');
+			var parent = document.querySelector('.statistics');
 			parent.appendChild(string);
 			string.innerHTML = 'end';
 		}
