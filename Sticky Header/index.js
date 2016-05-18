@@ -67,6 +67,7 @@
 		}
 
 		function handleWantedMove(el) {
+			console.log(el);
 			el.top = 0;
 			var string = document.createElement('span');
 			var parent = document.querySelector('.statistics');
