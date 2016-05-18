@@ -1,8 +1,12 @@
-document.documentElement.addEventlistener('ontouchmove', showTop);
+document.documentElement.addEventlistener('touchmove', showTop);
 var grayBar = document.querySelectorAll('.bar')[1];
 
 function showTop() {
 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
+	var string = document.createElement('span');
+	var statisticsField = document.querySelector('.statistics');
+	statisticsField.appendChild(string);
+	string.innerHTML = '+touch+';
 }
 
 // function sticky(el, top) {
