@@ -51,6 +51,10 @@
 		window.onscroll = function(event) {
 			// grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 			if (getWindowScroll().top > originalRect.top - requiredTop) {
+					var string = document.createElement('span');
+					var parent = document.querySelector('.statistics');
+					parent.appendChild(string);
+					string.innerHTML = ' + (scroll) + ';
 				for (key in styles) {
 					el.style[key] = styles[key];
 					grayBar.innerHTML = grayBar.getBoundingClientRect().top;
