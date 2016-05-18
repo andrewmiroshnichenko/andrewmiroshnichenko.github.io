@@ -26,14 +26,16 @@
 		});
 		var string = document.createElement('p');
 		var parent = document.querySelector('.statistics');
-		var onscroll, onresize;
+		var onscroll, onresize, ontouchmove;
 		if (window.onscroll) {
 			onscroll = window.onscroll;
 		}
 		if (window.onresize) {
 			onresize = window.onresize;
 		}
-
+		if (window.onresize) {
+			onresize = window.onresize;
+		}
 		window.onresize = function(e) {
 				styles.left = ((window.innerWidth - originalRect.width) / 2 + getWindowScroll().left) + 'px';
 				console.log(styles.left);
@@ -54,6 +56,7 @@
 					grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 				// console.log(styles.left);  
 				}
+				document.documentElement.addEventListener('touchmove', handleWantedMove(el));
 			} else {
 				for (key in originalStyles) {
 					el.style[key] = originalStyles[key];
@@ -61,6 +64,10 @@
 				}
 			}
 			onscroll && onscroll(event)
+		}
+
+		function handleWantedMove(el) {
+			el.top = 0;
 		}
 
 		function handleClick() {
