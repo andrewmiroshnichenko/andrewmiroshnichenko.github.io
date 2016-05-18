@@ -40,13 +40,13 @@
 				onresize && onresize(e)
 		}
 
+		// document.body
+
+		window.onscroll = function(event) {
 		document.body.addEventListener('touchstart', handleStart);
 		document.body.addEventListener('touchmove', handleMove);
 		document.body.addEventListener('touchend', handleEnd);
 		document.body.addEventListener('click', handleClick);
-		// document.body
-
-		window.onscroll = function(event) {
 			// grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 			if (getWindowScroll().top > originalRect.top - requiredTop) {
 				for (key in styles) {
