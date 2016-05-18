@@ -33,8 +33,8 @@
 		if (window.onresize) {
 			onresize = window.onresize;
 		}
-		if (window.onresize) {
-			onresize = window.onresize;
+		if (window.ontouchmove) {
+			onresize = window.ontouchmove;
 		}
 		window.onresize = function(e) {
 				styles.left = ((window.innerWidth - originalRect.width) / 2 + getWindowScroll().left) + 'px';
@@ -48,35 +48,52 @@
 				// document.body.addEventListener('touchmove', handleMove);
 				document.body.addEventListener('touchend', handleEnd);
 				document.body.addEventListener('click', handleClick);
-		window.onscroll = function(event) {
+		// window.onscroll = function(event) {
+		// 	// grayBar.innerHTML = grayBar.getBoundingClientRect().top;
+		// 			var string = document.createElement('span');
+		// 			var parent = document.querySelector('.statistics');
+		// 			parent.appendChild(string);
+		// 			string.innerHTML = ' + (scroll) + ';
+		// 	if (getWindowScroll().top > originalRect.top - requiredTop) {
+		// 		for (key in styles) {
+		// 			el.style[key] = styles[key];
+		// 			grayBar.innerHTML = grayBar.getBoundingClientRect().top;
+		// 		// console.log(styles.left);  
+		// 		}
+		// 		// document.documentElement.addEventListener('touchmove', handleWantedMove(el));
+		// 	} else {
+		// 		for (key in originalStyles) {
+		// 			el.style[key] = originalStyles[key];
+		// 			// console.log(requiredTop);
+		// 		}
+		// 	}
+		// 	onscroll && onscroll(event)
+		// }
+		window.ontouchmove = function(event) {
 			// grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-					var string = document.createElement('span');
-					var parent = document.querySelector('.statistics');
-					parent.appendChild(string);
-					string.innerHTML = ' + (scroll) + ';
 			if (getWindowScroll().top > originalRect.top - requiredTop) {
 				for (key in styles) {
 					el.style[key] = styles[key];
 					grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 				// console.log(styles.left);  
 				}
-				// document.documentElement.addEventListener('touchmove', handleWantedMove(el));
+				document.documentElement.addEventListener('touchmove', handleWantedMove(el));
 			} else {
 				for (key in originalStyles) {
 					el.style[key] = originalStyles[key];
 					// console.log(requiredTop);
 				}
 			}
-			onscroll && onscroll(event)
+			ontouchmove && ontouchmove(event)
 		}
 
 		function handleWantedMove(el) {
 			// console.log(el);
 			// el.top = 0;
-			// var string = document.createElement('span');
-			// var parent = document.querySelector('.statistics');
-			// parent.appendChild(string);
-			// string.innerHTML = ' + (move) + ';
+			var string = document.createElement('span');
+			var parent = document.querySelector('.statistics');
+			parent.appendChild(string);
+			string.innerHTML = ' + (move) + ';
 		}
 
 		function handleClick() {
