@@ -21,12 +21,14 @@ function showStart() {
 	string.innerHTML = '+++' + Math.floor(grayBar.getBoundingClientRect().top) + '___start';
 }
 
-function showMove() {
+function showMove(e) {
+	e.preventDefault();
 	var statisticsField = document.querySelector('.statistics');
 	var string = document.createElement('span');
 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 	statisticsField.appendChild(string);
 	container.replaceChild(grayBar, grayBar);
+	grayBar.style.opacity -= '0.01';
 	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___move';
 	// window.dispatchEvent(genClick);
 	// window.dispatchEvent(genTouchEnd);
