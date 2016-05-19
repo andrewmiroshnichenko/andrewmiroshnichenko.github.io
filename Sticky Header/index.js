@@ -7,6 +7,7 @@ window.onscroll = function(e) {
 	e.preventDefault();
 }
 var grayBar = document.querySelectorAll('.bar')[1];
+grayBar.style.opacity = '1';
 var container = document.querySelector('.container');
 
 var genClick = new Event('click');
@@ -55,9 +56,10 @@ function showClick() {
 	var statisticsField = document.querySelector('.statistics');
 	var string = document.createElement('span');
 	statisticsField.appendChild(string);
+	grayBar.style.opacity =  +grayBar.style.opacity - +'0.01' + '';
 	// string.innerHTML = grayBar.getBoundingClientRect().top;
 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-	string.innerHTML = '___click';
+	string.innerHTML = 'click';
 }
 
 
