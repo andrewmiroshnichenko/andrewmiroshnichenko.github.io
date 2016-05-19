@@ -1,14 +1,24 @@
-document.documentElement.addEventListener('touchmove', showTop);
+window.addEventListener('touchmove', showTop);
+window.addEventListener('click', showClick);
 var grayBar = document.querySelectorAll('.bar')[1];
-	var statisticsField = document.querySelector('.statistics');
 
 function showTop() {
+	var statisticsField = document.querySelector('.statistics');
 	var string = document.createElement('span');
-	console.log(1);
 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 	statisticsField.appendChild(string);
-	string.innerHTML = grayBar.getBoundingClientRect().top;
+	string.innerHTML = '+++++' + grayBar.getBoundingClientRect().top;
 }
+
+function showClick() {
+	var statisticsField = document.querySelector('.statistics');
+	var string = document.createElement('span');
+	statisticsField.appendChild(string);
+	// string.innerHTML = grayBar.getBoundingClientRect().top;
+	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
+	string.innerHTML = 'click';
+}
+
 
 // function sticky(el, top) {
 
