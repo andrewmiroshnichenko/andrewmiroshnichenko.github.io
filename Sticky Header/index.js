@@ -7,6 +7,7 @@ window.onscroll = function(e) {
 	e.preventDefault();
 }
 var grayBar = document.querySelectorAll('.bar')[1];
+var container = document.querySelector('.container');
 
 var genClick = new Event('click');
 var genTouchStart = new Event('touchstart');
@@ -25,11 +26,11 @@ function showMove() {
 	var string = document.createElement('span');
 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 	statisticsField.appendChild(string);
-	grayBar.getBoundingClientRect().top += 10;
+	container.replaceChild(grayBar, grayBar);
 	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___move';
 	// window.dispatchEvent(genClick);
-	window.dispatchEvent(genTouchEnd);
-	window.dispatchEvent(genTouchStart);
+	// window.dispatchEvent(genTouchEnd);
+	// window.dispatchEvent(genTouchStart);
 }
 
 function showEnd() {
@@ -54,7 +55,7 @@ function showClick() {
 	statisticsField.appendChild(string);
 	// string.innerHTML = grayBar.getBoundingClientRect().top;
 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-	string.innerHTML = 'click';
+	string.innerHTML = '___click';
 }
 
 
