@@ -12,6 +12,7 @@ var container = document.querySelector('.container');
 var initialOffset = grayBar.getBoundingClientRect().top;
 
 var genClick = new Event('click');
+var genFocus = new Event('focus');
 var genTouchStart = new Event('touchstart');
 var genTouchEnd = new Event('touchend');
 
@@ -29,10 +30,10 @@ function showMove(e) {
 	grayBar.innerHTML = initialOffset -  window.pageYOffset;
 	statisticsField.appendChild(string);
 	container.replaceChild(grayBar, grayBar);
-	grayBar.style.opacity =  +grayBar.style.opacity - +'0.02' + '';
+	// grayBar.style.opacity =  +grayBar.style.opacity - +'0.02' + '';
 	string.innerHTML = '+++++' + window.pageYOffset + '___move';
 	// string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___move';
-	// window.dispatchEvent(genClick);
+	window.dispatchEvent(genFocus);
 	// window.dispatchEvent(genTouchEnd);
 	// window.dispatchEvent(genTouchStart);
 }
@@ -60,7 +61,7 @@ function showClick() {
 	grayBar.style.opacity =  +grayBar.style.opacity - +'0.02' + '';
 	// string.innerHTML = grayBar.getBoundingClientRect().top;
 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-	string.innerHTML = 'click';
+	string.innerHTML = '___click';
 }
 
 
