@@ -2,10 +2,10 @@ window.addEventListener('touchstart', showStart);
 window.addEventListener('touchmove', showMove);
 window.addEventListener('touchend', showEnd);
 window.addEventListener('touchcancel', showCancel);
-window.addEventListener('click', showClick());
+window.addEventListener('click', showClick);
 var grayBar = document.querySelectorAll('.bar')[1];
 
-function showStart(what) {
+function showStart() {
 	var statisticsField = document.querySelector('.statistics');
 	var string = document.createElement('span');
 	grayBar.innerHTML = Math.floor(grayBar.getBoundingClientRect().top);
