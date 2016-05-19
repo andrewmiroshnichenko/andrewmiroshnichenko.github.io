@@ -18,7 +18,7 @@ function showMove() {
 	var string = document.createElement('span');
 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 	statisticsField.appendChild(string);
-	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top + '___move');
+	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___move';
 }
 
 function showEnd() {
