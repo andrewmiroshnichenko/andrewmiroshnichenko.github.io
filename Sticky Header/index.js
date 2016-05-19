@@ -9,6 +9,7 @@ window.onscroll = function(e) {
 var grayBar = document.querySelectorAll('.bar')[1];
 grayBar.style.opacity = '1';
 var container = document.querySelector('.container');
+var initialOffset = grayBar.getBoundingClientRect().top;
 
 var genClick = new Event('click');
 var genTouchStart = new Event('touchstart');
@@ -25,11 +26,12 @@ function showStart() {
 function showMove(e) {
 	var statisticsField = document.querySelector('.statistics');
 	var string = document.createElement('span');
-	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
+	grayBar.innerHTML = initialOffset -  window.pageYOffset;
 	statisticsField.appendChild(string);
 	container.replaceChild(grayBar, grayBar);
 	grayBar.style.opacity =  +grayBar.style.opacity - +'0.02' + '';
-	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___move';
+	string.innerHTML = '+++++' + grayBar.style.opacity + '___move';
+	// string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___move';
 	// window.dispatchEvent(genClick);
 	// window.dispatchEvent(genTouchEnd);
 	// window.dispatchEvent(genTouchStart);
