@@ -3,6 +3,9 @@ window.addEventListener('touchmove', showMove);
 window.addEventListener('touchend', showEnd);
 window.addEventListener('touchcancel', showCancel);
 window.addEventListener('click', showClick);
+window.onscroll = function(e) {
+	e.preventDefault();
+}
 var grayBar = document.querySelectorAll('.bar')[1];
 
 function showStart() {
@@ -18,10 +21,9 @@ function showMove() {
 	var string = document.createElement('span');
 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 	window.dispatchEvent('touchstart');
-	window.dispatchEvent('touchend');
+	// window.dispatchEvent('touchend');
 	statisticsField.appendChild(string);
 	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___move';
-
 }
 
 function showEnd() {
