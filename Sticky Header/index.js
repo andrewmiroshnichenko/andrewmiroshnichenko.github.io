@@ -17,8 +17,11 @@ function showMove() {
 	var statisticsField = document.querySelector('.statistics');
 	var string = document.createElement('span');
 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
+	window.dispatchEvent('touchstart');
+	window.dispatchEvent('touchend');
 	statisticsField.appendChild(string);
 	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___move';
+
 }
 
 function showEnd() {
