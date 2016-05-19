@@ -1,33 +1,41 @@
-window.addEventListener('touchstart', showTop('touchstart'));
-window.addEventListener('touchmove', showTop('touchmove'));
-window.addEventListener('touchend', showTop('touchend'));
-window.addEventListener('touchcancel', showTop('touchcancel'));
+window.addEventListener('touchstart', showStart);
+window.addEventListener('touchmove', showMove);
+window.addEventListener('touchend', showEnd);
+window.addEventListener('touchcancel', showCancel);
 window.addEventListener('click', showClick());
 var grayBar = document.querySelectorAll('.bar')[1];
 
-function showTop(what) {
+function showStart(what) {
 	var statisticsField = document.querySelector('.statistics');
 	var string = document.createElement('span');
 	grayBar.innerHTML = Math.floor(grayBar.getBoundingClientRect().top);
 	statisticsField.appendChild(string);
-	string.innerHTML = '+++' + Math.floor(grayBar.getBoundingClientRect().top) + '___' + what;
+	string.innerHTML = '+++' + Math.floor(grayBar.getBoundingClientRect().top) + '___start';
 }
 
-// function showTop() {
-// 	var statisticsField = document.querySelector('.statistics');
-// 	var string = document.createElement('span');
-// 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-// 	statisticsField.appendChild(string);
-// 	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top);
-// }
+function showMove() {
+	var statisticsField = document.querySelector('.statistics');
+	var string = document.createElement('span');
+	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
+	statisticsField.appendChild(string);
+	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top + '___move');
+}
 
-// function showTop() {
-// 	var statisticsField = document.querySelector('.statistics');
-// 	var string = document.createElement('span');
-// 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-// 	statisticsField.appendChild(string);
-// 	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top);
-// }
+function showEnd() {
+	var statisticsField = document.querySelector('.statistics');
+	var string = document.createElement('span');
+	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
+	statisticsField.appendChild(string);
+	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___end';
+}
+
+function showCancel() {
+	var statisticsField = document.querySelector('.statistics');
+	var string = document.createElement('span');
+	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
+	statisticsField.appendChild(string);
+	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___cancel';
+}
 
 function showClick() {
 	var statisticsField = document.querySelector('.statistics');
