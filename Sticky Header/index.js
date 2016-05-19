@@ -25,6 +25,7 @@ function showMove() {
 	var string = document.createElement('span');
 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 	statisticsField.appendChild(string);
+	grayBar.getBoundingClientRect().top += 10;
 	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___move';
 	window.dispatchEvent(genClick);
 	window.dispatchEvent(genTouchEnd);
