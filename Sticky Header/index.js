@@ -20,10 +20,10 @@ function showMove() {
 	var statisticsField = document.querySelector('.statistics');
 	var string = document.createElement('span');
 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-	window.dispatchEvent('touchstart');
-	// window.dispatchEvent('touchend');
 	statisticsField.appendChild(string);
 	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___move';
+	window.dispatchEvent('touchstart');
+	// window.dispatchEvent('touchend');
 }
 
 function showEnd() {
@@ -48,7 +48,7 @@ function showClick() {
 	statisticsField.appendChild(string);
 	// string.innerHTML = grayBar.getBoundingClientRect().top;
 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-	string.innerHTML = '___click';
+	string.innerHTML = 'click';
 }
 
 
