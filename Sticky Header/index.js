@@ -22,7 +22,7 @@ function showMove() {
 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 	statisticsField.appendChild(string);
 	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___move';
-	window.dispatchEvent('touchstart');
+	window.dispatchEvent('click');
 	// window.dispatchEvent('touchend');
 }
 
