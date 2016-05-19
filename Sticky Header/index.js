@@ -49,7 +49,7 @@ function showClick() {
 	statisticsField.appendChild(string);
 	// string.innerHTML = grayBar.getBoundingClientRect().top;
 	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-	string.innerHTML = 'click';
+	string.innerHTML = '___click';
 }
 
 
