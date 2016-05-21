@@ -6,7 +6,8 @@ window.addEventListener('click', showClick);
 window.onscroll = function(e) {
 	e.preventDefault();
 }
-// var grayBar = document.querySelectorAll('.bar')[1];
+var grayBar = document.querySelectorAll('.bar')[1];
+	var initialOffset = grayBar.getBoundingClientRect().top;
 // grayBar.style.opacity = '1';
 // var container = document.querySelector('.container');
 
@@ -16,7 +17,6 @@ var genTouchStart = new Event('touchstart');
 var genTouchEnd = new Event('touchend');
 
 function showStart() {
-	var grayBar = document.querySelectorAll('.bar')[1];
 	var statisticsField = document.querySelector('.statistics');
 	var string = document.createElement('span');
 	grayBar.innerHTML = Math.floor(grayBar.getBoundingClientRect().top);
@@ -25,12 +25,10 @@ function showStart() {
 }
 
 function showMove(e) {
-	var grayBar = document.querySelectorAll('.bar')[1];
-	var initialOffset = grayBar.getBoundingClientRect().top;
 	var statisticsField = document.querySelector('.statistics');
 	var string = document.createElement('span');
 	// grayBar.innerHTML = initialOffset -  window.pageYOffset;
-	grayBar.innerHTML = Math.floor(grayBar.getBoundingClientRect().top);
+	grayBar.innerHTML = findCoords();
 	statisticsField.appendChild(string);
 	// container.replaceChild(grayBar, grayBar);
 	// grayBar.style.opacity =  +grayBar.style.opacity - +'0.02' + '';
@@ -42,8 +40,11 @@ function showMove(e) {
 	// console.log(e.changedTouches[0].clientY);
 }
 
+function findCoords() {
+	return Math.floor(grayBar.getBoundingClientRect().top);
+}
+
 function showEnd() {
-	var grayBar = document.querySelectorAll('.bar')[1];
 	var statisticsField = document.querySelector('.statistics');
 	var string = document.createElement('span');
 	grayBar.innerHTML = Math.floor(grayBar.getBoundingClientRect().top);
