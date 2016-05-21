@@ -139,13 +139,19 @@ body > * {
     color: #e7e7e7;
     text-transform: uppercase;
     padding-left: 23px; }
+    @media (min-width: 768px) {
+      .article__header {
+        font-size: 90px;
+        padding: 60px 0 22px 17px;
+        display: inline-block; } }
   .article__image {
     margin: 10px auto 34px;
     display: block;
     padding: 0; }
     @media (min-width: 768px) {
       .article__image {
-        float: left; } }
+        float: left;
+        padding-top: 73px; } }
   .article__count-number {
     font-family: "ProximaNova Bold";
     font-size: 14px;
@@ -153,6 +159,9 @@ body > * {
     text-transform: none;
     font-weight: bold;
     vertical-align: super; }
+    @media (min-width: 768px) {
+      .article__count-number {
+        font-size: 18px; } }
     .article__count-number_square {
       width: 70px;
       height: 70px;
@@ -170,11 +179,31 @@ body > * {
       display: inline-block;
       background: url(../img/opportunities/underline.png) left bottom no-repeat;
       height: 20px; }
+      @media (min-width: 768px) {
+        .article__count-number_inline {
+          height: 26px;
+          vertical-align: top; } }
 
 .section {
   line-height: 18px;
   letter-spacing: .04em;
   padding: 0 0 15px 19px; }
+  @media (min-width: 768px) {
+    .section {
+      width: 460px;
+      display: inline-block;
+      padding-left: 17px; } }
+  .section_white {
+    height: 170px;
+    padding-top: 17px; }
+  .section_gray {
+    height: 235px;
+    padding-top: 37px;
+    background-color: #f5f4f9; }
+  .section_violet {
+    height: 205px;
+    background-color: #5e42b0;
+    padding-top: 37px; }
   .section_background_underline {
     background: url(../img/opportunities/underline.png) left bottom no-repeat; }
   .section__header {
@@ -184,6 +213,10 @@ body > * {
     text-transform: uppercase;
     display: inline-block;
     padding-left: 7px; }
+    @media (min-width: 768px) {
+      .section__header {
+        font-size: 36px;
+        padding-top: 7px; } }
     .section__header_color {
       color: #e7e7e7; }
   .section__text {
@@ -192,6 +225,10 @@ body > * {
     color: #000;
     text-transform: none;
     margin-top: 22px; }
+    @media (min-width: 768px) {
+      .section__text {
+        font-size: 18px;
+        line-height: 28px; } }
 
 .ending {
   text-align: center;
