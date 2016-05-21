@@ -6,10 +6,9 @@ window.addEventListener('click', showClick);
 window.onscroll = function(e) {
 	e.preventDefault();
 }
-var grayBar = document.querySelectorAll('.bar')[1];
-grayBar.style.opacity = '1';
-var container = document.querySelector('.container');
-var initialOffset = grayBar.getBoundingClientRect().top;
+// var grayBar = document.querySelectorAll('.bar')[1];
+// grayBar.style.opacity = '1';
+// var container = document.querySelector('.container');
 
 var genClick = new Event('click');
 var genFocus = new Event('focus');
@@ -17,6 +16,7 @@ var genTouchStart = new Event('touchstart');
 var genTouchEnd = new Event('touchend');
 
 function showStart() {
+	var grayBar = document.querySelectorAll('.bar')[1];
 	var statisticsField = document.querySelector('.statistics');
 	var string = document.createElement('span');
 	grayBar.innerHTML = Math.floor(grayBar.getBoundingClientRect().top);
@@ -25,21 +25,25 @@ function showStart() {
 }
 
 function showMove(e) {
+	var initialOffset = grayBar.getBoundingClientRect().top;
+	var grayBar = document.querySelectorAll('.bar')[1];
 	var statisticsField = document.querySelector('.statistics');
 	var string = document.createElement('span');
-	e.preventDefault();
-	grayBar.innerHTML = initialOffset -  window.pageYOffset;
+	// grayBar.innerHTML = initialOffset -  window.pageYOffset;
+	grayBar.innerHTML = Math.floor(grayBar.getBoundingClientRect().top);
 	statisticsField.appendChild(string);
-	container.replaceChild(grayBar, grayBar);
+	// container.replaceChild(grayBar, grayBar);
 	// grayBar.style.opacity =  +grayBar.style.opacity - +'0.02' + '';
-	string.innerHTML = '+++++' + window.pageYOffset + '___move';
-	// string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___move';
+	// string.innerHTML = '+++++' + window.pageYOffset + '___move';
+	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___move';
 	// window.dispatchEvent(genClick);
 	// window.dispatchEvent(genTouchEnd);
 	// window.dispatchEvent(genTouchStart);
+	// console.log(e.changedTouches[0].clientY);
 }
 
 function showEnd() {
+	var grayBar = document.querySelectorAll('.bar')[1];
 	var statisticsField = document.querySelector('.statistics');
 	var string = document.createElement('span');
 	grayBar.innerHTML = Math.floor(grayBar.getBoundingClientRect().top);
@@ -63,7 +67,7 @@ function showClick(e) {
 	// grayBar.style.opacity =  +grayBar.style.opacity - +'0.02' + '';
 	// string.innerHTML = grayBar.getBoundingClientRect().top;
 	// grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-	string.innerHTML = 'click';
+	string.innerHTML = '___click';
 }
 
 
