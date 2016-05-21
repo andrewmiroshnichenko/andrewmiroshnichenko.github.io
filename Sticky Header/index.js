@@ -25,8 +25,8 @@ function showStart() {
 }
 
 function showMove(e) {
-	var initialOffset = grayBar.getBoundingClientRect().top;
 	var grayBar = document.querySelectorAll('.bar')[1];
+	var initialOffset = grayBar.getBoundingClientRect().top;
 	var statisticsField = document.querySelector('.statistics');
 	var string = document.createElement('span');
 	// grayBar.innerHTML = initialOffset -  window.pageYOffset;
