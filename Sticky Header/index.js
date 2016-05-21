@@ -22,7 +22,6 @@
       originalStyles[key] = el.style[key];
     });
 
-			// 	styles.left = ((window.innerWidth - originalRect.width) / 2 + getWindowScroll().left) + 'px';
     var onscroll;
     if (window.onscroll) {
       onscroll = window.onscroll;
@@ -32,6 +31,7 @@
       if (getWindowScroll().top > originalRect.top - requiredTop) {
         for (key in styles) {
           el.style[key] = styles[key];
+					styles.left = ((window.innerWidth - originalRect.width) / 2 + getWindowScroll().left) + 'px';
         }
       } else {
         for (key in originalStyles) {
@@ -46,7 +46,8 @@
     var rect = el.getBoundingClientRect();
     var windowScroll = getWindowScroll()
     return {
-			left: (document.documentElement.clientWidth - rect.width) / 2 + windowScroll.left,
+			// left: (document.documentElement.clientWidth - rect.width) / 2 + windowScroll.left,
+			left: rect.left + windowScroll.left,
       top: rect.top + windowScroll.top,
       width: rect.width,
       height: rect.height
