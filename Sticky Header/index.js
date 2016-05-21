@@ -34,8 +34,8 @@ function showMove(e) {
 	string.innerHTML = '+++++' + window.pageYOffset + '___move';
 	// string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___move';
 	window.dispatchEvent(genFocus);
-	// window.dispatchEvent(genTouchEnd);
-	// window.dispatchEvent(genTouchStart);
+	window.dispatchEvent(genTouchEnd);
+	window.dispatchEvent(genTouchStart);
 }
 
 function showEnd() {
