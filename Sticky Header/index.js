@@ -27,13 +27,14 @@ function showStart() {
 function showMove(e) {
 	var statisticsField = document.querySelector('.statistics');
 	var string = document.createElement('span');
+	e.preventDefault();
 	grayBar.innerHTML = initialOffset -  window.pageYOffset;
 	statisticsField.appendChild(string);
 	container.replaceChild(grayBar, grayBar);
 	// grayBar.style.opacity =  +grayBar.style.opacity - +'0.02' + '';
 	string.innerHTML = '+++++' + window.pageYOffset + '___move';
 	// string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___move';
-	window.dispatchEvent(genClick);
+	// window.dispatchEvent(genClick);
 	// window.dispatchEvent(genTouchEnd);
 	// window.dispatchEvent(genTouchStart);
 }
@@ -62,7 +63,7 @@ function showClick(e) {
 	// grayBar.style.opacity =  +grayBar.style.opacity - +'0.02' + '';
 	// string.innerHTML = grayBar.getBoundingClientRect().top;
 	// grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-	string.innerHTML = '___click';
+	string.innerHTML = 'click';
 }
 
 
