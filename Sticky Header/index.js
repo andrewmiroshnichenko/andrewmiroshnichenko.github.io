@@ -8,7 +8,7 @@
 
     var requiredOriginalStyles = ['position', 'top', 'left', 'z-index'];
 
-    var requiredTop = top || 0;
+    var requiredTop = 0;
     var originalRect = calcRect(el);
     var styles = {
       position: 'fixed',
@@ -33,6 +33,7 @@
           el.style[key] = styles[key];
 					styles.left = ((window.innerWidth - originalRect.width) / 2 + getWindowScroll().left) + 'px';
         }
+        // document.querySelectorAll('.bar')[0].innerH
       } else {
         for (key in originalStyles) {
           el.style[key] = originalStyles[key];
