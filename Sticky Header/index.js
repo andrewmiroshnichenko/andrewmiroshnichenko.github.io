@@ -33,9 +33,9 @@ function showMove(e) {
 	// grayBar.style.opacity =  +grayBar.style.opacity - +'0.02' + '';
 	string.innerHTML = '+++++' + window.pageYOffset + '___move';
 	// string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___move';
-	window.dispatchEvent(genFocus);
-	window.dispatchEvent(genTouchEnd);
-	window.dispatchEvent(genTouchStart);
+	window.dispatchEvent(genClick);
+	// window.dispatchEvent(genTouchEnd);
+	// window.dispatchEvent(genTouchStart);
 }
 
 function showEnd() {
@@ -54,13 +54,14 @@ function showCancel() {
 	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___cancel';
 }
 
-function showClick() {
+function showClick(e) {
+	e.preventDefault();
 	var statisticsField = document.querySelector('.statistics');
 	var string = document.createElement('span');
 	statisticsField.appendChild(string);
-	grayBar.style.opacity =  +grayBar.style.opacity - +'0.02' + '';
+	// grayBar.style.opacity =  +grayBar.style.opacity - +'0.02' + '';
 	// string.innerHTML = grayBar.getBoundingClientRect().top;
-	grayBar.innerHTML = grayBar.getBoundingClientRect().top;
+	// grayBar.innerHTML = grayBar.getBoundingClientRect().top;
 	string.innerHTML = '___click';
 }
 
