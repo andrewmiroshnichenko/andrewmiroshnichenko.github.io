@@ -68,7 +68,7 @@ function showClick(e) {
 	// grayBar.style.opacity =  +grayBar.style.opacity - +'0.02' + '';
 	// string.innerHTML = grayBar.getBoundingClientRect().top;
 	// grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-	string.innerHTML = 'click';
+	string.innerHTML = '___click';
 }
 
 
