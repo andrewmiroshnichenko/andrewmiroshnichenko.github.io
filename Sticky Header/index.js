@@ -1,111 +1,125 @@
-window.addEventListener('touchstart', showStart);
-window.addEventListener('touchmove', showMove);
-window.addEventListener('touchend', showEnd);
-window.addEventListener('touchcancel', showCancel);
-window.addEventListener('click', showClick);
-window.onscroll = function(e) {
-	e.preventDefault();
-}
-var grayBar = document.querySelectorAll('.bar')[1];
-	var initialOffset = grayBar.getBoundingClientRect().top;
-// grayBar.style.opacity = '1';
-// var container = document.querySelector('.container');
+! function(name, definition) {
+	if (typeof module != 'undefined' && module.exports) module.exports = definition();
+	else if (typeof define == 'function') define(definition);
+	else this[name] = definition();
+}('sticky', function() {
 
-var genClick = new Event('click');
-var genFocus = new Event('focus');
-var genTouchStart = new Event('touchstart');
-var genTouchEnd = new Event('touchend');
-
-function showStart() {
-	var statisticsField = document.querySelector('.statistics');
-	var string = document.createElement('span');
-	grayBar.innerHTML = Math.floor(grayBar.getBoundingClientRect().top);
-	statisticsField.appendChild(string);
-	string.innerHTML = '+++' + Math.floor(grayBar.getBoundingClientRect().top) + '___start';
-}
-
-function showMove(e) {
-	var statisticsField = document.querySelector('.statistics');
-	var string = document.createElement('span');
-	// grayBar.innerHTML = initialOffset -  window.pageYOffset;
-	grayBar.innerHTML = findCoords();
-	statisticsField.appendChild(string);
-	// container.replaceChild(grayBar, grayBar);
-	// grayBar.style.opacity =  +grayBar.style.opacity - +'0.02' + '';
-	// string.innerHTML = '+++++' + window.pageYOffset + '___move';
-	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___move';
-	// window.dispatchEvent(genClick);
-	// window.dispatchEvent(genTouchEnd);
-	// window.dispatchEvent(genTouchStart);
-	// console.log(e.changedTouches[0].clientY);
-}
-
-function findCoords() {
-	return Math.floor(grayBar.getBoundingClientRect().top);
-}
-
-function showEnd() {
-	var statisticsField = document.querySelector('.statistics');
-	var string = document.createElement('span');
-	grayBar.innerHTML = Math.floor(grayBar.getBoundingClientRect().top);
-	statisticsField.appendChild(string);
-	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___end';
-}
-
-function showCancel() {
-	var statisticsField = document.querySelector('.statistics');
-	var string = document.createElement('span');
-	grayBar.innerHTML = Math.floor(grayBar.getBoundingClientRect().top);
-	statisticsField.appendChild(string);
-	string.innerHTML = '+++++' + Math.floor(grayBar.getBoundingClientRect().top) + '___cancel';
-}
-
-function showClick(e) {
-	e.preventDefault();
-	var statisticsField = document.querySelector('.statistics');
-	var string = document.createElement('span');
-	statisticsField.appendChild(string);
-	// grayBar.style.opacity =  +grayBar.style.opacity - +'0.02' + '';
-	// string.innerHTML = grayBar.getBoundingClientRect().top;
-	// grayBar.innerHTML = grayBar.getBoundingClientRect().top;
-	string.innerHTML = '___click';
-}
-
-
-// function sticky(el, top) {
+	return function sticky(el, top) {
 
 		
-// 		var requiredOriginalStyles = ['position', 'top', 'left', 'z-index'];
-// 		var grayBar = document.querySelectorAll('.bar')[1];
-// 		console.log(grayBar);
+		var requiredOriginalStyles = ['position', 'top', 'left', 'z-index'];
+		var grayBar = document.querySelectorAll('.bar')[1];
+		console.log(grayBar);
 
-// 		var requiredTop = top || 0;
-// 		var originalRect = calcRect(el);
-// 		var styles = {
-// 			position: 'fixed',
-// 			top: requiredTop + 'px',
-// 			left: originalRect.left + 'px',
-// 			// width: originalRect.width + 'px',
-// 			'z-index': 9999
-// 		}
-// 		var originalStyles = {}
-// 		requiredOriginalStyles.forEach(function(key) {
-// 			originalStyles[key] = el.style[key];
-// 		});
+		var requiredTop = top || 0;
+		var originalRect = calcRect(el);
+		var styles = {
+			position: 'fixed',
+			top: requiredTop + 'px',
+			left: originalRect.left + 'px',
+			// width: originalRect.width + 'px',
+			'z-index': 9999
+		}
+		var originalStyles = {}
+		requiredOriginalStyles.forEach(function(key) {
+			originalStyles[key] = el.style[key];
+		});
+		var string = document.createElement('p');
+		var parent = document.querySelector('.statistics');
+		var onscroll, onresize, ontouchmove;
+		if (window.onscroll) {
+			onscroll = window.onscroll;
+		}
+		if (window.onresize) {
+			onresize = window.onresize;
+		}
+		if (window.onresize) {
+			onresize = window.onresize;
+		}
+		window.onresize = function(e) {
+				styles.left = ((window.innerWidth - originalRect.width) / 2 + getWindowScroll().left) + 'px';
+				console.log(styles.left);
+				onresize && onresize(e)
+		}
 
-	// function calcRect(el) {
-	// 	var rect = el.getBoundingClientRect();
-	// 	var windowScroll = getWindowScroll();
-	// 	return {
-	// 		left: (document.documentElement.clientWidth - rect.width) / 2 + windowScroll.left,
-	// 		top: rect.top + windowScroll.top,
-	// 		width: rect.width,
-	// 		height: rect.height
-	// 	}
-	// }
-	// function getWindowScroll() {
-	// 	return {
-	// 		top: window.pageYOffset || document.documentElement.scrollTop,
-	// 		left: window.pageXOffset || document.documentElement.scrollLeft
-	// 	}
-	// }
+		// document.body
+
+				document.body.addEventListener('touchstart', handleStart);
+				// document.body.addEventListener('touchmove', handleMove);
+				document.body.addEventListener('touchend', handleEnd);
+				document.body.addEventListener('click', handleClick);
+		window.onscroll = function(event) {
+			// grayBar.innerHTML = grayBar.getBoundingClientRect().top;
+			if (getWindowScroll().top > originalRect.top - requiredTop) {
+				for (key in styles) {
+					el.style[key] = styles[key];
+					grayBar.innerHTML = grayBar.getBoundingClientRect().top;
+				// console.log(styles.left);  
+				}
+				document.documentElement.addEventListener('touchmove', handleWantedMove(el));
+			} else {
+				for (key in originalStyles) {
+					el.style[key] = originalStyles[key];
+					// console.log(requiredTop);
+				}
+			}
+			onscroll && onscroll(event)
+		}
+
+		function handleWantedMove(el) {
+			console.log(el);
+			el.top = 0;
+			var string = document.createElement('span');
+			var parent = document.querySelector('.statistics');
+			parent.appendChild(string);
+			string.innerHTML = ' + (move) + ';
+		}
+
+		function handleClick() {
+			var string = document.createElement('span');
+			var parent = document.querySelector('.statistics');
+			parent.appendChild(string);
+			string.innerHTML = ' + (click) + ';
+		}
+		function handleStart() {
+			var string = document.createElement('span');
+			var parent = document.querySelector('.statistics');
+			parent.appendChild(string);
+			string.innerHTML = ' + (start) + ';
+		}
+		// function handleMove() {
+		// 	var string = document.createElement('span');
+		// 	var parent = document.querySelector('.statistics');
+		// 	parent.appendChild(string);
+		// 	string.innerHTML = ' + (move) + ';
+		// }
+		function handleEnd() {
+			var string = document.createElement('span');
+			var parent = document.querySelector('.statistics');
+			parent.appendChild(string);
+			string.innerHTML = ' + (end) + ';
+		}
+			// if (grayBar.getBoundingClientRect().top / )
+			// console.log(grayBar.getBoundingClientRect().top);
+	}
+
+
+	function calcRect(el) {
+		var rect = el.getBoundingClientRect();
+		var windowScroll = getWindowScroll();
+		return {
+			left: (document.documentElement.clientWidth - rect.width) / 2 + windowScroll.left,
+			top: rect.top + windowScroll.top,
+			width: rect.width,
+			height: rect.height
+		}
+	}
+
+	function getWindowScroll() {
+		return {
+			top: window.pageYOffset || document.documentElement.scrollTop,
+			left: window.pageXOffset || document.documentElement.scrollLeft
+		}
+	}
+
+});
