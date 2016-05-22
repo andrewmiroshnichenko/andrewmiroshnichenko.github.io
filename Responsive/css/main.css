@@ -126,6 +126,9 @@ body > * {
       border-radius: 50%;
       -webkit-animation: counter 2s linear;
               animation: counter 2s linear; }
+    @media (min-width: 768px) {
+      .article_opportunity {
+        height: 921px; } }
   .article_advantage {
     background: url(../img/background-grey.png) center bottom no-repeat;
     height: 587px;
@@ -142,16 +145,24 @@ body > * {
     @media (min-width: 768px) {
       .article__header {
         font-size: 90px;
-        padding: 60px 0 22px 17px;
-        display: inline-block; } }
+        padding: 60px 100px 22px 17px;
+        /*display: inline-block;*/
+        float: right; } }
   .article__image {
     margin: 10px auto 34px;
     display: block;
     padding: 0; }
     @media (min-width: 768px) {
       .article__image {
-        float: left;
-        padding-top: 73px; } }
+        display: none; } }
+  .article__image768 {
+    display: none; }
+    @media (min-width: 768px) {
+      .article__image768 {
+        display: block; } }
+    .article__image768_advantage {
+      position: absolute;
+      padding-top: 73px; }
   .article__count-number {
     font-family: "ProximaNova Bold";
     font-size: 14px;
@@ -170,6 +181,15 @@ body > * {
       text-align: center;
       top: 292px;
       left: 20px; }
+      @media (min-width: 768px) {
+        .article__count-number_square {
+          font-size: 24px;
+          color: #f5f6f7;
+          top: 493px;
+          left: 31px;
+          width: 117px;
+          height: 117px;
+          background: #5e42b0 url(../img/opportunities/underline-number.png) no-repeat scroll 51px 71px; } }
       .article__count-number_square:before {
         content: "";
         display: inline-block;
@@ -190,9 +210,8 @@ body > * {
   padding: 0 0 15px 19px; }
   @media (min-width: 768px) {
     .section {
-      width: 460px;
-      display: inline-block;
-      padding-left: 17px; } }
+      float: right;
+      padding-left: 290px; } }
   .section_white {
     height: 170px;
     padding-top: 17px; }
@@ -217,18 +236,29 @@ body > * {
       .section__header {
         font-size: 36px;
         padding-top: 7px; } }
-    .section__header_color {
+    .section__header_opportunity {
       color: #e7e7e7; }
+      @media (min-width: 768px) {
+        .section__header_opportunity {
+          font-size: 90px;
+          padding: 77px 0 0 30px;
+          line-height: 90px;
+          width: 768px; } }
   .section__text {
     font-family: "ProximaNova Regular";
     font-size: 15px;
     color: #000;
     text-transform: none;
-    margin-top: 22px; }
+    padding-top: 22px; }
     @media (min-width: 768px) {
-      .section__text {
+      .section__text_advantage {
         font-size: 18px;
         line-height: 28px; } }
+    @media (min-width: 768px) {
+      .section__text_opportunity {
+        font-size: 24px;
+        padding: 9px 70px 0 35px;
+        line-height: 29px; } }
 
 .ending {
   text-align: center;
@@ -243,7 +273,11 @@ body > * {
       .ending_header {
         background: url(../img/header/header_background768.jpg) 100% 100%; } }
   .ending_footer {
-    background: url(../img/footer/footer_background.png) 100% 100%; }
+    background: url(../img/footer/footer_background320.png) 100% 100%; }
+    @media (min-width: 768px) {
+      .ending_footer {
+        background: url(../img/footer/footer_background768.png) 100% 100%;
+        overflow: hidden; } }
   .ending__logo {
     display: block; }
     .ending__logo-slogan {
@@ -269,8 +303,17 @@ body > * {
           display: block;
           float: left;
           padding: 52px 0 182px 19px; } }
-    .ending__logo_footer {
-      padding: 97px 0 51px; }
+    .ending__logo_footer320 {
+      padding: 39px 0 136px; }
+      @media (min-width: 768px) {
+        .ending__logo_footer320 {
+          display: none; } }
+    .ending__logo_footer768 {
+      display: none; }
+      @media (min-width: 768px) {
+        .ending__logo_footer768 {
+          display: block;
+          margin: 128px auto 0; } }
   .ending__slogan {
     font-family: "ProximaNova Bold";
     font-size: 32px;
@@ -301,10 +344,19 @@ body > * {
       display: block;
       margin: 0 auto;
       font-size: 34px; }
+      @media (min-width: 768px) {
+        .ending__slogan_footer {
+          padding-top: 74px;
+          font-size: 80px; } }
     .ending__slogan_footer p:last-child {
       color: #9b8ec1;
       font-size: 15px;
       line-height: 24px; }
+      @media (min-width: 768px) {
+        .ending__slogan_footer p:last-child {
+          color: #a496ca;
+          font-size: 36px;
+          padding-top: 20px; } }
 
 .social {
   background: url(../img/footer/social-background.png);
@@ -313,6 +365,10 @@ body > * {
   height: 48px;
   width: 100%;
   padding: 3px 0 0 20px; }
+  @media (min-width: 768px) {
+    .social {
+      height: 67px;
+      vertical-align: top; } }
   .social__item {
     display: inline-block;
     width: 25px;
@@ -360,7 +416,12 @@ body > * {
         right: 58px;
         padding: 0 85px 0 126px; } }
     .button__google_footer {
-      bottom: 177px; }
+      bottom: 222px; }
+      @media (min-width: 768px) {
+        .button__google_footer {
+          background-position: -297px 19px;
+          right: 58px;
+          padding: 0 80px 0 120px; } }
   .button__apple {
     background-position: 3px -3px;
     padding-left: 40px;
@@ -372,7 +433,12 @@ body > * {
         left: 58px;
         padding: 0 66px 0 105px; } }
     .button__apple_footer {
-      bottom: 177px; }
+      bottom: 222px; }
+      @media (min-width: 768px) {
+        .button__apple_footer {
+          background-position: 43px 19px;
+          left: 58px;
+          padding: 0 50px 0 104px; } }
   .button:hover {
     background-color: #5e42ff; }
 
@@ -396,6 +462,9 @@ body > * {
       box-shadow: 0 0 2px 0 #000; }
     .switcher__item_active {
       background-color: #5e42b0; }
+      @media (min-width: 768px) {
+        .switcher__item_active {
+          background-color: #fff; } }
 
 .links {
   padding-top: 196px; }

@@ -30,7 +30,12 @@
 			}
 		}
 		&_footer {
-			bottom: 177px;
+			bottom: 222px;
+			@include breakpoint(tablet) {
+				background-position: -297px 19px;
+				right: 58px;
+				padding: 0 80px 0 120px;
+			}
 		}
 	}
 	&__apple {
@@ -46,7 +51,12 @@
 			}
 		}
 		&_footer {
-			bottom: 177px;
+			bottom: 222px;
+			@include breakpoint(tablet) {
+				background-position: 43px 19px;
+				left: 58px;
+				padding: 0 50px 0 104px;
+			}
 		}
 	}
 	&:hover {
@@ -76,6 +86,9 @@
 		}
 		&_active {
 			background-color: #5e42b0;
+			@include breakpoint(tablet) {
+				background-color: #fff;
+			}
 		}
 	}
 }

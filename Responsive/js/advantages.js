@@ -20,7 +20,7 @@ var advantages768 = {
 	0: {
 	// "athlets": {
 		name: "athlets",
-		image: "img/footballer768.jpg",
+		image: "img/footballer768.png",
 		// background1:
 		number1: "01",
 		header1: "Connection",
@@ -37,7 +37,7 @@ var advantages768 = {
 	1: {
 	// "players": {
 		name: "players",
-		image: "img/player768.jpg",
+		image: "img/player768.png",
 		// background1:
 		number1: "01",
 		header1: "Connection",

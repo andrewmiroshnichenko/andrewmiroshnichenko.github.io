@@ -21,11 +21,24 @@
 
 	function generateNewAdvantage(advantageSet, advantageNumber, templateId) {
 		var templateHtml = $(templateId).html();
-
 		$('.article_advantage').remove();
 		$('.ending_header').after( tmpl(templateHtml, advantageSet[advantageNumber]) );
-
 		$('.article_advantage .switcher__item').eq(advantageNumber).addClass('switcher__item_active');
+		$('.switcher__container').css('top', '220px');
+		$('.section_violet .section__text').css('color', '#fff');
+		$('.section_violet .article__count-number_inline').css('background', 'url(img/opportunities/underline-white.png) left bottom no-repeat');
+
+		if ((templateId === '#advantages768') && (advantageNumber === 1)) {
+			$('.article__image').css('right', '0');
+			$('.article__image').css('padding-top', '12px');
+			$('.article__header').css('padding', '56px 100px 22px 33px');
+			$('.article__header').css('float', 'left');
+			$('.section').css('float', 'left');
+			$('.section').css('width', '100%');
+			$('.section_white').css('padding', '18px 355px 0 33px');
+			$('.section_gray').css('padding', '58px 355px 0 33px');
+			$('.section_violet').css('padding', '48px 355px 0 33px');
+		}
 	};
 
 })(jQuery);

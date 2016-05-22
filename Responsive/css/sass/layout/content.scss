@@ -9,6 +9,9 @@
 				animation: counter 2s linear;
 			}
 		}
+		@include breakpoint(tablet) {
+			height: 921px;
+		}
 	}
 	&_advantage {
 		background: url(../img/background-grey.png) center bottom no-repeat;
@@ -23,8 +26,9 @@
 		padding-left: 23px;
 		@include breakpoint(tablet) {
 			font-size: 90px;
-			padding: 60px 0 22px 17px;
-			display: inline-block;
+			padding: 60px 100px 22px 17px;
+			/*display: inline-block;*/
+			float: right;
 		}
 	}
 	&__image {
@@ -32,8 +36,20 @@
 		display: block;
 		padding: 0;
 		@include breakpoint(tablet) {
-			float: left;
+			display: none;
+		}
+	}
+	&__image768 {
+		display: none;
+		@include breakpoint(tablet) {
+			display: block;
+		}
+		&_opportunity {
+		}
+		&_advantage {
+			position: absolute;
 			padding-top: 73px;
+
 		}
 	}
 	&__count-number {
@@ -51,6 +67,15 @@
 			text-align: center;
 			top: 292px;
 			left: 20px;
+			@include breakpoint(tablet) {
+				font-size: 24px;
+				color: #f5f6f7;
+				top: 493px;
+				left: 31px;
+				width: 117px;
+				height: 117px;
+				background: #5e42b0 url(../img/opportunities/underline-number.png) no-repeat scroll 51px 71px;
+			}
 			&:before {
 				content: "";
 				display: inline-block;
@@ -75,9 +100,8 @@
 	letter-spacing: .04em;
 	padding: 0 0 15px 19px;
 	@include breakpoint(tablet) {
-		width: 460px;
-		display: inline-block;
-		padding-left: 17px;
+		float: right;
+		padding-left: 290px;
 	}
 	&_white {
 		height: 170px;
@@ -104,16 +128,31 @@
 			font-size: 36px;
 			padding-top: 7px;
 		}
-		&_color {
-			color: #e7e7e7;	
+		&_opportunity {
+			color: #e7e7e7;
+			@include breakpoint(tablet) {
+				font-size: 90px;
+				padding: 77px 0 0 30px;
+				line-height: 90px;
+				width: 768px;
+			}
 		}
 	}
 	&__text {
 		@include font('ProximaNova Regular', 15px, #000, none);
-		margin-top: 22px;
-		@include breakpoint(tablet) {
-			font-size: 18px;
-			line-height: 28px;
+		padding-top: 22px;
+		&_advantage {
+			@include breakpoint(tablet) {
+				font-size: 18px;
+				line-height: 28px;
+			}
+		}
+		&_opportunity {
+			@include breakpoint(tablet) {
+				font-size: 24px;
+				padding: 9px 70px 0 35px;
+				line-height: 29px;
+			}
 		}
 	}
 }

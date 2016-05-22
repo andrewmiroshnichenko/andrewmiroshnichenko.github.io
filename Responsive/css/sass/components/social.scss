@@ -5,6 +5,10 @@
 	height: 48px;
 	width: 100%;
 	padding: 3px 0 0 20px;
+	@include breakpoint(tablet) {
+		height: 67px;
+		vertical-align: top;
+	}
 	&__item {
 		display: inline-block;
 		width: 25px;
