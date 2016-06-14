@@ -10,13 +10,25 @@ window.onload = function() {
 		container.addEventListener('scroll', move);
 	}
 
+	container.addEventListener('touchmove', makeStatic);
+	container.addEventListener('resize', makeStatic);
+
+	function makeStatic() {
+		if (document.documentElement.clientWidth > window.innerWidth) {
+			// sticky.lastElementChild.innerHTML = document.documentElement.clientWidth + '----' + window.innerWidth + '----' + sticky.style.position;
+			sticky.style.position = 'static';
+		} else {
+			sticky.style.position = 'sticky';
+		}
+	}
+
 	function move() {
 		var scrolled = container.scrollTop;
 		// sticky.lastElementChild.innerHTML = scrolled + '-----' + top;
 		if (scrolled > top) {
 			sticky.style.position = 'fixed';
 			placeholder.style.display = 'block';
-		} else if (scrolled < top) {
+		} else if (scrolled <= top) {
 			placeholder.style.display = 'none';
 			sticky.style.position = 'static';
 
