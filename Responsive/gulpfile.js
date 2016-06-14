@@ -6,7 +6,10 @@ var gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   svgSprite = require('gulp-svg-sprite'),
   watch = require('gulp-watch'),
-  plumber = require('gulp-plumber');
+  plumber = require('gulp-plumber'),
+  changed = require('gulp-changed'),
+  uglify = require('gulp-uglify'),
+  clean = require('gulp-clean');
 
 var svgSpriteConfig = {
   shape: {
