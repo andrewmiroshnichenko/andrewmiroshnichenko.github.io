@@ -1,0 +1,12 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.maindigits,
+.calcmath {
+  display: inline-block;
+}
+button {
+  width: 100%;
+  height: 100%;
+}
