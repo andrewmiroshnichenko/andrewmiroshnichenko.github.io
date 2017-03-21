@@ -8,7 +8,7 @@ body {
 }
 
 .empty {
-  height: 550px;
+  height: 1500px;
   width: 100%;
 }
 
@@ -16,29 +16,23 @@ body {
   display: inline-block;
   width: 100%;
   background: linear-gradient(to top, white, blue);
-  height: 2000px;
+  height: 4000px;
   position: relative;
 }
 
 section {
-  /*margin-top: -255px;*/
   width: 470px;
   float: left;
   margin-left: 150px;
   padding: 100px;
-  /*position: relative;*/
-  /*margin: 0 auto;*/
   background-color: yellow;
 }
 
 aside {
   width: 200px;
   padding: 50px 35px;
-  /*margin: 0 150px 0 0;*/
-  /*position: relative;*/
-  /*float: right;*/
   background: red;
-  /*position: absolute;*/
+  font-size: 20px;
 }
 
 .fixed-bottom {
@@ -52,9 +46,11 @@ aside {
   position: fixed;
   top: 0;
   margin: 0;
+  bottom: initial;
 }
 
 .absolute {
   position: absolute;
   margin: 0;
+  bottom: initial;
 }

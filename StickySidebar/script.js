@@ -4,59 +4,52 @@ var toTop = false;
 var scrolled = null;
 var position;
 var topElementHeight = document.querySelector('.empty').getBoundingClientRect().height;
+var firstTimeScroll = true;
 
-function checkBottom() {
-  if ((window.pageYOffset >= sidebar.getBoundingClientRect().bottom + window.pageYOffset - document.documentElement.clientHeight) && toBottom) {
-    sidebar.classList.remove('absolute');
-    sidebar.classList.add('fixed-bottom');
-    position = window.pageYOffset + document.documentElement.clientHeight - sidebar.getBoundingClientRect().height - topElementHeight + 'px';
+function scrollHandler() {
+  if (firstTimeScroll) {
+    if (sidebar.getBoundingClientRect().bottom <= window.innerHeight) {
+      sidebar.className = 'fixed-bottom';
+      sidebar.style.top = '';
+    }
+    firstTimeScroll = false;
+    return;
+  }
+  checkDirection();
+  if (window.pageYOffset < topElementHeight) {
+    sidebar.className = 'absolute';
     sidebar.style.top = 'initial';
-  // } else if ( toBottom) {
-  //   sidebar.classList.remove('fixed-top');
-  //   sidebar.classList.add('absolute');
-  //   sidebar.style.top = position;
+    position = 0;
+  } else if (sidebar.getBoundingClientRect().top < 0 && sidebar.getBoundingClientRect().bottom > window.innerHeight) {
+    sidebar.className = 'absolute';
+    sidebar.style.top = position > 0 ? position + 'px' : 0;
+  } else if (sidebar.getBoundingClientRect().top >= 0 && toTop) {
+    position = -document.querySelector('.wrapper').getBoundingClientRect().top;
+    sidebar.className = 'fixed-top';
+    sidebar.style.top = '';
+  } else if (sidebar.getBoundingClientRect().bottom <= window.innerHeight && toBottom) {
+    position = -document.querySelector('.wrapper').getBoundingClientRect().top + sidebar.getBoundingClientRect().top;
+    sidebar.className = 'fixed-bottom';
+    sidebar.style.top = '';
+  } else if ((sidebar.getBoundingClientRect().top >= 0 && toBottom) || (sidebar.getBoundingClientRect().bottom <= window.innerHeight && toTop)) {
+    sidebar.className = 'absolute';
+    sidebar.style.top = position + 'px';
   }
 }
-// console.log(topElementHeight);
-// console.log(window.pageYOffset);
-
-function checkTop() {
-    // console.log(window.pageYOffset);
-    console.log(sidebar.getBoundingClientRect().top);
-    console.log(toTop);
-// console.log(sidebar.getBoundingClientRect().height);
-  if ((sidebar.getBoundingClientRect().top >= 0) && toTop && (window.pageYOffset > topElementHeight)) {
-    sidebar.classList.remove('absolute');
-    sidebar.classList.add('fixed-top');
-    sidebar.style.top = 0;
-    position = window.pageYOffset + document.documentElement.clientHeight - sidebar.getBoundingClientRect().height - topElementHeight + 'px';
-  } else if ((window.pageYOffset < topElementHeight) && toTop) {
-    sidebar.classList.remove('fixed-top');
-    sidebar.classList.add('absolute');
-    sidebar.style.top = 0;
-    console.log(position);
-  } else if ((sidebar.getBoundingClientRect().bottom + window.pageYOffset > window.pageYOffset) && toTop) {
-    sidebar.classList.remove('fixed-bottom');
-    sidebar.classList.add('absolute');
-    sidebar.style.top = position;
-    console.log(position);
-  } 
-}
-
 function checkDirection() {
   if (scrolled < window.pageYOffset) {
     scrolled = window.pageYOffset;
     toBottom = true;
     toTop = false;
-    // console.log(toBottom, toTop);
   } else if (scrolled > window.pageYOffset) {
     scrolled = window.pageYOffset;
     toBottom = false;
     toTop = true;
-    // console.log(toBottom, toTop);
   }
 }
+// checkDirection();
+// scrollHandler();
 
-window.addEventListener('scroll', checkDirection);
-window.addEventListener('scroll', checkBottom);
-window.addEventListener('scroll', checkTop);
+window.onload = function() {
+  window.addEventListener('scroll', scrollHandler);
+};
