@@ -47,6 +47,35 @@
     .question__legend {
       font: 600 20px 'Roboto', sans-serif;
       width: 100%;
+      position: relative;
+    }
+    .question__legend-tips {
+      display: inline-block;
+      height: 25px;
+      width: 25px;
+      vertical-align: bottom;
+      cursor: pointer;
+      white-space: pre;
+      position: relative;
+      z-index: 2;
+    }
+    .question__legend-tips_folded {
+      background: url(info.png) center center/25px no-repeat;
+    }
+    .question__legend-tips_unfolded {
+      background: url(https://image.flaticon.com/icons/svg/61/61155.svg) center center/20px no-repeat;
+      box-shadow: 0 -1px 4px -2px black;
+      background-color: white;
+    }
+    .question__legend-tips-text {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      top: 100%;
+      box-shadow: 0 0 2px 0 black;
+      background-color: white;
+      font: 16px 'Roboto', sans-serif;
+      padding: 16px 0;
     }
     .question label {
       display: block;
@@ -77,6 +106,9 @@
     /*This rule is needed to override original swiper rule*/
     .swiper-wrapper {
       height: initial;
+    }
+    .swiper-button_zindex-0 {
+      z-index: 0;
     }
     .questionnaire__submit-button {
       cursor: pointer;
@@ -126,18 +158,18 @@
       "categories": [\
         {\
           "categoryId": "0",\
-          "categoryName": "Загальні питання"\
+          "categoryName": "Спілкування з жеківцями"\
         },\
         {\
           "categoryId": "1",\
-          "categoryName": "Благоустрій"\
+          "categoryName": "Навігація по території комплексу"\
         }\
       ],\
       "questions": [\
         {\
-          "questionName": "Плануєте купувати квартиру?",\
+          "questionName": "На всіх будівлях комплексу є зрозумілі адресні покажчики з назвою вулиці та номером будинку",\
           "questionId": "0",\
-          "categoryName": "Загальні питання",\
+          "categoryName": "Спілкування з жеківцями",\
           "categoryId": "0",\
           "answers": [\
             {\
@@ -168,9 +200,9 @@
           ]\
         },\
         {\
-          "questionName": "Вам подобається відповідати на наші питання?",\
+          "questionName": "При в’їзді на територію комплексу розміщена зрозуміла схема кварталу",\
           "questionId": "1",\
-          "categoryName": "Загальні питання",\
+          "categoryName": "Спілкування з жеківцями",\
           "categoryId": "0",\
           "answers": [\
             {\
@@ -203,7 +235,7 @@
         {\
           "questionName": "На всіх будівлях комплексу є зрозумілі адресні покажчики з назвою вулиці та номером будинку",\
           "questionId": "2",\
-          "categoryName": "Благоустрій",\
+          "categoryName": "Навігація по території комплексу",\
           "categoryId": "1",\
           "answers": [\
             {\
@@ -236,7 +268,7 @@
         {\
           "questionName": "При в’їзді на територію комплексу розміщена зрозуміла схема кварталу",\
           "questionId": "3",\
-          "categoryName": "Благоустрій",\
+          "categoryName": "Навігація по території комплексу",\
           "categoryId": "1",\
           "answers": [\
             {\
@@ -303,15 +335,26 @@
       var fieldset = document.createElement('fieldset');
       var legend = document.createElement('legend');
       var answerContainer = document.createElement('div');
+      var tipTrigger = document.createElement('span');
+
       fieldset.appendChild(legend);
       fieldset.appendChild(answerContainer);
       container.appendChild(fieldset);
 
       fieldset.className = 'swiper-slide question';
       legend.className = 'question__legend';
-      legend.textContent = +questionData['questionId'] + 1 + '. ' + questionData['questionName'];
+      legend.innerHTML = +questionData['questionId'] + 1 + '. ' + questionData['questionName'] + ' <span class="question__legend-tips question__legend-tips_folded"></span><p class="question__legend-tips-text none"></p>';
       answerContainer.className = 'question__answers-wrapper';
+      var tipTrigger = legend.querySelector('.question__legend-tips');
+      var tipText = legend.querySelector('.question__legend-tips-text');
+      tipText.textContent = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati esse optio corrupti, perferendis ratione quaerat, mollitia rem facilis est beatae?';
 
+      tipTrigger.addEventListener('click', function(e) {
+        this.classList.toggle('question__legend-tips_unfolded');
+        tipText.classList.toggle('none');
+        document.querySelector('.swiper-button-next').classList.toggle('swiper-button_zindex-0');
+        document.querySelector('.swiper-button-prev').classList.toggle('swiper-button_zindex-0');
+      });
       questionData['answers'].forEach(function(item) {
         buildAnswer({answerData: item, container: answerContainer, questionId: questionData['questionId']});
       });
