@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Form</title>
+  <link rel="stylesheet" type="text/css" href="swiper.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      border-radius: 0;
+      background: none;
+      border: 0;
+      outline: 0;
+    }
+    .mainnav {
+      height: 10vh;
+      background-color: red;
+    }
+    .maincontent {
+      text-align: center;
+      height: 90vh;
+      position: relative;
+    }
+    .maincontent:after {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    .questionnaire {
+      min-height: 400px;
+      width: calc(100% - 32px);
+      min-width: 320px;
+      max-width: 480px;
+      vertical-align: middle;
+      padding: 16px;
+      display: inline-block;
+    }
+    .question {
+      border: 0;
+      height: initial;
+    }
+    .question__legend {
+      font: 600 20px 'Roboto', sans-serif;
+      width: 100%;
+    }
+    .question label {
+      display: block;
+      font: 16px/48px 'Roboto', sans-serif;
+      width: calc(100% - 80px);
+      margin: 0 auto;
+      height: 48px;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+    .question label:first-of-type {
+      margin-top: 20px;
+    }
+    .question label:last-of-type {
+      margin-bottom: 20px;
+    }
+    .question label:hover {
+      background-color: #EEEEEE;
+    }
+    .question input { 
+      position: absolute;
+      left: -10000px;
+    }
+    .question input:checked + label {
+      background-color: lightgreen;
+      cursor: initial;
+    }
+    /*This rule is needed to override original swiper rule*/
+    .swiper-wrapper {
+      height: initial;
+    }
+    .questionnaire__submit-button {
+      cursor: pointer;
+      font: 600 14px 'Roboto', sans-serif;
+      min-width: 88px;
+      min-height: 36px;
+      border-radius: 2px;
+      text-transform: uppercase;
+      display: inline-block;
+      background-color: #2196F3;
+      color: #fff;
+      padding: 0 8px;
+    }
+    .questionnaire__submit-button:hover {
+      box-shadow: 0 1px 3px 0 #999;
+    }
+    .questionnaire__submit-button:active {
+      box-shadow: 0 2px 4px 0 #999;
+    }
+    .questionnaire__select-category { 
+      display: block;
+      margin: 0 auto;
+      border-bottom: 1px solid rgba(0, 0, 0, .12);
+      font: 18px 'Roboto', sans-serif;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      margin-bottom: 5vmin;
+    }
+    .none {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="mainnav"></div>
+  <main class="maincontent">
+    <form class="questionnaire swiper-container">
+      <select class="questionnaire__select-category"></select>
+      <div class="swiper-wrapper"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <button class="questionnaire__submit-button" type="button">Завершити опитування та ???</button>
+    </form>
+  </main>
+  <script>
+    var testJSON = '{\
+      "categories": [\
+        {\
+          "categoryId": "0",\
+          "categoryName": "Загальні питання"\
+        },\
+        {\
+          "categoryId": "1",\
+          "categoryName": "Благоустрій"\
+        }\
+      ],\
+      "questions": [\
+        {\
+          "questionName": "Плануєте купувати квартиру?",\
+          "questionId": "0",\
+          "categoryName": "Загальні питання",\
+          "categoryId": "0",\
+          "answers": [\
+            {\
+              "answerText": "Точно ні",\
+              "answerId": "0",\
+              "isChosen": "false"\
+            },\
+            {\
+              "answerText": "Скоріше ні",\
+              "answerId": "1",\
+              "isChosen": "false"\
+            },\
+            {\
+              "answerText": "Не можу відповісти",\
+              "answerId": "2",\
+              "isChosen": "true"\
+            },\
+            {\
+              "answerText": "Скоріше так",\
+              "answerId": "3",\
+              "isChosen": "false"\
+            },\
+            {\
+              "answerText": "Точно так",\
+              "answerId": "4",\
+              "isChosen": "false"\
+            }\
+          ]\
+        },\
+        {\
+          "questionName": "Вам подобається відповідати на наші питання?",\
+          "questionId": "1",\
+          "categoryName": "Загальні питання",\
+          "categoryId": "0",\
+          "answers": [\
+            {\
+              "answerText": "Точно ні",\
+              "answerId": "0",\
+              "isChosen": "false"\
+            },\
+            {\
+              "answerText": "Скоріше ні",\
+              "answerId": "1",\
+              "isChosen": "false"\
+            },\
+            {\
+              "answerText": "Не можу відповісти",\
+              "answerId": "2",\
+              "isChosen": "true"\
+            },\
+            {\
+              "answerText": "Скоріше так",\
+              "answerId": "3",\
+              "isChosen": "false"\
+            },\
+            {\
+              "answerText": "Точно так",\
+              "answerId": "4",\
+              "isChosen": "false"\
+            }\
+          ]\
+        },\
+        {\
+          "questionName": "На всіх будівлях комплексу є зрозумілі адресні покажчики з назвою вулиці та номером будинку",\
+          "questionId": "2",\
+          "categoryName": "Благоустрій",\
+          "categoryId": "1",\
+          "answers": [\
+            {\
+              "answerText": "Точно ні",\
+              "answerId": "0",\
+              "isChosen": "false"\
+            },\
+            {\
+              "answerText": "Скоріше ні",\
+              "answerId": "1",\
+              "isChosen": "false"\
+            },\
+            {\
+              "answerText": "Не можу відповісти",\
+              "answerId": "2",\
+              "isChosen": "true"\
+            },\
+            {\
+              "answerText": "Скоріше так",\
+              "answerId": "3",\
+              "isChosen": "false"\
+            },\
+            {\
+              "answerText": "Точно так",\
+              "answerId": "4",\
+              "isChosen": "false"\
+            }\
+          ]\
+        },\
+        {\
+          "questionName": "При в’їзді на територію комплексу розміщена зрозуміла схема кварталу",\
+          "questionId": "3",\
+          "categoryName": "Благоустрій",\
+          "categoryId": "1",\
+          "answers": [\
+            {\
+              "answerText": "Точно ні",\
+              "answerId": "0",\
+              "isChosen": "false"\
+            },\
+            {\
+              "answerText": "Скоріше ні",\
+              "answerId": "1",\
+              "isChosen": "false"\
+            },\
+            {\
+              "answerText": "Не можу відповісти",\
+              "answerId": "2",\
+              "isChosen": "true"\
+            },\
+            {\
+              "answerText": "Скоріше так",\
+              "answerId": "3",\
+              "isChosen": "false"\
+            },\
+            {\
+              "answerText": "Точно так",\
+              "answerId": "4",\
+              "isChosen": "false"\
+            }\
+          ]\
+        }\
+      ]\
+    }';
+    var modelData = JSON.parse(testJSON);
+    var categories = modelData['categories'];
+    var questions = modelData['questions'];
+    questions.forEach(function(item) {
+      buildQuestion({questionData: item, container: document.querySelector('.swiper-wrapper')});
+    });
+    categories.forEach(function(item) {
+      builCategoriesList({categoryData: item, container: document.querySelector('.questionnaire__select-category')});
+    });
+    document.querySelector('.questionnaire__select-category').addEventListener('change', function(event) {
+      var firstQuestionInSelectedCategory, selectedCategoryId;
+      categories.forEach(function(item) {
+        if (+item['categoryId'] + 1 + '. ' + item['categoryName'] === event.target.value) {
+          selectedCategoryId = item['categoryId'];
+        }
+      });
+      questions.forEach(function(item) {
+        if (item['categoryId'] === selectedCategoryId) {
+          firstQuestionInSelectedCategory = +item['questionId'] - 1;
+        }
+        questionSwiper.slideTo(firstQuestionInSelectedCategory);
+      });
+    });
+    document.querySelector('.questionnaire__submit-button').addEventListener('click', function(event) {
+      event.stopPropagation();
+      event.preventDefault();
+      serializeDataFromForm(getDataFromForm(document.querySelector('.swiper-wrapper')));
+    });
+    function buildQuestion(params) {
+      var questionData = params.questionData;
+      var container = params.container;
+
+      var fieldset = document.createElement('fieldset');
+      var legend = document.createElement('legend');
+      var answerContainer = document.createElement('div');
+      fieldset.appendChild(legend);
+      fieldset.appendChild(answerContainer);
+      container.appendChild(fieldset);
+
+      fieldset.className = 'swiper-slide question';
+      legend.className = 'question__legend';
+      legend.textContent = +questionData['questionId'] + 1 + '. ' + questionData['questionName'];
+      answerContainer.className = 'question__answers-wrapper';
+
+      questionData['answers'].forEach(function(item) {
+        buildAnswer({answerData: item, container: answerContainer, questionId: questionData['questionId']});
+      });
+    }
+    function buildAnswer(params) {
+      var answerData = params.answerData;
+      var container = params.container;
+      var questionId = params.questionId;
+
+      var input = document.createElement('input');
+      var label = document.createElement('label');
+      container.appendChild(input);
+      container.appendChild(label);
+
+      input.setAttribute('type', 'radio');
+      input.setAttribute('name', questionId);
+      input.setAttribute('value', answerData['answerId']);
+      input.setAttribute('id', questionId + '-' + answerData['answerId']);
+      label.setAttribute('for', questionId + '-' + answerData['answerId']);
+      label.textContent = answerData['answerText'];
+    }
+    function builCategoriesList(params) {
+      var categoryData = params.categoryData;
+      var container = params.container;
+      var option = document.createElement('option');
+      container.appendChild(option);
+
+      option.textContent = +categoryData['categoryId'] + 1 + '. ' + categoryData['categoryName'];
+    }
+    function changeCategory(swiper) {
+      var categoryId = questions[swiper.activeIndex]['categoryId'];
+      var optionsDOM = document.querySelectorAll('.questionnaire__select-category option');
+      Array.prototype.forEach.call(optionsDOM, function(item) {
+        if (item.selected) {
+          item.selected = false;
+        }
+      });
+      optionsDOM[categoryId].selected = true;
+    }
+    function getDataFromForm() {
+      var answers = [];
+      Array.prototype.forEach.call(document.querySelectorAll('input[type="radio"]'), function(item) {
+        if (item.checked) {
+          var pair = {};
+          var pairArr = item.id.split('-');
+          pair.questionId = pairArr[0];
+          pair.answerId = pairArr[1];
+          answers.push(pair);
+        }
+      });
+      return answers;
+    }
+    function serializeDataFromForm(data) {
+      return JSON.stringify(data);
+    }
+  </script>
+  <script src="swiper.min.js"></script>
+  <script>
+    var questionSwiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      spaceBetween: 15,
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      simulateTouch: false,
+      onSlideChangeStart: changeCategory,
+      preloadImages: false,
+      lazyLoading: true,
+      lazyLoadingInPrevNext: true,
+      watchSlidesVisibility: true
+    });
+  </script>
+</body>
+</html>
