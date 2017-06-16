@@ -1,0 +1,65 @@
+<html><head><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="ImageSelectElement.css"><script src="load-image.all.min.js"></script><script src="EventEmitter.js"></script><script src="ImageSelectElement.js"></script><script src="CropElement.js"></script><style>form {
+      position: relative;
+    }
+
+    #main {
+      height: 25%;
+      width: 70%;
+      background-color: lightgreen;
+      margin: 10px;
+    }
+
+    #div1 {
+      width: 70%;
+      /*height: 25%;*/
+      position: relative;
+      overflow: hidden;
+      background: yellow;
+    }
+
+    #div1 > .center {
+      position: absolute;
+      background: rgba(0, 255, 0, 0.5);
+    }
+
+    #div1 > .left {
+      position: absolute;
+      /*left: 0px;
+      width: 20%;
+      height: 20%;*/
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    #div1 > .top {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    #div1 > .right {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    #div1 > .bottom {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    #input {
+      visibility: hidden;
+      position: absolute;
+      z-index: -1;
+    }
+
+    canvas {
+      position: relative;
+    }
+
+    .none {
+      display: none;
+    }</style></head><body><div id="main"></div><div id="div1"></div><input id="button" type="button" value="save" onclick="save()"> <img id="img" style="border:2px solid green"><script>var cropElement = new CropElement(document.getElementById('div1'), {crop: true, ratio: 0.9, width: 320, left: 0.1, top: 0.1, right: 0.1, bottom: 0.1}, document.body); 
+    var imageSelectElement = new ImageSelectElement({container: document.getElementById('main'), editable: true, supportedTypes: ['image/png', 'image/jpeg'], cropElement: cropElement});
+
+    function save() {
+      img.src = cropElement.get();
+    }</script></body></html>
