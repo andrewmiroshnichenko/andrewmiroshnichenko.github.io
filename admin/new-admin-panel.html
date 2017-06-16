@@ -57,6 +57,9 @@
   .settings-nav-item:active {
     color: rgba(0, 0, 0, .6);
   }
+  .settings-nav-item:last-child {
+    border-top: 2px solid gray;
+  }
   .settings-nav-item.current {
     background-color: #EEE;
     cursor: initial;
@@ -124,6 +127,10 @@
     height: 100%;
     width: 100%;
   }
+  .settings-changed-list {
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
   .image-choose .center {
     position: absolute;
   }
@@ -182,6 +189,9 @@
     font-size: 14px;
     cursor: pointer;
   }
+  .settings-save-settings button {
+    margin: initial;
+  }
   .none {
     display: none;
   }
@@ -195,9 +205,10 @@
   </div class="header">
   <aside>
     <ul class="settings-nav">
-      <li class="settings-nav-item current">General</li>
-      <li class="settings-nav-item">Chat</li>
-      <li class="settings-nav-item">Widget</li>
+      <li data-settings-section="general" class="settings-nav-item current">General</li>
+      <li data-settings-section="chat" class="settings-nav-item">Chat</li>
+      <li data-settings-section="widget" class="settings-nav-item">Widget</li>
+      <li data-settings-section="save" class="settings-nav-item">Save and apply</li>
     </ul>
   </aside>
   <main>
@@ -261,6 +272,20 @@
         <input type="text" class="settings-item-input">
       </div> -->
     </section>
+    <section class="settings-section settings-save-settings none">
+      <div class="settings-item pictition-save-settings">
+        <h4 class="settings-item-title">Save settings of your petition</h4>
+        <p class="settings-item-description">Currently you have changed next 4 things:</p>
+        <ul class="settings-changed-list">
+          <li class="settings-changed-item">- hashtag;</li>
+          <li class="settings-changed-item">- main image;</li>
+          <li class="settings-changed-item">- enable chat;</li>
+          <li class="settings-changed-item">- widget background color.</li>
+        </ul>
+        <p class="settings-item-description">If everything is OK, then press button and your changes will be applied</p>
+        <button class="settings-save">Save</button>
+      </div>
+    </section>
   </main>
   <div class="popup none">
     <div class="image-choose-wrapper">
@@ -279,7 +304,7 @@
         item.classList.remove('current');
       });
       this.classList.add('current');
-      var name = this.textContent.toLowerCase();
+      var name = this.getAttribute('data-settings-section');
       [].forEach.call(settingsSections, function(section) {
         section.classList.add('none');
         if (~section.className.indexOf(name)) section.classList.remove('none');
