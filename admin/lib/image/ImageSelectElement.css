@@ -1,1 +1,0 @@
-@keyframes scroltwo{from{background-position:center 0}to{background-position:center 100%}}.image-loading-popup{top:0;left:0;right:0;bottom:0;position:absolute;background-color:#fff;display:none}.image-loading-popup__image{background:url(spinner.png) no-repeat gray;width:800px;height:800px;background-size:800px;animation:scroltwo 2.67s steps(39) infinite}
